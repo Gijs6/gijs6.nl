@@ -2,5 +2,7 @@
     "school": "https://school.gijs6.nl",
     "contact": "mailto:gijs6@dupunkto.org",
     "home": "/",
-    "check/cijfer": "/priv/grade"
+    "check/cijfer": "/priv/grade",
+    "kodo/get": "https://api.dupunkto.org/kodo/get",
+    "kodo/new": "https://api.dupunkto.org/kodo/new"
 }
