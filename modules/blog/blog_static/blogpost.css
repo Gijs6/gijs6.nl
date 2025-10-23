@@ -43,9 +43,10 @@ main blockquote {
 
 main p code {
     padding-inline: 0.3em;
-    background-color: var(--oc-gray-5);
+    background-color: var(--oc-gray-8);
     border-radius: 6px;
 }
+
 
 .ref-inline {
     vertical-align: super;
