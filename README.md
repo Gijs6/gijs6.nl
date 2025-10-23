@@ -8,7 +8,7 @@ Flask + Jinja is just amazing. Has my blog, a todo app (ProLi), grade calculator
 
 ```bash
 pip install -r requirements.txt
-python main.py
+python app.py
 ```
 
 Then visit `localhost:7000` and there you go!
