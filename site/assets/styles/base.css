@@ -37,9 +37,16 @@ body {
             flex-wrap: wrap;
         }
 
-        > span {
+        > a {
             font-weight: 900;
             font-size: 2em;
+            text-decoration: none;
+
+            &:hover {
+                box-shadow: none;
+                background-color: unset;
+                color: currentColor;
+            }
 
             > sup {
                 color: var(--color-primary);

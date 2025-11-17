@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,18 +29,19 @@
         <link rel="alternate" type="application/rss+xml" title="Blog - RSS" href="/blog/rss.xml">
         <link rel="alternate" type="application/atom+xml" title="Blog - Atom" href="/blog/atom.xml">
     </head>
+
     <body>
         <header>
-            <span>
+            <a href="/">
                 Gijs<sup>6</sup>
-            </span>
+            </a>
             <nav>
-                <a href="/"{% if active_page == 'home' %} class="active"{% endif %}>/home</a>
-                <a href="/blog/"{% if active_page == 'blog' %} class="active"{% endif %}>/blog</a>
-                <a href="/projects"{% if active_page == 'projects' %} class="active"{% endif %}>/projects</a>
-                <a href="/bookmarks"{% if active_page == 'bookmarks' %} class="active"{% endif %}>/bookmarks</a>
-                <a href="/colophon"{% if active_page == 'colophon' %} class="active"{% endif %}>/colophon</a>
-                <a href="/resume"{% if active_page == 'resume' %} class="active"{% endif %}>/resume</a>
+                <a href="/" {% if active_page=='home' %}class="active"{% endif %}>/home</a>
+                <a href="/blog/" {% if active_page=='blog' %}class="active"{% endif %}>/blog</a>
+                <a href="/projects" {% if active_page=='projects' %}class="active"{% endif %}>/projects</a>
+                <a href="/bookmarks" {% if active_page=='bookmarks' %}class="active"{% endif %}>/bookmarks</a>
+                <a href="/colophon" {% if active_page=='colophon' %}class="active"{% endif %}>/colophon</a>
+                <a href="/resume" {% if active_page=='resume' %}class="active"{% endif %}>/resume</a>
                 <a href="/school">/school</a>
             </nav>
         </header>
@@ -53,8 +55,11 @@
                 Copying is an act of love. Love is not subject to law. Please copy. &lt;3 - <a href="https://unlicense.org/">unlicensed</a>
             </p>
             <p>
-                View the <a href="https://github.com/Gijs6/gijs6.nl">repository</a> on GitHub. Built from commit <a href="https://github.com/Gijs6/gijs6.nl/commit/{{ data.last_commit.hash.long }}">{{ data.last_commit.hash.short }}</a>, deployed on <time time="{{ data.now.date.short }}">{{ data.now.date.long }}</time> at <time time="{{ data.now.time }}">{{ data.now.time }}</time>.
+                View the <a href="https://github.com/Gijs6/gijs6.nl">repository</a> on GitHub. Built from commit <a href="https://github.com/Gijs6/gijs6.nl/commit/{{ data.last_commit.hash.long }}">{{
+                data.last_commit.hash.short }}</a>, deployed on <time time="{{ data.now.date.short }}">{{
+                data.now.date.long }}</time> at <time time="{{ data.now.time }}">{{ data.now.time }}</time>.
             </p>
         </footer>
     </body>
+
 </html>
