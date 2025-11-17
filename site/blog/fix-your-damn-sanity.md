@@ -23,7 +23,7 @@ Also: the developer experience is completely mental. Xcode is slow, bloated, and
 
 So if you have a MacBook or just another device that runs macOS, throw it out the window and buy something sensible. Since you were using Apple products, the rest will feel so fucking cheap to you. And guess what; the quality is also better (I know that is hard for Apple users to even imagine, but it is very much the fucking reality)!
 
-Enough about macOS and Apple, let's talk about an actually great OS.
+Enough about macOS and Apple. Let's talk about an actually great OS.
 Linux gives you actual control. Real control. Your system doesn't fight you; it helps you. You decide how things work. And that scares people. But once you get used to it, there's no way you're going back to an OS that constantly fucks with you. No big decisions made for you (well, apart from the distro, I guess). No forced updates at 3 AM. No bullshit "let's restart your machine just when you wanted to be productive because we said so." No manipulative nudges, no mystery processes eating your RAM while doing God knows what. It's yours. Finally.
 
 I used Windows since I was very small. And it's what I was used to. I didn't want to switch to Linux, because, well, change is messy. But I did. And holy shit, the difference is so little. If you just use a great desktop environment (Cinnamon is amazing), the change is really, really small. And with the internet as your friend, you can really find your way around Linux. You're not alone. You don't have to be a command line monk who recompiles Firefox in the middle of the night. You just need curiosity and a browser (and fucking ChatGPT will also answer your, ehmm... "simple" questions).
