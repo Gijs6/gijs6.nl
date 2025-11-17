@@ -99,11 +99,17 @@ body {
     > footer {
         grid-area: footer;
         margin-top: 40px;
-        border-top: 1px solid var(--oc-gray-6);
-        padding-top: 5px;
+        border-top: 1px solid light-dark(var(--oc-gray-5), var(--oc-gray-7));
+        padding-top: 10px;
+        font-size: 0.9em;
 
         > p {
             margin-block: 0.5em;
+            color: light-dark(var(--oc-gray-6), var(--oc-gray-5));
+
+            a {
+                text-decoration-thickness: 1px;
+            }
 
             > time {
                 font-weight: 700;
