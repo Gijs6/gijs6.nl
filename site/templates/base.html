@@ -36,13 +36,16 @@
                 Gijs<sup>6</sup>
             </a>
             <nav>
-                <a href="/" {% if active_page=='home' %}class="active"{% endif %}>/home</a>
-                <a href="/blog/" {% if active_page=='blog' %}class="active"{% endif %}>/blog</a>
-                <a href="/projects" {% if active_page=='projects' %}class="active"{% endif %}>/projects</a>
-                <a href="/bookmarks" {% if active_page=='bookmarks' %}class="active"{% endif %}>/bookmarks</a>
-                <a href="/colophon" {% if active_page=='colophon' %}class="active"{% endif %}>/colophon</a>
-                <a href="/resume" {% if active_page=='resume' %}class="active"{% endif %}>/resume</a>
-                <a href="/school">/school</a>
+                <a href="/" {% if active_page=='home' %}class="active"{% endif %}>Home</a>
+                <a href="/blog/" {% if active_page=='blog' %}class="active"{% endif %}>Blog</a>
+                <a href="/projects" {% if active_page=='projects' %}class="active"{% endif %}>Projects</a>
+                <a href="/bookmarks" {% if active_page=='bookmarks' %}class="active"{% endif %}>Bookmarks</a>
+                <a href="/colophon" {% if active_page=='colophon' %}class="active"{% endif %}>Colophon</a>
+                <a href="/resume" {% if active_page=='resume' %}class="active"{% endif %}>Resume</a>
+            </nav>
+            <nav>
+                <a href="/school" hreflang="nl">School</a>
+                <a href="/inbox">Inbox</a>
             </nav>
         </header>
         <main>
