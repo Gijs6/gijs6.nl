@@ -6,8 +6,8 @@ serve() {
 
 build() {
   .venv/bin/python engine.py build
-  find build -name '*.css' -exec sh -c 'npx lightningcss --browserslist --bundle --minify "$1" -o "$1"' _ {} \;
-  npx prettier --write --ignore-path /dev/null "build/**/*.{css,js,xml,html}"
+  find build -name '*.css' -exec sh -c 'lightningcss --browserslist --bundle --minify "$1" -o "$1"' _ {} \;
+  prettier --write --ignore-path /dev/null "build/**/*.{css,js,xml,html}"
 }
 
 deploy() {
@@ -35,7 +35,7 @@ publish() {
 
 format() {
   ruff format .
-  npx prettier --write "**/*.{css,js,json,xml}"
+  prettier --write "**/*.{css,js,json,xml}"
   djlint . --reformat
   markdownlint --fix "**/*.md" || true
 }
