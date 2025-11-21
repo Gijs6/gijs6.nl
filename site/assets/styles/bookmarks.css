@@ -9,6 +9,12 @@ body {
             @media (max-width: 750px) {
                 grid-template-columns: 1fr;
             }
+
+            > section {
+                > h2 {
+                    margin-block: 0 .5em;
+                }
+            }
         }
     }
 }
