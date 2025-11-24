@@ -1,19 +1,13 @@
-body {
-    > main {
-        > article {
-            > hgroup {
-                > h1 {
-                    margin-block-end: 0.25em;
-                }
+body > main > article > hgroup {
+    > h1 {
+        margin-block-end: 0.25em;
+    }
 
-                > p {
-                    margin-block: 0 1.5em;
+    > p {
+        margin-block: 0 1.5em;
 
-                    > time {
-                        color: light-dark(var(--oc-gray-6), var(--oc-gray-5));
-                    }
-                }
-            }
+        > time {
+            color: light-dark(var(--oc-gray-6), var(--oc-gray-5));
         }
     }
 }

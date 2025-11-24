@@ -1,18 +1,14 @@
-body {
-    > main {
-        > pre {
-            line-height: 1;
-            float: right;
-            width: fit-content;
-            margin: -30px 0 15px 15px;
-            font-size: 0.75em;
+body > main > pre {
+    line-height: 1;
+    float: right;
+    width: fit-content;
+    margin: -30px 0 15px 15px;
+    font-size: 0.75em;
 
-            @media (max-width: 750px) {
-                float: none;
-                margin: 0;
-                width: unset;
-                overflow-x: scroll;
-            }
-        }
+    @media (max-width: 750px) {
+        float: none;
+        margin: 0;
+        width: unset;
+        overflow-x: scroll;
     }
 }

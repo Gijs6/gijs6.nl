@@ -1,20 +1,16 @@
-body {
-    > main {
-        > div {
-            display: grid;
-            grid-template-rows: masonry;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0 20px;
+body > main > div {
+    display: grid;
+    grid-template-rows: masonry;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 20px;
 
-            @media (max-width: 750px) {
-                grid-template-columns: 1fr;
-            }
+    @media (max-width: 750px) {
+        grid-template-columns: 1fr;
+    }
 
-            > section {
-                > h2 {
-                    margin-block: 0 0.5em;
-                }
-            }
+    > section {
+        > h2 {
+            margin-block: 0 0.5em;
         }
     }
 }
