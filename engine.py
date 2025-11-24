@@ -31,8 +31,12 @@ init()
 SITE_DIR = "site"
 BUILD_DIR = "build"
 BUILD_DEV_DIR = "build-dev"
-TEMPLATES_DIR = "site/templates"
-BLOG_DIR = "site/blog"
+TEMPLATES_DIR = os.path.join(SITE_DIR, "templates")
+BLOG_DIR = os.path.join(SITE_DIR, "blog")
+
+BLOG_INDEX_TEMPLATE = "blog_index.html"
+BLOG_POST_TEMPLATE = "blog_post.html"
+DEFAULT_TEMPLATE = "base.html"
 
 SITE_URL = "https://gijs6.nl"
 SITE_TITLE = "Gijs6"
@@ -100,15 +104,20 @@ def get_data():
 
 
 def infer_page_metadata(rel_path):
-    canonical_path = "/" + os.path.splitext(rel_path)[0]
-
-    if rel_path == "home.html":
-        return "home", "/"
-    elif rel_path == "404.html":
-        return "", "/404"
+    # For index.html, canonical path is "/" not "/index"
+    if rel_path == "index.html":
+        canonical_path = "/"
     else:
-        active_page = rel_path.split("/")[0].replace(".html", "").replace(".md", "")
-        return active_page, canonical_path
+        canonical_path = "/" + os.path.splitext(rel_path)[0]
+
+    # Active page is derived from the first path component or filename
+    active_page = rel_path.split("/")[0].replace(".html", "").replace(".md", "")
+
+    # Map "index" to "home" for navigation purposes
+    if active_page == "index":
+        active_page = "home"
+
+    return active_page, canonical_path
 
 
 def process_blog(build_dir, template_env, md_processor, data):
@@ -183,13 +192,18 @@ def process_blog(build_dir, template_env, md_processor, data):
         reverse=True,
     )
 
-    blog_dir = os.path.join(build_dir, "blog")
+    # Derive blog section name from BLOG_DIR (e.g., "site/blog" -> "blog")
+    blog_section = os.path.basename(BLOG_DIR)
+    blog_dir = os.path.join(build_dir, blog_section)
     os.makedirs(blog_dir, exist_ok=True)
 
     with open(os.path.join(blog_dir, "index.html"), "w", encoding="utf-8") as f:
         f.write(
-            template_env.get_template("blog_index.html").render(
-                posts=posts, active_page="blog", canonical_path="/blog", data=data
+            template_env.get_template(BLOG_INDEX_TEMPLATE).render(
+                posts=posts,
+                active_page=blog_section,
+                canonical_path=f"/{blog_section}",
+                data=data,
             )
         )
 
@@ -197,27 +211,27 @@ def process_blog(build_dir, template_env, md_processor, data):
         post_path = os.path.join(blog_dir, f"{post['slug']}.html")
         with open(post_path, "w", encoding="utf-8") as f:
             f.write(
-                template_env.get_template("blog_post.html").render(
+                template_env.get_template(BLOG_POST_TEMPLATE).render(
                     post=post,
-                    active_page="blog",
-                    canonical_path=f"/blog/{post['slug']}",
+                    active_page=blog_section,
+                    canonical_path=f"/{blog_section}/{post['slug']}",
                     data=data,
                 )
             )
 
     fg = FeedGenerator()
-    fg.title(f"{SITE_TITLE} - blog")
+    fg.title(f"{SITE_TITLE} - {blog_section}")
     fg.description(SITE_DESCRIPTION)
     fg.id(SITE_URL)
-    fg.link(href=f"{SITE_URL}/blog", rel="alternate")
+    fg.link(href=f"{SITE_URL}/{blog_section}", rel="alternate")
     fg.language("en")
     fg.author(name=AUTHOR_NAME, email=AUTHOR_EMAIL, uri=SITE_URL)
 
     for post in posts:
         fe = fg.add_entry()
         fe.title(post["title"])
-        fe.link(href=f"{SITE_URL}/blog/{post['slug']}")
-        fe.id(f"{SITE_URL}/blog/{post['slug']}")
+        fe.link(href=f"{SITE_URL}/{blog_section}/{post['slug']}")
+        fe.id(f"{SITE_URL}/{blog_section}/{post['slug']}")
         fe.description(post["content"])
         if post.get("created"):
             fe.pubDate(post["created"])
@@ -248,9 +262,7 @@ def process_site_files(build_dir, template_env, md_processor, data):
                 continue
 
             rel_path = os.path.relpath(filepath, SITE_DIR)
-            if rel_path == "home.html":
-                output_path = os.path.join(build_dir, "index.html")
-            elif rel_path.endswith(".md"):
+            if rel_path.endswith(".md"):
                 output_path = os.path.join(build_dir, rel_path[:-3] + ".html")
             else:
                 output_path = os.path.join(build_dir, rel_path)
@@ -302,7 +314,7 @@ def process_site_files(build_dir, template_env, md_processor, data):
                 metadata, html_content = parse_front_matter(content)
 
                 if metadata:
-                    template_name = metadata.get("template", "base.html")
+                    template_name = metadata.get("template", DEFAULT_TEMPLATE)
                     try:
                         active_page, canonical_path = infer_page_metadata(rel_path)
 
@@ -340,6 +352,7 @@ def process_site_files(build_dir, template_env, md_processor, data):
 
 def generate_sitemap(build_dir, posts):
     urlset = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
+    blog_section = os.path.basename(BLOG_DIR)
 
     def add_url(loc, lastmod=None):
         url = ET.SubElement(urlset, "url")
@@ -348,11 +361,12 @@ def generate_sitemap(build_dir, posts):
             ET.SubElement(url, "lastmod").text = lastmod
 
     add_url(f"{SITE_URL}/")
-    add_url(f"{SITE_URL}/blog/")
+    if posts:
+        add_url(f"{SITE_URL}/{blog_section}/")
 
     for post in posts:
         lastmod = post["created"].strftime("%Y-%m-%d") if post.get("created") else None
-        add_url(f"{SITE_URL}/blog/{post['slug']}", lastmod=lastmod)
+        add_url(f"{SITE_URL}/{blog_section}/{post['slug']}", lastmod=lastmod)
 
     for root, _, files in os.walk(build_dir):
         for filename in files:
@@ -364,7 +378,7 @@ def generate_sitemap(build_dir, posts):
             filepath = os.path.join(root, filename)
             rel_path = os.path.relpath(filepath, build_dir)
 
-            if rel_path.startswith("blog"):
+            if rel_path.startswith(blog_section):
                 continue
 
             url_path = "/" + rel_path.replace("\\", "/").replace(".html", "")
