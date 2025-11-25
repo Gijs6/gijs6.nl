@@ -103,9 +103,9 @@ body {
     > main {
         grid-area: main;
 
+        min-width: 0;
         max-width: 800px;
         margin-top: 5px;
-        overflow: hidden;
 
         h1:first-child {
             margin-block-start: 0;
