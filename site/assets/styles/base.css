@@ -1,8 +1,8 @@
 :root {
-    color-scheme: light dark;
-
     --color-primary: var(--oc-green-8);
     --color-accent: var(--oc-orange-8);
+
+    color-scheme: light dark;
 
     @media print {
         color-scheme: light;
@@ -10,27 +10,32 @@
 }
 
 body {
-    font-family: "Inter", "Ubuntu", "Roboto", "Helvetica", "Noto", sans-serif;
-    padding: 35px 30px 20px 30px;
     display: grid;
     grid-template-areas: "sidebar main" "footer footer";
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr auto;
     gap: 25px 40px;
+
     width: fit-content;
+    min-height: 100vh;
+    margin: 0;
+    padding: 35px 30px 20px 30px;
+
+    font-family: "Inter", "Ubuntu", "Roboto", "Helvetica", "Noto", sans-serif;
     line-height: 1.4;
 
     @media (max-width: 750px) {
         grid-template-areas: "sidebar" "main" "footer";
-        grid-template-rows: auto 1fr auto;
         grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
     }
 
     > header {
-        grid-area: sidebar;
         display: flex;
         flex-direction: column;
         gap: 20px;
+
+        grid-area: sidebar;
 
         @media (max-width: 750px) {
             flex-direction: row;
@@ -39,8 +44,10 @@ body {
         }
 
         > a {
-            font-weight: 900;
+            margin: 0;
+
             font-size: 2em;
+            font-weight: 900;
             text-decoration: none;
 
             @media (max-width: 750px) {
@@ -48,13 +55,15 @@ body {
             }
 
             &:hover {
-                box-shadow: none;
+                color: currentcolor;
+
                 background-color: unset;
-                color: currentColor;
+                box-shadow: none;
             }
 
             > sup {
                 color: var(--color-primary);
+
                 transition:
                     color 300ms ease,
                     text-shadow 300ms ease;
@@ -62,6 +71,7 @@ body {
 
             &:hover > sup {
                 color: var(--color-accent);
+
                 text-shadow:
                     2.5px 2.5px 25px var(--color-accent),
                     -2.5px -2.5px 25px var(--color-accent);
@@ -80,8 +90,9 @@ body {
             }
 
             > a {
-                width: fit-content;
                 --item-color: var(--color-primary);
+
+                width: fit-content;
 
                 &.active {
                     --item-color: var(--color-accent);
@@ -92,6 +103,7 @@ body {
 
     > main {
         grid-area: main;
+
         max-width: 800px;
         margin-top: 5px;
         overflow: hidden;
@@ -103,16 +115,20 @@ body {
 
     > footer {
         grid-area: footer;
+
         margin-top: 40px;
-        border-top: 1px solid light-dark(var(--oc-gray-5), var(--oc-gray-7));
         padding-top: 10px;
+
         font-size: 0.9em;
+
+        border-top: 1px solid light-dark(var(--oc-gray-5), var(--oc-gray-7));
 
         > p {
             margin-block: 0.5em;
+
             color: light-dark(var(--oc-gray-6), var(--oc-gray-5));
 
-            a {
+            > a {
                 text-decoration-thickness: 1px;
             }
 
@@ -126,20 +142,24 @@ body {
 a {
     --item-color: var(--color-accent);
 
-    color: currentColor;
-    text-decoration: underline solid var(--item-color);
-    text-decoration-thickness: 2px;
-    box-decoration-break: clone;
     position: relative;
 
+    box-decoration-break: clone;
+
+    color: currentcolor;
+    text-decoration: underline solid var(--item-color);
+    text-decoration-thickness: 2px;
+
     &:hover {
+        z-index: 10;
+
+        color: white;
+        text-decoration: none;
+
         background: var(--item-color);
         box-shadow:
             -1px 0 0 2.5px var(--item-color),
             1px 0 0 2.5px var(--item-color);
-        text-decoration: none;
-        color: white;
-        z-index: 10;
     }
 }
 
