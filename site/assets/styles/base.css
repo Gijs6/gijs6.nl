@@ -44,6 +44,7 @@ body {
 
         > a {
             margin: 0;
+            width: fit-content;
 
             font-size: 2em;
             font-weight: 900;
