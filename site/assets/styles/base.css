@@ -63,10 +63,6 @@ body {
 
             > sup {
                 color: var(--color-primary);
-
-                transition:
-                    color 300ms ease,
-                    text-shadow 300ms ease;
             }
 
             &:hover > sup {
