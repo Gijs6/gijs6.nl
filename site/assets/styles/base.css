@@ -22,6 +22,7 @@ body {
     padding: 35px 30px 20px 30px;
 
     font-family: "Inter", "Ubuntu", "Roboto", "Helvetica", "Noto", sans-serif;
+    font-size: clamp(0.9rem, 0.7rem + 0.5vw, 1.05rem);
     line-height: 1.4;
 
     @media (max-width: 750px) {
