@@ -8,6 +8,7 @@ import tempfile
 
 import re
 from datetime import datetime, timezone
+import json
 
 import time
 import threading
@@ -241,6 +242,29 @@ def process_blog(build_dir, template_env, md_processor, data):
         f.write(fg.rss_str(pretty=True))
     with open(os.path.join(blog_dir, "atom.xml"), "wb") as f:
         f.write(fg.atom_str(pretty=True))
+
+    json_feed = {
+        "version": "https://jsonfeed.org/version/1.1",
+        "title": f"{SITE_TITLE} - {blog_section}",
+        "home_page_url": f"{SITE_URL}/",
+        "feed_url": f"{SITE_URL}/{blog_section}/feed.json",
+        "description": SITE_DESCRIPTION,
+        "author": {"name": AUTHOR_NAME, "url": SITE_URL},
+        "items": [
+            {
+                "id": f"{SITE_URL}/{blog_section}/{post['slug']}",
+                "url": f"{SITE_URL}/{blog_section}/{post['slug']}",
+                "title": post["title"],
+                "content_html": post["content"],
+                "date_published": post.get("date_iso"),
+            }
+            for post in posts
+            if post.get("date_iso")
+        ],
+    }
+
+    with open(os.path.join(blog_dir, "feed.json"), "w", encoding="utf-8") as f:
+        json.dump(json_feed, f, indent=4, ensure_ascii=False)
 
     return posts
 
