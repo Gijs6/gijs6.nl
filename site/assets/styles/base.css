@@ -35,12 +35,17 @@ body {
         @media (max-width: 750px) {
             flex-direction: row;
             flex-wrap: wrap;
+            gap: 7.5px;
         }
 
         > a {
             font-weight: 900;
             font-size: 2em;
             text-decoration: none;
+
+            @media (max-width: 750px) {
+                margin-bottom: 2.5px;
+            }
 
             &:hover {
                 box-shadow: none;
@@ -58,15 +63,15 @@ body {
             &:hover > sup {
                 color: var(--color-accent);
                 text-shadow:
-                    3px 3px 25px var(--color-accent),
-                    -3px -3px 25px var(--color-accent);
+                    2.5px 2.5px 25px var(--color-accent),
+                    -2.5px -2.5px 25px var(--color-accent);
             }
         }
 
         > nav {
             display: flex;
             flex-direction: column;
-            gap: 0.5em;
+            gap: 7.5px;
 
             @media (max-width: 750px) {
                 flex-direction: row;
@@ -130,8 +135,8 @@ a {
     &:hover {
         background: var(--item-color);
         box-shadow:
-            -1px 0px 0px 3px var(--item-color),
-            1px 0px 0px 3px var(--item-color);
+            -1px 0 0 2.5px var(--item-color),
+            1px 0 0 2.5px var(--item-color);
         text-decoration: none;
         color: white;
         z-index: 10;
