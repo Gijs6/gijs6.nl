@@ -202,7 +202,7 @@ def process_blog(build_dir, template_env, md_processor, data):
             template_env.get_template(BLOG_INDEX_TEMPLATE).render(
                 posts=posts,
                 active_page=blog_section,
-                canonical_path=f"/{blog_section}",
+                canonical_path=f"/{blog_section}/",
                 data=data,
             )
         )
