@@ -3,6 +3,6 @@
     "tabWidth": 4,
     "useTabs": false,
     "trailingComma": "none",
-    "htmlWhitespaceSensitivity": "ignore",
+    "htmlWhitespaceSensitivity": "css",
     "plugins": ["@prettier/plugin-xml"]
 }
