@@ -14,7 +14,7 @@ body {
     grid-template-areas: "sidebar main" "footer footer";
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr auto;
-    gap: 25px 40px;
+    gap: 25px 50px;
 
     width: fit-content;
     min-height: 100vh;
