@@ -4,16 +4,22 @@
     Resume
 {%- endblock title %}
 
+{% block additional_stylesheets %}
+    <link rel="stylesheet" href="/assets/styles/resume.css">
+{% endblock additional_stylesheets %}
+
 {% block content %}
     <h1>Resume</h1>
     <hgroup>
         <h2>Gijs ten Berg</h2>
-        <p>Full-stack developer & web designer</p>
+        <p>16-year-old developer from Schiedam, NL</p>
     </hgroup>
     <section>
-        <h2>Skills</h2>
-        <p>I'm familiar with the usual web stack: HTML, CSS, and JavaScript. I mostly work in Python, using Flask and Jinja. I also know quite a bit of Elixir.</p>
-        <p>I'm comfortable working on the GNU/Linux command line and with Git for version control. I have experience with databases like PostgreSQL and SQLite, and I know a bit of Docker.</p>
+        <h2>What I work with</h2>
+        <p>I mostly write Python, using Flask and Jinja2. I've built a couple of static site generators from scratch, and I make CLI tools when I need to automate stuff. This is what I use for most personal projects.</p>
+        <p>At work I use Elixir with Phoenix LiveView and functional programming patterns. Still learning this one, but it's pretty cool.</p>
+        <p>For web stuff, I write semantic HTML, modern CSS (Grid, Flexbox, custom properties, light-dark mode), and JavaScript when I actually need it. I care about accessibility and keeping things simple.</p>
+        <p>I'm comfortable with Git, the GNU/Linux command line, Docker, PostgreSQL, SQLite, and nginx. I can also do basic graphic design in Figma and Lunacy.</p>
     </section>
     <section>
         <h2>Experience</h2>
@@ -29,32 +35,57 @@
             <p>
                 <time datetime="2024-11">November 2024</time> - current
             </p>
-            <p>Three friends and I run this small collective. We work on various open-source projects together.</p>
+            <p>Three friends and I run this small collective. We work on open-source projects together and host our own infrastructure.</p>
         </article>
     </section>
     <section>
         <h2>Education</h2>
         <article>
-            <h3>Lyceum Schravenlant</h3>
+            <h3>VWO NT/NG @ Lyceum Schravenlant</h3>
             <p>
                 <time datetime="2021-09">September 2021</time> - <time datetime="2027-07">July 2027</time>
             </p>
-            <p>I'm doing VWO with the NT/NG profile and NLT. I'm also a member of the medezeggenschapsraad (school council). I finished my English exams a year early.</p>
+            <p>
+                I'm doing VWO with the NT/NG profile (science & health) and NLT. I'm also on the school council (<em lang="nl">medezeggenschapsraad</em>). I finished my English exams a year early.
+            </p>
         </article>
         <article>
-            <p>I haven't figured out what I want to study yet. I'll get there eventually.</p>
+            <p>Haven't decided what to study at university yet. Probably something with computer science or natural sciences or maybe something completely different. I'll figure it out :)</p>
         </article>
+    </section>
+    <section>
+        <h2>Some projects</h2>
+        <p>
+            <strong><a href="https://github.com/Gijs6/gijs6.nl">This website</a>:</strong> I built a custom Python static site generator for this. No frameworks, no tracking, just static HTML. You can read <a href="/colophon">the colophon</a> for more details.
+        </p>
+        <p>
+            <strong><a href="https://github.com/Gijs6/meliag">Meliag</a>:</strong> This is a train info webapp for Dutch stations. I built it because the official NS app is way too bloated and I just want to know when my train is coming.
+        </p>
+        <p>
+            There's more stuff I've built on the <a href="/projects">projects page</a>.
+        </p>
     </section>
     <section>
         <h2>Other interests</h2>
         <ul>
-            <li>Natural sciences</li>
-            <li>Web servers and protocols</li>
-            <li>Self-hosting and networking</li>
-            <li>Free software</li>
-            <li>Contributing to the Dutch Wikipedia</li>
-            <li>Graphic design</li>
-            <li>Writing</li>
+            <li>Natural sciences (biology, chemistry, physics)</li>
+            <li>Web protocols and how the internet actually works</li>
+            <li>Contributing to Dutch Wikipedia</li>
+            <li>Graphic design and typography</li>
+            <li>
+                <a href="/blog/">Writing</a> about technology, education, and other stuff
+            </li>
+            <li>
+                <a href="https://api.gijs6.nl/random-image">Photography</a> (mostly random things I think look cool)
+            </li>
         </ul>
+    </section>
+    <section>
+        <h2>Contact</h2>
+        <p>If you want to get in touch:</p>
+        <pre><code>printf "%s%d@%s.%s\n" gijs 6 dupunkto org</code></pre>
+        <p>
+            You can also find me on <a href="https://github.com/Gijs6">GitHub</a>.
+        </p>
     </section>
 {% endblock content %}
