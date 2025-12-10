@@ -43,7 +43,7 @@ SITE_URL = "https://gijs6.nl"
 SITE_TITLE = "Gijs6"
 SITE_DESCRIPTION = "A big mess of fun pages, interesting projects, my own thoughts and opinions and more."
 AUTHOR_NAME = "Gijs6"
-AUTHOR_EMAIL = "gijs6@dupunkto.org"
+AUTHOR_EMAIL = "me@gijs6.nl"
 
 FRONT_MATTER_PATTERN = re.compile(r"^---\n(.*?)\n---", re.DOTALL)
 
