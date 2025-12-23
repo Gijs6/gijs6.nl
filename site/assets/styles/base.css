@@ -122,7 +122,7 @@ body {
         > p {
             margin-block: 0.5em;
 
-            color: light-dark(var(--oc-gray-6), var(--oc-gray-5));
+            color: light-dark(var(--oc-gray-7), var(--oc-gray-5));
 
             > a {
                 text-decoration-thickness: 1px;

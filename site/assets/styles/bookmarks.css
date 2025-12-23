@@ -1,14 +1,17 @@
 body > main > div {
-    display: grid;
-    grid-template-rows: masonry;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0 20px;
+    column-count: 2;
+    column-gap: 20px;
 
     @media (max-width: 750px) {
-        grid-template-columns: 1fr;
+        column-count: 1;
     }
 
-    > section > h2 {
-        margin-block: 0 0.5em;
+    > section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+
+        > h2 {
+            margin-block: 0 0.5em;
+        }
     }
 }

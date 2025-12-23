@@ -1,0 +1,19 @@
+@gijs6.nl host gijs6.nl
+handle @gijs6.nl {
+	redir /contact mailto:me@gijs6.nl?{query} permanent
+
+	redir /inbox https://inbox.gijs6.nl permanent
+	redir /school https://school.gijs6.nl permanent
+
+	redir /me.jpg /assets/images/me.jpg permanent
+	redir /me.jpeg /assets/images/me.jpg permanent
+
+	redir /blog /blog/ permanent
+
+	redir /security.txt /.well-known/security.txt permanent
+
+	redir /priv/absjdwaidajsijasd https://api.gijs6.nl{uri} permanent
+
+	redir /check/cijfer https://leerling.somtoday.nl/cijfers permanent
+	redir /priv/grade https://leerling.somtoday.nl/cijfers permanent
+}
