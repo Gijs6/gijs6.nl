@@ -79,12 +79,12 @@
             {% endblock content %}
         </main>
         <footer>
-            <p>~ Gijs ten Berg</p>
+            <p>Made by <a href="/contact">Gijs ten Berg</a> (yes, this whole mess is my fault)</p>
             <p>
-                <a href="https://unlicense.org/">Unlicensed</a>
+                <a href="https://unlicense.org/">No rights reserved</a>: copy it, change it, do something with it, make something cool :)
             </p>
             <p>
-                Built from commit <a href="https://github.com/Gijs6/gijs6.nl/commit/{{ data.last_commit.hash.long }}">{{ data.last_commit.hash.short }}</a>, deployed on <time datetime="{{ data.now.date.short }}">{{ data.now.date.long }}</time> at <time datetime="{{ data.now.time }}">{{ data.now.time }} UTC</time>.
+                Built from commit <a href="https://github.com/Gijs6/gijs6.nl/commit/{{ data.last_commit.hash.long }}">{{ data.last_commit.hash.short }}</a>, deployed on <time datetime="{{ data.now.date.short }}">{{ data.now.date.long }}</time> at <time datetime="{{ data.now.time }}">{{ data.now.time }} UTC</time>
             </p>
         </footer>
     </body>
