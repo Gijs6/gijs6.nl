@@ -1,128 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap");
+
 :root {
     --color-primary: var(--oc-green-8);
     --color-accent: var(--oc-orange-8);
 
-    color-scheme: light dark;
-
-    @media print {
-        color-scheme: light;
-    }
+    color-scheme: light;
 }
 
 body {
-    display: grid;
-    grid-template-areas: "sidebar main" "footer footer";
+    /* display: grid;
+    grid-template-areas: "header header" "main footer";
     grid-template-columns: auto 1fr;
-    grid-template-rows: 1fr auto;
-    gap: 25px 50px;
-
-    width: fit-content;
-    min-height: 100vh;
-    margin: 0;
-    padding: 35px 30px 20px 30px;
-
-    font-family: "Inter", "Ubuntu", "Roboto", "Helvetica", "Noto", sans-serif;
+    grid-template-rows: 1fr auto; */
+    font-family: "Schibsted Grotesk", "Inter", "Ubuntu", "Roboto", "Helvetica", "Noto", sans-serif;
     font-size: clamp(0.9rem, 0.7rem + 0.5vw, 1.05rem);
     line-height: 1.4;
 
-    @media (max-width: 750px) {
-        grid-template-areas: "sidebar" "main" "footer";
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr auto;
-    }
-
     > header {
+        /* grid-area: header; */
         display: flex;
-        flex-direction: column;
-        gap: 20px;
-
-        grid-area: sidebar;
-
-        @media (max-width: 750px) {
-            gap: 7.5px;
-        }
+        text-transform: uppercase;
+        flex-direction: row;
+        border-bottom: 2px solid black;
 
         > a {
-            margin: 0;
-            width: fit-content;
-
-            font-size: 2em;
+            transition: all 0.5s ease;
+            flex-grow: 1;
+            font-size: 6em;
             font-weight: 900;
+            color: black;
             text-decoration: none;
-
-            @media (max-width: 750px) {
-                margin-bottom: 2.5px;
-            }
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             &:hover {
-                color: currentcolor;
-
-                background-color: unset;
-                box-shadow: none;
+                flex-grow: 2;
             }
 
-            > sup {
-                color: var(--color-primary);
+            > span {
+                display: inline-block;
+                transform: rotate(0deg);
+                transition: transform 0.5s ease;
             }
 
-            &:hover > sup {
-                color: var(--color-accent);
-
-                text-shadow:
-                    2.5px 2.5px 25px var(--color-accent),
-                    -2.5px -2.5px 25px var(--color-accent);
+            &:hover > span {
+                transform: rotate(360deg);
             }
         }
 
         > nav {
+            transition: all 0.5s ease;
+            flex-grow: 3;
             display: flex;
-            flex-direction: column;
-            gap: 7.5px;
-
-            @media (max-width: 750px) {
-                flex-direction: row;
-                flex-wrap: wrap;
-                align-content: center;
-            }
+            flex-direction: row;
+            min-height: 30em;
 
             > a {
-                --item-color: var(--color-primary);
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 0.75em;
+                border-left: 2px solid black;
+                padding: var(--spacing-3xs);
 
-                width: fit-content;
+                font-size: 4em;
+                font-weight: 900;
+                color: black;
+                text-decoration: none;
+
+                transition: all 0.5s ease;
+
+                > div {
+                    flex: 1;
+                    min-width: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    align-self: stretch;
+                    clip-path: inset(0);
+
+                    > span {
+                        white-space: nowrap;
+                        transform: rotate(90deg);
+                        transition: transform 0.5s ease;
+                    }
+                }
+
+                &:hover {
+                    flex-grow: 5;
+
+                    > div > span {
+                        transform: rotate(0deg);
+                    }
+                }
 
                 &.active {
-                    --item-color: var(--color-accent);
+                    text-decoration: underline 5px solid black;
                 }
             }
         }
     }
 
     > main {
-        grid-area: main;
-
-        min-width: 0;
+        /* grid-area: main; */
+        padding: var(--spacing-xl) var(--spacing-2xl);
         max-width: 800px;
-        margin-top: 5px;
 
         h1:first-child {
-            margin-block-start: 0;
+            margin-block: 0 var(--spacing-lg);
+            font-size: 3em;
+            text-transform: uppercase;
+        }
+
+        > hgroup:has(> :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6)) {
+            > h1:first-child {
+                margin-block-end: var(--spacing-2xs);
+            }
+
+            > p {
+                font-size: 1.25em;
+                font-weight: 700;
+                margin-block: 0 var(--spacing-lg);
+            }
         }
     }
 
     > footer {
-        grid-area: footer;
-
-        margin-top: 40px;
-        padding-top: 10px;
-
-        font-size: 0.9em;
-
-        border-top: 1px solid light-dark(var(--oc-gray-5), var(--oc-gray-7));
+        /* grid-area: footer; */
+        padding: var(--spacing-xl) var(--spacing-2xl);
+        border-top: 2px solid black;
 
         > p {
-            margin-block: 0.5em;
+            margin-block: var(--spacing-sm);
 
-            color: light-dark(var(--oc-gray-7), var(--oc-gray-5));
+            &:first-child {
+                margin-block-start: 0;
+            }
+
+            &:last-child {
+                margin-block-end: 0;
+            }
 
             > a {
                 text-decoration-thickness: 1px;
@@ -136,27 +155,8 @@ body {
 }
 
 a {
-    --item-color: var(--color-accent);
-
-    position: relative;
-
-    box-decoration-break: clone;
-
-    color: currentcolor;
-    text-decoration: underline solid var(--item-color);
-    text-decoration-thickness: 2px;
-
-    &:hover {
-        z-index: 10;
-
-        color: white;
-        text-decoration: none;
-
-        background: var(--item-color);
-        box-shadow:
-            -1px 0 0 2.5px var(--item-color),
-            1px 0 0 2.5px var(--item-color);
-    }
+    color: currentColor;
+    font-weight: 700;
 }
 
 code,

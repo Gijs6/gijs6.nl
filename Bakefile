@@ -6,7 +6,7 @@ serve() {
 
 build() {
   .venv/bin/python engine.py build
-  find build -name '*.css' -exec sh -c 'lightningcss --browserslist --bundle --minify "$1" -o "$1"' _ {} \;
+  lightningcss --browserslist --bundle --minify build/assets/styles/main.css -o build/assets/styles/main.min.css
   prettier --write --config .prettierrc --ignore-path /dev/null "build/**/*.{css,js,xml,html}"
 }
 
