@@ -6,6 +6,7 @@ serve() {
 
 build() {
   .venv/bin/python engine.py build
+  curl "https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" -o site/assets/styles/fonts.css
   lightningcss --browserslist --bundle --minify build/assets/styles/main.css -o build/assets/styles/main.min.css
   prettier --write --config .prettierrc --ignore-path /dev/null "build/**/*.{css,js,xml,html}"
 }
