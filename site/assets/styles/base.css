@@ -1,8 +1,8 @@
 :root {
+    color-scheme: light;
+
     --color-primary: var(--oc-green-8);
     --color-accent: var(--oc-orange-8);
-
-    color-scheme: light;
 }
 
 body {
@@ -12,20 +12,20 @@ body {
 
     > header {
         display: flex;
-        text-transform: uppercase;
         flex-direction: row;
         border-bottom: 2px solid black;
+        text-transform: uppercase;
 
         > a {
-            transition: all 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             flex-grow: 1;
             font-size: 5em;
             font-weight: 900;
             color: black;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            transition: all 0.5s ease;
 
             &:hover {
                 flex-grow: 2;
@@ -43,35 +43,33 @@ body {
         }
 
         > nav {
-            transition: all 0.5s ease;
-            flex-grow: 8;
             display: flex;
             flex-direction: row;
+            flex-grow: 8;
             min-height: 25em;
+            transition: all 0.5s ease;
 
             > a {
-                flex-grow: 1;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                flex-grow: 1;
                 width: 0.75em;
-                border-left: 2px solid black;
                 padding: var(--spacing-3xs);
-
+                border-left: 2px solid black;
                 font-size: 3em;
                 font-weight: 900;
                 color: black;
                 text-decoration: none;
-
                 transition: all 0.5s ease;
 
                 > div {
-                    flex: 1;
-                    min-width: 0;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     align-self: stretch;
+                    flex: 1;
+                    min-width: 0;
                     clip-path: inset(0);
 
                     > span {
@@ -110,28 +108,28 @@ body {
             flex-direction: column;
 
             > a {
-                font-size: 3em;
-                padding: var(--spacing-sm) var(--spacing-md);
                 justify-content: flex-start;
+                padding: var(--spacing-sm) var(--spacing-md);
+                font-size: 3em;
             }
 
             > nav {
-                min-height: unset;
                 flex-direction: row;
                 flex-wrap: wrap;
+                min-height: unset;
                 border-top: 2px solid black;
 
                 > a {
-                    width: auto;
                     flex-grow: 1;
-                    border: none;
+                    width: auto;
                     padding: var(--spacing-sm) var(--spacing-md);
+                    border: none;
                     font-size: 1.1em;
 
                     &:hover,
                     &:active {
-                        text-decoration: underline 3px solid black;
                         flex-grow: 1;
+                        text-decoration: underline 3px solid black;
                     }
 
                     > div > span {
@@ -147,8 +145,8 @@ body {
     }
 
     > main {
-        padding: var(--spacing-xl) var(--spacing-2xl);
         max-width: 800px;
+        padding: var(--spacing-xl) var(--spacing-2xl);
 
         h1:first-child {
             margin-block: 0 var(--spacing-lg);
@@ -162,9 +160,9 @@ body {
             }
 
             > p {
+                margin-block: 0 var(--spacing-lg);
                 font-size: 1.25em;
                 font-weight: 700;
-                margin-block: 0 var(--spacing-lg);
             }
         }
     }
