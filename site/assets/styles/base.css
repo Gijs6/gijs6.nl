@@ -119,7 +119,7 @@ body {
                 min-height: unset;
                 flex-direction: row;
                 flex-wrap: wrap;
-                    border-top: 2px solid black;
+                border-top: 2px solid black;
 
                 > a {
                     width: auto;
@@ -129,7 +129,7 @@ body {
                     font-size: 1.1em;
 
                     &:hover,
-                    &:active  {
+                    &:active {
                         text-decoration: underline 3px solid black;
                         flex-grow: 1;
                     }
