@@ -1,7 +1,7 @@
 #!/bin/bash
 
 serve() {
-  .venv/bin/python engine.py serve
+  .venv/bin/python engine.py serve --host 0.0.0.0
 }
 
 build() {

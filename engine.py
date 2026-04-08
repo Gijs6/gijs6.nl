@@ -534,6 +534,7 @@ def build(output_dir=None):
     template_env = Environment(loader=FileSystemLoader([SITE_DIR, TEMPLATES_DIR]))
     md_processor = Markdown(extensions=["meta", "tables", "fenced_code"])
     data = get_data()
+    data["is_dev"] = output_dir != BUILD_DIR
     setup_time = time.time() - setup_start
     print(f"{Fore.GREEN}done ({setup_time * 1000:.0f}ms){Style.RESET_ALL}")
 
@@ -569,7 +570,7 @@ def build(output_dir=None):
     )
 
 
-def serve(port=8000):
+def serve(port=8000, host="localhost"):
     print(f"{Fore.BLUE}=== Development Server ==={Style.RESET_ALL}\n")
 
     build(output_dir=BUILD_DEV_DIR)
@@ -583,11 +584,11 @@ def serve(port=8000):
     class DevHTTPServer(BuildHTTPServer):
         directory = BUILD_DEV_DIR
 
-    server = HTTPServer(("localhost", port), DevHTTPServer)
+    server = HTTPServer((host, port), DevHTTPServer)
     threading.Thread(target=server.serve_forever, daemon=True).start()
 
     print(
-        f"{Fore.GREEN}Server running at {Style.BRIGHT}http://localhost:{port}{Style.RESET_ALL}"
+        f"{Fore.GREEN}Server running at {Style.BRIGHT}http://{host}:{port}{Style.RESET_ALL}"
     )
     print(f"{Fore.CYAN}Serving from: {Style.BRIGHT}{BUILD_DEV_DIR}/{Style.RESET_ALL}")
     print(
@@ -620,10 +621,15 @@ if __name__ == "__main__":
         default=8000,
         help="Port for server (default: 8000)",
     )
+    parser.add_argument(
+        "--host",
+        default="localhost",
+        help="Host for server (default: localhost)",
+    )
 
     args = parser.parse_args()
 
     if args.command == "serve":
-        serve(args.port)
+        serve(args.port, args.host)
     else:
         build()
