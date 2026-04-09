@@ -154,15 +154,18 @@ body {
             text-transform: uppercase;
         }
 
-        > hgroup:has(> :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6)) {
-            > h1:first-child {
-                margin-block-end: var(--spacing-2xs);
-            }
+        > article > hgroup,
+        > hgroup {
+            &:has(> :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6)) {
+                > h1:first-child {
+                    margin-block-end: var(--spacing-2xs);
+                }
 
-            > p {
-                margin-block: 0 var(--spacing-lg);
-                font-size: 1.25em;
-                font-weight: 700;
+                > p {
+                    margin-block: 0 var(--spacing-lg);
+                    font-size: 1.25em;
+                    font-weight: 700;
+                }
             }
         }
     }

@@ -1,3 +1,0 @@
-body > main > article > hgroup > p > time {
-    color: light-dark(var(--oc-gray-6), var(--oc-gray-5));
-}
