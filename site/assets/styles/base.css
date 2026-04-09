@@ -1,8 +1,5 @@
 :root {
     color-scheme: light;
-
-    --color-primary: var(--oc-green-8);
-    --color-accent: var(--oc-orange-8);
 }
 
 body {
