@@ -4,7 +4,6 @@
 
 body {
     font-family: "Schibsted Grotesk", "Inter", "Ubuntu", "Roboto", "Helvetica", "Noto", sans-serif;
-    font-size: clamp(0.9rem, 0.7rem + 0.5vw, 1.05rem);
     line-height: 1.4;
 
     > header {
