@@ -69,6 +69,14 @@ body {
                 padding: var(--spacing-lg);
             }
 
+            &:has(> a:hover:not(.active)) > a.active {
+                flex-grow: 1;
+
+                > div > span {
+                    transform: rotate(90deg);
+                }
+            }
+
             > a {
                 display: flex;
                 align-items: center;
@@ -134,7 +142,16 @@ body {
                 }
 
                 &.active {
+                    flex-grow: 8;
                     text-decoration: underline 5px solid black;
+
+                    > div > span {
+                        transform: rotate(0deg);
+                    }
+
+                    @media (min-width: 751px) and (max-width: 1300px) {
+                        flex-grow: 20;
+                    }
 
                     @media (max-width: 750px) {
                         flex-grow: 0;
