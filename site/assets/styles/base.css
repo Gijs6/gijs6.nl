@@ -124,7 +124,7 @@ body {
                     flex-grow: 8;
 
                     @media (min-width: 751px) and (max-width: 1300px) {
-                        flex-grow: 20;
+                        flex-grow: 10;
                     }
 
                     @media (max-width: 750px) {
@@ -150,7 +150,7 @@ body {
                     }
 
                     @media (min-width: 751px) and (max-width: 1300px) {
-                        flex-grow: 20;
+                        flex-grow: 10;
                     }
 
                     @media (max-width: 750px) {
