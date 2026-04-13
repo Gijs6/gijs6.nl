@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <title>{%- block title -%}{%- endblock title %} - Gijs6</title>
-        <meta name="description" content="My little space on the interwebs: blog, projects, and whatever else I felt like putting here :)">
-        <meta name="author" content="Gijs6">
-        <meta name="generator" content="Custom Python+Jinja2 SSG">
+        <meta name="description" content="My little space on the interwebs: blog, projects, and whatever else I felt like putting here :)" />
+        <meta name="author" content="Gijs6" />
+        <meta name="generator" content="Custom Python+Jinja2 SSG" />
 
-        <link rel="icon" href="/favicon.ico">
-
+        <link rel="icon" href="/favicon.ico" />
 
         {% if data.is_dev %}
-            <link rel="stylesheet" href="/assets/styles/skeleton.css">
-            <link rel="stylesheet" href="/assets/styles/base.css">
-            <link rel="stylesheet" href="/assets/styles/bookmarks.css">
-            <link rel="stylesheet" href="/assets/styles/colophon.css">
+            <link rel="stylesheet" href="/assets/styles/skeleton.css" />
+            <link rel="stylesheet" href="/assets/styles/base.css" />
+            <link rel="stylesheet" href="/assets/styles/bookmarks.css" />
+            <link rel="stylesheet" href="/assets/styles/colophon.css" />
         {% else %}
-            <link rel="stylesheet" href="/assets/styles/main.min.css">
+            <link rel="stylesheet" href="/assets/styles/main.min.css" />
         {% endif %}
 
-        <link rel="canonical" href="https://gijs6.nl{%- if canonical_path -%}{{ canonical_path }}{%- else -%}/{%- endif -%}">
+        <link rel="canonical" href="https://gijs6.nl{%- if canonical_path -%}{{ canonical_path }}{%- else -%}/{%- endif -%}" />
 
-        <link rel="me" href="https://github.com/Gijs6">
-        <link rel="me" href="/contact">
+        <link rel="me" href="https://github.com/Gijs6" />
+        <link rel="me" href="/contact" />
 
-        <link rel="license" href="https://unlicense.org/">
-        <link rel="robots" href="/robots.txt">
-        <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-        <link rel="security" href="/.well-known/security.txt">
+        <link rel="license" href="https://unlicense.org/" />
+        <link rel="robots" href="/robots.txt" />
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+        <link rel="security" href="/.well-known/security.txt" />
 
-        <link rel="alternate" type="application/rss+xml" title="Blog - RSS" href="/blog/rss.xml">
-        <link rel="alternate" type="application/atom+xml" title="Blog - Atom" href="/blog/atom.xml">
-        <link rel="alternate" type="application/feed+json" title="Blog - JSON" href="/blog/feed.json">
+        <link rel="alternate" type="application/rss+xml" title="Blog - RSS" href="/blog/rss.xml" />
+        <link rel="alternate" type="application/atom+xml" title="Blog - Atom" href="/blog/atom.xml" />
+        <link rel="alternate" type="application/feed+json" title="Blog - JSON" href="/blog/feed.json" />
     </head>
 
     <body>
@@ -89,5 +87,4 @@
             </p>
         </footer>
     </body>
-
 </html>
