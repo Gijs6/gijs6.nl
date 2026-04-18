@@ -1,15 +1,26 @@
 :root {
-    color-scheme: light;
+    color-scheme: light dark;
+    --color-fg: black;
+    --color-bg: white;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-fg: white;
+        --color-bg: black;
+    }
 }
 
 body {
     font-family: "Schibsted Grotesk", "Inter", "Ubuntu", "Roboto", "Helvetica", "Noto", sans-serif;
     line-height: 1.4;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
 
     > header {
         display: flex;
         flex-direction: row;
-        border-bottom: 2px solid black;
+        border-bottom: 2px solid var(--color-fg);
         text-transform: uppercase;
 
         @media (max-width: 750px) {
@@ -23,7 +34,7 @@ body {
             flex-grow: 1;
             font-size: 5em;
             font-weight: 900;
-            color: black;
+            color: var(--color-fg);
             text-decoration: none;
             transition: all 0.5s ease;
 
@@ -65,7 +76,7 @@ body {
                 flex-wrap: wrap;
                 min-height: unset;
                 gap: var(--spacing-sm) var(--spacing-md);
-                border-top: 2px solid black;
+                border-top: 2px solid var(--color-fg);
                 padding: var(--spacing-lg);
             }
 
@@ -84,10 +95,10 @@ body {
                 flex-grow: 1;
                 width: 0.75em;
                 padding: var(--spacing-3xs);
-                border-left: 2px solid black;
+                border-left: 2px solid var(--color-fg);
                 font-size: 3em;
                 font-weight: 900;
-                color: black;
+                color: var(--color-fg);
                 text-decoration: none;
                 transition: all 0.5s ease;
                 text-underline-offset: 3px;
@@ -129,7 +140,7 @@ body {
 
                     @media (max-width: 750px) {
                         flex-grow: 0;
-                        text-decoration: underline 3px solid black;
+                        text-decoration: underline 3px solid var(--color-fg);
                     }
 
                     > div > span {
@@ -143,7 +154,7 @@ body {
 
                 &.active {
                     flex-grow: 8;
-                    text-decoration: underline 5px solid black;
+                    text-decoration: underline 5px solid var(--color-fg);
 
                     > div > span {
                         transform: rotate(0deg);
@@ -155,7 +166,7 @@ body {
 
                     @media (max-width: 750px) {
                         flex-grow: 0;
-                        text-decoration: underline 3px solid black;
+                        text-decoration: underline 3px solid var(--color-fg);
                     }
                 }
             }
@@ -194,7 +205,7 @@ body {
 
     > footer {
         padding: var(--spacing-xl) var(--spacing-2xl);
-        border-top: 2px solid black;
+        border-top: 2px solid var(--color-fg);
 
         @media (max-width: 750px) {
             padding: var(--spacing-lg);
