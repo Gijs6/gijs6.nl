@@ -11,6 +11,22 @@
     }
 }
 
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-weight: 700;
+    text-decoration: none;
+    z-index: 100;
+
+    &:focus {
+        top: 0;
+    }
+}
+
 body {
     font-family: "Schibsted Grotesk", "Inter", "Ubuntu", "Roboto", "Helvetica", "Noto", sans-serif;
     line-height: 1.4;

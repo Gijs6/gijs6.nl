@@ -37,29 +37,29 @@
 
     <body>
         <header>
-            <a href="/">Gijs<span>6</span></a>
-            <nav>
-                <a href="/" {% if active_page=='home' %}class="active"{% endif %}>
+            <a href="/" aria-label="Gijs6 - homepage">Gijs<span>6</span></a>
+            <nav aria-label="Main navigation">
+                <a href="/" {% if active_page=='home' %}class="active" aria-current="page"{% endif %}>
                     <div>
                         <span>Home</span>
                     </div>
                 </a>
-                <a href="/blog/" {% if active_page=='blog' %}class="active"{% endif %}>
+                <a href="/blog/" {% if active_page=='blog' %}class="active" aria-current="page"{% endif %}>
                     <div>
                         <span>Blog</span>
                     </div>
                 </a>
-                <a href="/projects" {% if active_page=='projects' %}class="active"{% endif %}>
+                <a href="/projects" {% if active_page=='projects' %}class="active" aria-current="page"{% endif %}>
                     <div>
                         <span>Projects</span>
                     </div>
                 </a>
-                <a href="/bookmarks" {% if active_page=='bookmarks' %}class="active"{% endif %}>
+                <a href="/bookmarks" {% if active_page=='bookmarks' %}class="active" aria-current="page"{% endif %}>
                     <div>
                         <span>Bookmarks</span>
                     </div>
                 </a>
-                <a href="/colophon" {% if active_page=='colophon' %}class="active"{% endif %}>
+                <a href="/colophon" {% if active_page=='colophon' %}class="active" aria-current="page"{% endif %}>
                     <div>
                         <span>Colophon</span>
                     </div>
