@@ -1,6 +1,6 @@
 @gijs6.nl host gijs6.nl
 handle @gijs6.nl {
-	redir /contact mailto:me@gijs6.nl?{query} permanent
+	redir /contact https://contact.gijs6.nl permanent
 
 	redir /inbox https://inbox.gijs6.nl permanent
 	redir /school https://school.gijs6.nl permanent
