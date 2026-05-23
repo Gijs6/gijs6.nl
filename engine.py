@@ -273,9 +273,7 @@ def process_site_files(build_dir, template_env, md_processor, data):
     seen_outputs = {}
 
     for root, dirs, files in os.walk(SITE_DIR):
-        dirs[:] = [
-            d for d in dirs if os.path.join(root, d) not in [TEMPLATES_DIR]
-        ]
+        dirs[:] = [d for d in dirs if os.path.join(root, d) not in [TEMPLATES_DIR]]
 
         for filename in files:
             filepath = os.path.join(root, filename)
