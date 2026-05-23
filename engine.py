@@ -274,13 +274,15 @@ def process_site_files(build_dir, template_env, md_processor, data):
 
     for root, dirs, files in os.walk(SITE_DIR):
         dirs[:] = [
-            d for d in dirs if os.path.join(root, d) not in [TEMPLATES_DIR, BLOG_DIR]
+            d for d in dirs if os.path.join(root, d) not in [TEMPLATES_DIR]
         ]
 
         for filename in files:
             filepath = os.path.join(root, filename)
 
-            if filepath.startswith(TEMPLATES_DIR) or filepath.startswith(BLOG_DIR):
+            if filepath.startswith(TEMPLATES_DIR):
+                continue
+            if filepath.startswith(BLOG_DIR) and filepath.endswith(".md"):
                 continue
             if filename.startswith("."):
                 continue
