@@ -42,8 +42,8 @@ Not all of that is equally important. When you pick up the booklet, the first th
 I also removed the code in the bottom-left corner that appears current exams. That code is for administrative use and no student has ever needed it. I replaced it with something actually useful: a clear description of the document and exam.
 
 <figure>
-    <img src="https://cdn.gijs6.nl/blog/new-exam-design/1.png" alt="Cover of the proposed exercise booklet design.">
-    <img src="https://cdn.gijs6.nl/blog/new-exam-design/3.png" alt="Cover of the proposed texts booklet design.">
+    <img src="https://cdn.gijs6.nl/blog/new-exam-design/o1.png" alt="Cover of the proposed exercise booklet design.">
+    <img src="https://cdn.gijs6.nl/blog/new-exam-design/t1.png" alt="Cover of the proposed texts booklet design.">
     <figcaption>The proposed covers: exercise booklet (left) and texts booklet (right)</figcaption>
 </figure>
 
@@ -56,9 +56,9 @@ I dropped the word <span lang="nl">"Vraag"</span> before every question number, 
 Point values are back in front of the question number, where they were in the old design. That makes it easy to scan down a page and understand how points are distributed at a glance. Small thing, but it matters when you're planning your time.
 
 <figure>
-    <img src="https://cdn.gijs6.nl/blog/new-exam-design/2.png" alt="A questions page from the proposed exercise booklet design.">
-    <img src="https://cdn.gijs6.nl/blog/new-exam-design/4.png" alt="A text page from the proposed texts booklet design.">
-    <img src="https://cdn.gijs6.nl/blog/new-exam-design/5.png" alt="Another text page from the proposed texts booklet design.">
+    <img src="https://cdn.gijs6.nl/blog/new-exam-design/o2.png" alt="A questions page from the proposed exercise booklet design.">
+    <img src="https://cdn.gijs6.nl/blog/new-exam-design/t2.png" alt="A text page from the proposed texts booklet design.">
+    <img src="https://cdn.gijs6.nl/blog/new-exam-design/t3.png" alt="Another text page from the proposed texts booklet design.">
     <figcaption>Questions page and text pages</figcaption>
 </figure>
 
