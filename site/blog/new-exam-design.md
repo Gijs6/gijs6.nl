@@ -63,3 +63,5 @@ Point values are back in front of the question number, where they were in the ol
 </figure>
 
 The old design wasn't exciting, but it was clear. Most of the problems with the new <span lang="nl">CvTE</span> design come from optimizing for the wrong thing: making the exam look more modern rather than making it easier to use. If you walked out of the exam hall thinking about question 3 and not the awful booklet, the design has done its job.
+
+You can view the full design as a PDF: [exercise booklet](https://cdn.gijs6.nl/blog/new-exam-design/o.pdf) and [texts booklet](https://cdn.gijs6.nl/blog/new-exam-design/t.pdf).
