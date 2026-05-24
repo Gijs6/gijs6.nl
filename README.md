@@ -1,3 +1,3 @@
 # [gijs6.nl](https://gijs6.nl)
 
-my personal site. i hope you like it. please like it.
+My personal site. I hope you like it. Please like it.
