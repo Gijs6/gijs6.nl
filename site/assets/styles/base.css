@@ -156,6 +156,12 @@ body {
                     flex-grow: 8;
                     text-decoration: underline 5px solid var(--color-fg);
 
+                    @media (min-width: 751px) {
+                        > div > span {
+                            transform: rotate(0deg);
+                        }
+                    }
+
                     @media (min-width: 751px) and (max-width: 1300px) {
                         flex-grow: 10;
                     }
