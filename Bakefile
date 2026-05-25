@@ -1,5 +1,11 @@
 #!/bin/bash
 
+setup() {
+  python -m venv .venv
+  .venv/bin/pip install -r requirements.txt
+  npm install
+}
+
 serve() {
   .venv/bin/python engine.py serve --host 0.0.0.0
 }
