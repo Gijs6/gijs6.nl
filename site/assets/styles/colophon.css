@@ -1,4 +1,4 @@
-body > main > div {
+body > main > figure {
     min-width: 0;
     overflow-x: auto;
 
