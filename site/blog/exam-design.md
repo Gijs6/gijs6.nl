@@ -1,6 +1,5 @@
 ---
 title: The new Dutch exam design is worse
-date: 2026-05-24
 ---
 
 <style>

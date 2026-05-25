@@ -1,6 +1,5 @@
 ---
 title: What is art?
-date: 2025-08-25
 ---
 
 Defining what art is isn't easy. According to the dictionary on my desk, art is "the result of the ability to creatively express emotions and thoughts".

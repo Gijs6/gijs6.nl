@@ -1,6 +1,5 @@
 ---
 title: My proposal for the Dutch national exam design
-date: 2026-05-24
 ---
 
 <style>

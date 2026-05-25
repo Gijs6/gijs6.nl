@@ -1,6 +1,5 @@
 ---
 title: Education was bad; AI made it worse
-date: 2025-05-13
 ---
 
 AI can be an awesome tool for writing. I use it myself more often than I like to admit, and it is used a lot in my school.

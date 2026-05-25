@@ -1,6 +1,5 @@
 ---
 title: Introduction
-date: 2025-04-06
 ---
 
 Hello there! Welcome to this "blog" :D

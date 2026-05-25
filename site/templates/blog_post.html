@@ -10,7 +10,7 @@
             <h1>{{ post.title }}</h1>
             {% if post.date %}
                 <p>
-                    <time datetime="{{ post.date_iso }}">{{ post.date }}</time>
+                    <time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }}</time>
                 </p>
             {% endif %}
         </hgroup>

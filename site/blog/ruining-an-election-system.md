@@ -1,6 +1,5 @@
 ---
 title: The Dutch Government is ruining its election system
-date: 2025-04-08
 ---
 
 The Dutch Minister of the Interior and Kingdom Relations Judith Uitermark (NSC) recently announced her plan to transform the Dutch election system by introducing a new system where 125 of the 150 members of the Second Chamber (the most important parliament in the Netherlands) would be elected via regional elections.[1] Her justification? It's to "strengthen the regional bond between voters and elected officials." What a load of nonsense. Let's be clear: this is a step in the wrong direction, and it's a move that will ultimately weaken the very democracy in the Netherlands.

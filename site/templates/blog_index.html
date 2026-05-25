@@ -17,7 +17,7 @@
     <ol>
         {% for post in posts %}
             <li>
-                {%- if post.date -%}<time datetime="{{ post.date_iso }}">{{ post.date }}</time>:{%- endif %} <a href="/blog/{{ post.slug }}">{{ post.title }}</a>
+                {%- if post.date -%}<time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }}</time>:{%- endif %} <a href="/blog/{{ post.slug }}">{{ post.title }}</a>
             </li>
         {% endfor %}
     </ol>

@@ -1,6 +1,5 @@
 ---
 title: Internalized compliance
-date: 2026-05-22
 ---
 
 As a student, you get so used to the idea that things just happen to you. Decisions get made somewhere above your head, and your role is basically just to read the email (and sigh a little) and move on. And I pretty much stopped considering that there could be another option.

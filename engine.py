@@ -7,7 +7,8 @@ import shutil
 import tempfile
 
 import re
-from datetime import datetime, timezone
+from datetime import datetime
+from zoneinfo import ZoneInfo
 import json
 
 import time
@@ -28,6 +29,8 @@ from feedgen.feed import FeedGenerator
 from colorama import Fore, Style, init
 
 init()
+
+LOCAL_TZ = ZoneInfo("Europe/Amsterdam")
 
 SITE_DIR = "site"
 BUILD_DIR = "build"
@@ -72,7 +75,7 @@ def get_git_commit_info():
                 short_hash = parts[0]
                 long_hash = parts[1]
                 commit_ts = int(parts[2])
-                commit_dt = datetime.fromtimestamp(commit_ts, tz=timezone.utc)
+                commit_dt = datetime.fromtimestamp(commit_ts, tz=LOCAL_TZ)
                 return {
                     "hash": {"short": short_hash, "long": long_hash},
                     "dt": {
@@ -90,7 +93,7 @@ def get_git_commit_info():
 
 
 def get_data():
-    now = datetime.now(timezone.utc)
+    now = datetime.now(LOCAL_TZ)
     return {
         "last_commit": get_git_commit_info(),
         "now": {
@@ -99,6 +102,7 @@ def get_data():
                 "short": now.strftime("%Y-%m-%d"),
             },
             "time": now.strftime("%H:%M:%S"),
+            "tz": now.strftime("%Z"),
             "iso": now.isoformat(),
         },
     }
@@ -119,6 +123,20 @@ def infer_page_metadata(rel_path):
         active_page = "home"
 
     return active_page, canonical_path
+
+
+def get_post_date(filepath):
+    try:
+        output = subprocess.check_output(
+            ["git", "log", "--follow", "--format=%ct", "--", filepath],
+            text=True,
+            stderr=subprocess.DEVNULL,
+        ).strip()
+        if output:
+            return datetime.fromtimestamp(int(output.split("\n")[-1]), tz=LOCAL_TZ)
+    except (subprocess.CalledProcessError, FileNotFoundError, ValueError):
+        pass
+    return None
 
 
 def process_blog(build_dir, template_env, md_processor, data):
@@ -145,51 +163,19 @@ def process_blog(build_dir, template_env, md_processor, data):
         html_content = md_processor.convert(markdown_content)
         md_processor.reset()
 
-        date_str = metadata.get("date")
-        if date_str:
-            if isinstance(date_str, str):
-                created_date = datetime.strptime(date_str, "%Y-%m-%d").replace(
-                    tzinfo=timezone.utc
-                )
-            else:
-                created_date = datetime.combine(date_str, datetime.min.time()).replace(
-                    tzinfo=timezone.utc
-                )
-        else:
-            try:
-                output = subprocess.check_output(
-                    ["git", "log", "--follow", "--format=%H %ct", "--", filepath],
-                    text=True,
-                    stderr=subprocess.DEVNULL,
-                ).strip()
-                if output:
-                    first_commit_ts = int(output.split("\n")[-1].split()[1])
-                    created_date = datetime.fromtimestamp(
-                        first_commit_ts, tz=timezone.utc
-                    )
-                else:
-                    created_date = None
-                    warn(f"No date found for blog post: {filename}")
-            except (subprocess.CalledProcessError, FileNotFoundError, ValueError):
-                created_date = None
-                warn(f"No date found for blog post: {filename}")
+        date = get_post_date(filepath)
+        if not date:
+            warn(f"No date found for blog post: {filename}")
 
-        post = {
+        posts.append({
             "title": metadata.get("title", slug.replace("-", " ").title()),
             "slug": slug,
             "content": html_content,
-            "filepath": filepath,
-            "created": created_date,
-        }
-
-        if created_date:
-            post["date"] = created_date.strftime("%Y-%m-%d")
-            post["date_iso"] = created_date.isoformat()
-
-        posts.append(post)
+            "date": date,
+        })
 
     posts.sort(
-        key=lambda p: p.get("created") or datetime.min.replace(tzinfo=timezone.utc),
+        key=lambda p: p["date"] or datetime.min.replace(tzinfo=LOCAL_TZ),
         reverse=True,
     )
 
@@ -234,9 +220,9 @@ def process_blog(build_dir, template_env, md_processor, data):
         fe.link(href=f"{SITE_URL}/{blog_section}/{post['slug']}")
         fe.id(f"{SITE_URL}/{blog_section}/{post['slug']}")
         fe.description(post["content"])
-        if post.get("created"):
-            fe.pubDate(post["created"])
-            fe.updated(post["created"])
+        if post["date"]:
+            fe.pubDate(post["date"])
+            fe.updated(post["date"])
 
     with open(os.path.join(blog_dir, "rss.xml"), "wb") as f:
         f.write(fg.rss_str(pretty=True))
@@ -256,10 +242,10 @@ def process_blog(build_dir, template_env, md_processor, data):
                 "url": f"{SITE_URL}/{blog_section}/{post['slug']}",
                 "title": post["title"],
                 "content_html": post["content"],
-                "date_published": post.get("date_iso"),
+                "date_published": post["date"].isoformat() if post["date"] else None,
             }
             for post in posts
-            if post.get("date_iso")
+            if post["date"]
         ],
     }
 
@@ -389,7 +375,7 @@ def generate_sitemap(build_dir, posts):
         add_url(f"{SITE_URL}/{blog_section}/")
 
     for post in posts:
-        lastmod = post["created"].strftime("%Y-%m-%d") if post.get("created") else None
+        lastmod = post["date"].strftime("%Y-%m-%d") if post["date"] else None
         add_url(f"{SITE_URL}/{blog_section}/{post['slug']}", lastmod=lastmod)
 
     for root, _, files in os.walk(build_dir):
@@ -437,7 +423,7 @@ class BuildHandler(FileSystemEventHandler):
             os.execv(sys.executable, [sys.executable] + sys.argv)
 
         rel_path = os.path.relpath(event.src_path)
-        timestamp = datetime.now(timezone.utc).strftime("%H:%M:%S")
+        timestamp = datetime.now(LOCAL_TZ).strftime("%H:%M:%S")
         print(
             f"\n{Fore.BLUE}[{timestamp}]{Style.RESET_ALL} {Fore.YELLOW}File changed:{Style.RESET_ALL} {rel_path}\n"
         )
@@ -482,7 +468,7 @@ class BuildHTTPServer(SimpleHTTPRequestHandler):
         else:
             status_color = Fore.RED
 
-        timestamp = datetime.now(timezone.utc).strftime("%H:%M:%S")
+        timestamp = datetime.now(LOCAL_TZ).strftime("%H:%M:%S")
         print(
             f"{Fore.BLUE}[{timestamp}]{Style.RESET_ALL}  {method_color}{Style.BRIGHT}{method}{Style.RESET_ALL}  {Fore.WHITE}{path}{Style.RESET_ALL}  {status_color}{status}{Style.RESET_ALL}"
         )
