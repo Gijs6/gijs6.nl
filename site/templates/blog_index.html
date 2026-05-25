@@ -11,14 +11,14 @@
             Things I <s>rant</s> write about
         </p>
     </hgroup>
-    <p>
+    <nav>
         <a href="/blog/rss.xml" rel="alternate" type="application/rss+xml">RSS</a> &middot; <a href="/blog/atom.xml" rel="alternate" type="application/atom+xml">Atom</a> &middot; <a href="/blog/feed.json" rel="alternate" type="application/feed+json">JSON</a>
-    </p>
-    <ul>
+    </nav>
+    <ol>
         {% for post in posts %}
             <li>
                 {%- if post.date -%}<time datetime="{{ post.date_iso }}">{{ post.date }}</time>:{%- endif %} <a href="/blog/{{ post.slug }}">{{ post.title }}</a>
             </li>
         {% endfor %}
-    </ul>
+    </ol>
 {% endblock content %}
