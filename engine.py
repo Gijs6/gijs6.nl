@@ -167,12 +167,14 @@ def process_blog(build_dir, template_env, md_processor, data):
         if not date:
             warn(f"No date found for blog post: {filename}")
 
-        posts.append({
-            "title": metadata.get("title", slug.replace("-", " ").title()),
-            "slug": slug,
-            "content": html_content,
-            "date": date,
-        })
+        posts.append(
+            {
+                "title": metadata.get("title", slug.replace("-", " ").title()),
+                "slug": slug,
+                "content": html_content,
+                "date": date,
+            }
+        )
 
     posts.sort(
         key=lambda p: p["date"] or datetime.min.replace(tzinfo=LOCAL_TZ),
