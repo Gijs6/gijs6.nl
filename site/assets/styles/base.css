@@ -49,8 +49,10 @@ body {
                 font-size: 4em;
             }
 
-            &:hover {
-                flex-grow: 2;
+            @media (min-width: 751px) {
+                &:hover {
+                    flex-grow: 2;
+                }
             }
 
             > span {
@@ -80,11 +82,13 @@ body {
                 padding: var(--spacing-lg);
             }
 
-            &:has(> a:hover:not(.active)) > a.active {
-                flex-grow: 1;
+            @media (min-width: 751px) {
+                &:has(> a:hover:not(.active)) > a.active {
+                    flex-grow: 1;
 
-                > div > span {
-                    transform: rotate(90deg);
+                    > div > span {
+                        transform: rotate(90deg);
+                    }
                 }
             }
 
@@ -122,43 +126,35 @@ body {
 
                     > span {
                         white-space: nowrap;
-                        transform: rotate(90deg);
-                        transition: transform 0.5s ease;
 
-                        @media (max-width: 750px) {
-                            transform: rotate(0deg);
+                        @media (min-width: 751px) {
+                            transform: rotate(90deg);
+                            transition: transform 0.5s ease;
                         }
                     }
                 }
 
                 &:hover {
-                    flex-grow: 8;
+                    @media (min-width: 751px) {
+                        flex-grow: 8;
+
+                        > div > span {
+                            transform: rotate(0deg);
+                        }
+                    }
 
                     @media (min-width: 751px) and (max-width: 1300px) {
                         flex-grow: 10;
                     }
 
                     @media (max-width: 750px) {
-                        flex-grow: 0;
                         text-decoration: underline 3px solid var(--color-fg);
-                    }
-
-                    > div > span {
-                        transform: rotate(0deg);
-
-                        @media (max-width: 750px) {
-                            transform: rotate(0deg);
-                        }
                     }
                 }
 
                 &.active {
                     flex-grow: 8;
                     text-decoration: underline 5px solid var(--color-fg);
-
-                    > div > span {
-                        transform: rotate(0deg);
-                    }
 
                     @media (min-width: 751px) and (max-width: 1300px) {
                         flex-grow: 10;
@@ -179,6 +175,10 @@ body {
 
         @media (max-width: 750px) {
             padding: var(--spacing-lg);
+        }
+
+        > ol {
+            list-style-type: disc;
         }
 
         h1:first-child {
@@ -211,7 +211,8 @@ body {
             padding: var(--spacing-lg);
         }
 
-        > p {
+        > p,
+        > address {
             margin-block: var(--spacing-sm);
 
             &:first-child {
@@ -222,7 +223,8 @@ body {
                 margin-block-end: 0;
             }
 
-            > a {
+            > a,
+            > small > a {
                 text-decoration-thickness: 1px;
             }
 
