@@ -12,13 +12,13 @@ title: My proposal for the Dutch national exam design
         justify-content: space-between
     }
 
-    figure img {
+    figure a {
         max-width: 340px;
         width: 100%;
         flex: 1 1 260px
     }
 
-    figure:has(img:only-child) img {
+    figure:has(a:only-child) a {
         max-width: 100%
     }
 
@@ -41,8 +41,8 @@ Not all of that is equally important. When you pick up the booklet, the first th
 I also removed the code in the bottom-left corner that appears current exams. That code is for administrative use and no student has ever needed it. I replaced it with something actually useful: a clear description of the document and exam.
 
 <figure>
-    <img src="https://cdn.gijs6.nl/blog/new-exam-design/o1.png" alt="Cover of the proposed exercise booklet design.">
-    <img src="https://cdn.gijs6.nl/blog/new-exam-design/t1.png" alt="Cover of the proposed texts booklet design.">
+    <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/new/opgaven.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/new/opgaven/page-01.png" alt="Cover of the proposed exercise booklet"></a>
+    <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/new/teksten.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/new/teksten/page-01.png" alt="Cover of the proposed texts booklet"></a>
     <figcaption>The proposed covers: exercise booklet (left) and texts booklet (right)</figcaption>
 </figure>
 
@@ -55,12 +55,12 @@ I dropped the word <span lang="nl">"Vraag"</span> before every question number, 
 Point values are back in front of the question number, where they were in the old design. That makes it easy to scan down a page and understand how points are distributed at a glance. Small thing, but it matters when you're planning your time.
 
 <figure>
-    <img src="https://cdn.gijs6.nl/blog/new-exam-design/o2.png" alt="A questions page from the proposed exercise booklet design.">
-    <img src="https://cdn.gijs6.nl/blog/new-exam-design/t2.png" alt="A text page from the proposed texts booklet design.">
-    <img src="https://cdn.gijs6.nl/blog/new-exam-design/t3.png" alt="Another text page from the proposed texts booklet design.">
-    <figcaption>Questions page and text pages</figcaption>
+    <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/new/opgaven.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/new/opgaven/page-02.png" alt="Questions page of the proposed exercise booklet"></a>
+    <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/new/teksten.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/new/teksten/page-02.png" alt="Text page of the proposed texts booklet"></a>
+    <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/new/teksten.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/new/teksten/page-03.png" alt="Another text page of the proposed texts booklet"></a>
+    <figcaption>The proposed pages: exercise booklet (left) and texts booklet (center, right)</figcaption>
 </figure>
 
 The old design wasn't exciting, but it was clear. Most of the problems with the new <span lang="nl">CvTE</span> design come from optimizing for the wrong thing: making the exam look more modern rather than making it easier to use. If you walked out of the exam hall thinking about question 3 and not the awful booklet, the design has done its job.
 
-You can view the full design as a PDF: [exercise booklet](https://cdn.gijs6.nl/blog/new-exam-design/o.pdf) and [texts booklet](https://cdn.gijs6.nl/blog/new-exam-design/t.pdf).
+You can view the full design as a PDF: [exercise booklet](https://cdn.gijs6.nl/blog/dutch-exam-design/new/opgaven.pdf) and [texts booklet](https://cdn.gijs6.nl/blog/dutch-exam-design/new/teksten.pdf).
