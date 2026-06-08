@@ -183,10 +183,6 @@ body {
             padding: var(--spacing-lg);
         }
 
-        > ol {
-            list-style-type: disc;
-        }
-
         h1:first-child {
             margin-block: 0 var(--spacing-lg);
             font-size: 3em;
@@ -207,6 +203,10 @@ body {
                 }
             }
         }
+
+        > ol {
+            list-style-type: disc;
+        }
     }
 
     > footer {
@@ -217,8 +217,9 @@ body {
             padding: var(--spacing-lg);
         }
 
-        > p,
-        > address {
+        > address,
+        > p {
+            font-style: normal;
             margin-block: var(--spacing-sm);
 
             &:first-child {
