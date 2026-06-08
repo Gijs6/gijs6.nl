@@ -28,7 +28,7 @@ title: The new Dutch exam design is worse
     }
 </style>
 
-The Dutch national exams are getting redesigned. The Board for Tests and Examinations (<abbr title="College voor Toetsen en Examens" lang="nl">CvTE</abbr>) has been running pilots since <time datetime="2025">2025</time>, starting with the Spanish exam for <abbr title="hoger algemeen voortgezet onderwijs" lang="nl">havo</abbr>. This year even more exams use the new layout, including the English exam for <abbr title="voorbereidend wetenschappelijk onderwijs" lang="nl">vwo</abbr>, which I took this year.
+The Dutch national exams are getting redesigned. The Board for Tests and Examinations (<abbr lang="nl" title="College voor Toetsen en Examens">CvTE</abbr>) has been running pilots since <time datetime="2025">2025</time>, starting with the Spanish exam for <abbr lang="nl" title="hoger algemeen voortgezet onderwijs">havo</abbr>. This year even more exams use the new layout, including the English exam for <abbr lang="nl" title="voorbereidend wetenschappelijk onderwijs">vwo</abbr>, which I took this year.
 
 The current design has been around since <time datetime="2007">2007</time>, so a refresh makes sense. The <span lang="nl">CvTE</span> says the main driver is new accessibility regulations. But having taken the new exam myself, I don't think it's an improvement at all.
 

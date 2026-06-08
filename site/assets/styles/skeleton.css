@@ -87,6 +87,20 @@ ol {
     }
 }
 
+dl {
+    > dt {
+        font-weight: 700;
+
+        &:not(:first-child) {
+            margin-block-start: var(--spacing-sm);
+        }
+    }
+
+    > dd {
+        margin-inline-start: var(--spacing-lg);
+    }
+}
+
 table {
     border-collapse: collapse;
 }
