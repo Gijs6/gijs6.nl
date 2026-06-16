@@ -4,7 +4,7 @@ title: On school phone bans
 
 Pretty much all Dutch schools already have a phone ban or are considering one. And I think this is unfair.
 
-Let me first say, I completely agree that phones do not belong in classrooms during lessons. They are distracting, addictive and take away your focus during the lesson.
+Let me first say, I completely agree that phones do not belong in classrooms during lessons. They are distracting, addictive and take away your focus during the lesson. Banning phones during lessons is completely fair and understandable.
 
 But what most Dutch schools are doing is a complete outright ban on phones in the entire school building. Which is indefensible in my opinion. Why would you not be allowed to have your phone in the hallway or during breaks? It's not like you're learning less just because you're looking at a screen instead of the floor while walking through school.
 
