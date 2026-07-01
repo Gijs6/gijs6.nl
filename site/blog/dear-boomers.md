@@ -16,7 +16,7 @@ Saying "I bought a house at 24" is not economic analysis. Saying "I didn't need 
 
 **Having lived through earlier versions of society gives perspective, but it does not make that perspective applicable today.** The fact that you were young once does not make you an expert on today's youth any more than owning a steam train makes you an expert on modern urban rail systems.
 
-You are absolutely allowed to dislike the changes, criticize them, or even try to fix what went wrong. But it only works if you start from the recognition that *everything* has changed.
+You are absolutely allowed to dislike the changes, criticise them, or even try to fix what went wrong. But it only works if you start from the recognition that *everything* has changed.
 
 Kind regards,  
 The present

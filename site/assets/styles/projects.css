@@ -12,6 +12,10 @@ body > .page > .project-list {
         border: 1px solid var(--color-border);
         border-radius: var(--spacing-xs);
 
+        &::before {
+            content: none;
+        }
+
         > .project-list__title {
             margin-block: 0 var(--spacing-2xs);
             font-size: var(--font-size-md);

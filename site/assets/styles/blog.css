@@ -4,7 +4,7 @@ body > .page > .post-list {
     margin-block: var(--spacing-lg);
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-md);
 
     > .post-list__item {
         margin-block: 0;
