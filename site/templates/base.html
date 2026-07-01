@@ -13,9 +13,12 @@
 
         {% if data.is_dev %}
             <link rel="stylesheet" href="/assets/styles/skeleton.css" />
+            <link rel="stylesheet" href="/assets/styles/fonts.css" />
             <link rel="stylesheet" href="/assets/styles/base.css" />
             <link rel="stylesheet" href="/assets/styles/bookmarks.css" />
+            <link rel="stylesheet" href="/assets/styles/blog.css" />
             <link rel="stylesheet" href="/assets/styles/colophon.css" />
+            <link rel="stylesheet" href="/assets/styles/projects.css" />
         {% else %}
             <link rel="stylesheet" href="/assets/styles/main.min.css" />
         {% endif %}
@@ -38,53 +41,29 @@
     </head>
 
     <body>
-        <header>
-            <a href="/">Gijs<span>6</span></a>
-            <nav aria-label="Site">
-                <a {% if active_page=='home' %}class="active"{% endif %}href="/" {% if active_page=='home' %}aria-current="page"{% endif %}>
-                    <div>
-                        <span>Home</span>
-                    </div>
-                </a>
-                <a {% if active_page=='blog' %}class="active"{% endif %}href="/blog/" {% if active_page=='blog' %}aria-current="page"{% endif %}>
-                    <div>
-                        <span>Blog</span>
-                    </div>
-                </a>
-                <a {% if active_page=='projects' %}class="active"{% endif %}href="/projects" {% if active_page=='projects' %}aria-current="page"{% endif %}>
-                    <div>
-                        <span>Projects</span>
-                    </div>
-                </a>
-                <a {% if active_page=='bookmarks' %}class="active"{% endif %}href="/bookmarks" {% if active_page=='bookmarks' %}aria-current="page"{% endif %}>
-                    <div>
-                        <span>Bookmarks</span>
-                    </div>
-                </a>
-                <a {% if active_page=='colophon' %}class="active"{% endif %}href="/colophon" {% if active_page=='colophon' %}aria-current="page"{% endif %}>
-                    <div>
-                        <span>Colophon</span>
-                    </div>
-                </a>
-                <a href="https://contact.gijs6.nl">
-                    <div>
-                        <span>Contact</span>
-                    </div>
-                </a>
+        <header class="sidebar">
+            <a class="sidebar__logo" href="/">Gijs<span class="sidebar__logo-accent">6</span></a>
+            <nav class="sidebar__nav" aria-label="Site">
+                <a class="sidebar__nav-link {% if active_page=='home' %}sidebar__nav-link--active{% endif %}" {% if active_page=='home' %}aria-current="page"{% endif %} href="/">Home</a>
+                <a class="sidebar__nav-link {% if active_page=='blog' %}sidebar__nav-link--active{% endif %}" {% if active_page=='blog' %}aria-current="page"{% endif %} href="/blog/">Blog</a>
+                <a class="sidebar__nav-link {% if active_page=='projects' %}sidebar__nav-link--active{% endif %}" {% if active_page=='projects' %}aria-current="page"{% endif %} href="/projects">Projects</a>
+                <a class="sidebar__nav-link {% if active_page=='bookmarks' %}sidebar__nav-link--active{% endif %}" {% if active_page=='bookmarks' %}aria-current="page"{% endif %} href="/bookmarks">Bookmarks</a>
+                <a class="sidebar__nav-link {% if active_page=='colophon' %}sidebar__nav-link--active{% endif %}" {% if active_page=='colophon' %}aria-current="page"{% endif %} href="/colophon">Colophon</a>
+                <a class="sidebar__nav-link" href="https://contact.gijs6.nl">Contact</a>
             </nav>
         </header>
-        <main>
+        <main class="page">
             {% block content %}
             {% endblock content %}
         </main>
-        <footer>
-            <address>
+        <footer class="footer">
+            <address class="footer__line">
                 Made by <a href="https://contact.gijs6.nl">Gijs ten Berg</a>
             </address>
-            <p>
+            <p class="footer__line">
                 <a href="https://unlicense.org/">No rights reserved</a>: copy it, change it, do something with it, make something cool :)
             </p>
-            <p>
+            <p class="footer__line">
                 Built from commit <a href="https://github.com/Gijs6/gijs6.nl/commit/{{ data.last_commit.hash.long }}">{{ data.last_commit.hash.short }}</a>, deployed on <time datetime="{{ data.now.iso }}">{{ data.now.date.long }} at {{ data.now.time }} {{ data.now.tz }}</time>
             </p>
         </footer>

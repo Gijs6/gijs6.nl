@@ -1,4 +1,7 @@
 @import "skeleton.css";
+@import "fonts.css";
 @import "base.css";
 @import "bookmarks.css";
+@import "blog.css";
 @import "colophon.css";
+@import "projects.css";
