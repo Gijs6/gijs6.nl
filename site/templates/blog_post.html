@@ -5,11 +5,11 @@
 {%- endblock title %}
 
 {% block content %}
-    <article>
-        <hgroup>
-            <h1>{{ post.title }}</h1>
+    <article class="page__article">
+        <hgroup class="page__intro">
+            <h1 class="page__title">{{ post.title }}</h1>
             {% if post.date %}
-                <p>
+                <p class="page__subtitle">
                     <time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }}</time>
                 </p>
             {% endif %}
