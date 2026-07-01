@@ -5,11 +5,11 @@
     --color-fg: #16181a;
     --color-fg-muted: #5b5f63;
     --color-border: #e2e2de;
-    --color-accent: #6a1b9a;
+    --color-accent: #551b9a;
 
-    --color-sidebar: #6a1b9a;
+    --color-sidebar: #551b9a;
     --color-sidebar-fg: #ffffff;
-    --color-sidebar-fg-muted: #dcb8f0;
+    --color-sidebar-fg-muted: #d3b8f0;
 
     --font-body: "Hanken Grotesk Variable", sans-serif;
     --font-heading: "Bricolage Grotesque Variable", sans-serif;
@@ -22,7 +22,6 @@
     --font-size-lg: 1.75rem;
     --font-size-xl: 3rem;
 
-    --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
@@ -45,7 +44,7 @@
         --color-fg: #f2f0ea;
         --color-fg-muted: #a6aaa8;
         --color-border: #2c2f2f;
-        --color-accent: #c58aef;
+        --color-accent: #b48aef;
     }
 }
 
@@ -98,9 +97,11 @@ body {
             font-family: var(--font-heading);
             color: var(--color-sidebar-fg);
             font-size: var(--font-size-xl);
-            font-weight: var(--font-weight-medium);
+            font-weight: var(--font-weight-black);
+            line-height: 1.15;
             text-decoration: none;
-            transition: font-weight 0.2s ease;
+            transition: color 0.2s ease;
+            width: fit-content;
 
             @media (max-width: 750px) {
                 margin-block-end: var(--spacing-md);
@@ -108,11 +109,17 @@ body {
 
             &:hover,
             &:focus-visible {
-                font-weight: var(--font-weight-black);
+                color: var(--color-sidebar-fg-muted);
             }
 
             > .sidebar__logo-accent {
                 color: var(--color-sidebar-fg-muted);
+                transition: color 0.2s ease;
+            }
+
+            &:hover > .sidebar__logo-accent,
+            &:focus-visible > .sidebar__logo-accent {
+                color: var(--color-sidebar-fg);
             }
         }
 
@@ -144,10 +151,14 @@ body {
                 }
 
                 &.sidebar__nav-link--active {
+                    position: relative;
                     color: var(--color-sidebar-fg);
 
                     &::before {
                         content: "→ ";
+                        position: absolute;
+                        right: 100%;
+                        padding-inline-end: var(--spacing-2xs);
                     }
                 }
             }
