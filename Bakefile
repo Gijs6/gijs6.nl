@@ -13,7 +13,7 @@ serve() {
 build() {
   .venv/bin/python engine.py build
   lightningcss --browserslist --bundle --minify build/assets/styles/main.css -o build/assets/styles/main.min.css
-  rm build/assets/styles/main.css build/assets/styles/base.css build/assets/styles/bookmarks.css build/assets/styles/colophon.css build/assets/styles/skeleton.css
+  rm build/assets/styles/main.css build/assets/styles/base.css build/assets/styles/bookmarks.css build/assets/styles/blog.css build/assets/styles/colophon.css build/assets/styles/fonts.css build/assets/styles/projects.css build/assets/styles/skeleton.css
   prettier --write --config .prettierrc --ignore-path /dev/null "build/**/*.{css,js,xml,html}"
 }
 
