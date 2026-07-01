@@ -5,54 +5,82 @@
 {%- endblock title %}
 
 {% block content %}
-    <hgroup>
-        <h1>Projects</h1>
-        <p>Some of the things I've worked on</p>
+    <hgroup class="page__intro">
+        <h1 class="page__title">Projects</h1>
+        <p class="page__subtitle">Some of the things I've worked on</p>
     </hgroup>
-    <dl>
-        <dt>
-            <a href="https://github.com/Gijs6/meliag">Meliag</a>
-        </dt>
-        <dd>
-            A train info webapp for Dutch train stations (hopefully works better than the actual trains).
-        </dd>
-        <dt>
-            <a href="https://github.com/Gijs6/stapler">Stapler</a>
-        </dt>
-        <dd>
-            A simple static site generator built with Python and Jinja.
-        </dd>
-        <dt>
-            <a href="https://github.com/Gijs6/gijs6.nl">gijs6.nl</a>
-        </dt>
-        <dd>
-            This very site. I hope you like it. Please like it.
-        </dd>
-        <dt>
-            <a href="https://school.gijs6.nl">school.gijs6.nl</a>
-        </dt>
-        <dd>
-            The place where I store all my school summaries.
-        </dd>
-        <dt>
-            <a href="https://github.com/Gijs6/outflow">Outflow</a>
-        </dt>
-        <dd>
-            A simple and clean weather webapp.
-        </dd>
-        <dt>
-            <a href="https://github.com/Gijs6/huebox">Huebox</a>
-        </dt>
-        <dd>
-            A simple color palette manager.
-        </dd>
-        <dt>
-            <a href="https://gemeentle.gijs6.nl">Gemeentle</a>
-        </dt>
-        <dd>
-            A daily Dutch municipality guessing game. Turns out the Netherlands has a lot of municipalities you've never heard of.
-        </dd>
-    </dl>
+    <ul class="project-list">
+        <li class="project-list__item">
+            <h3 class="project-list__title">Stapler</h3>
+            <p class="project-list__description">A simple static site generator built with Python and Jinja.</p>
+            <p class="project-list__links">
+                <a class="project-list__link" href="https://github.com/Gijs6/stapler">Source ↗</a>
+            </p>
+        </li>
+        <li class="project-list__item">
+            <h3 class="project-list__title">Outflow</h3>
+            <p class="project-list__description">A simple and clean weather webapp.</p>
+            <p class="project-list__links">
+                <a class="project-list__link" href="https://outflow.gijs6.nl">Visit ↗</a>
+                <a class="project-list__link" href="https://github.com/Gijs6/outflow">Source ↗</a>
+            </p>
+        </li>
+        <li class="project-list__item">
+            <h3 class="project-list__title">Huebox</h3>
+            <p class="project-list__description">A simple color palette manager.</p>
+            <p class="project-list__links">
+                <a class="project-list__link" href="https://huebox.gijs6.nl">Visit ↗</a>
+                <a class="project-list__link" href="https://github.com/Gijs6/huebox">Source ↗</a>
+            </p>
+        </li>
+        <li class="project-list__item">
+            <h3 class="project-list__title">Gemeentle</h3>
+            <p class="project-list__description">A daily Dutch municipality guessing game. Turns out the Netherlands has a lot of municipalities you've never heard of.</p>
+            <p class="project-list__links">
+                <a class="project-list__link" href="https://gemeentle.gijs6.nl">Visit ↗</a>
+                <a class="project-list__link" href="https://github.com/Gijs6/gemeentle">Source ↗</a>
+            </p>
+        </li>
+
+        <li class="project-list__item">
+            <h3 class="project-list__title">school.gijs6.nl</h3>
+            <p class="project-list__description">The place where I store all my school summaries.</p>
+            <p class="project-list__links">
+                <a class="project-list__link" href="https://school.gijs6.nl">Visit ↗</a>
+                <a class="project-list__link" href="https://github.com/gijs6/school.gijs6.nl">Source ↗</a>
+            </p>
+        </li>
+        <li class="project-list__item">
+            <h3 class="project-list__title">gijs6.nl</h3>
+            <p class="project-list__description">This very site. I hope you like it. Please like it.</p>
+            <p class="project-list__links">
+                <a class="project-list__link" href="https://gijs6.nl">Visit ↗</a>
+                <a class="project-list__link" href="https://github.com/Gijs6/gijs6.nl">Source ↗</a>
+            </p>
+        </li>
+        <li class="project-list__item">
+            <h3 class="project-list__title">Meliag</h3>
+            <p class="project-list__description">A train info webapp for Dutch train stations (hopefully works better than the actual trains).</p>
+            <p class="project-list__links">
+                <a class="project-list__link" href="https://meliag.gijs6.nl">Visit ↗</a>
+                <a class="project-list__link" href="https://github.com/Gijs6/meliag">Source ↗</a>
+            </p>
+        </li>
+        <li class="project-list__item">
+            <h3 class="project-list__title">Watchtower</h3>
+            <p class="project-list__description">A web app to monitor sites for changes.</p>
+            <p class="project-list__links">
+                <a class="project-list__link" href="https://github.com/Gijs6/watchtower">Source ↗</a>
+            </p>
+        </li>
+        <li class="project-list__item">
+            <h3 class="project-list__title">Mesh</h3>
+            <p class="project-list__description">A distributed uptime monitor for the {du}punkto network, made together with the rest of {du}punkto.</p>
+            <p class="project-list__links">
+                <a class="project-list__link" href="https://git.dupunkto.org/~dupunkto/mesh">Source ↗</a>
+            </p>
+        </li>
+    </ul>
     <p>
         You can find all my projects on my <a href="https://github.com/Gijs6">GitHub profile</a>, <a href="https://gitlab.com/ggijs">GitLab profile</a>, <a href="https://codeberg.org/Gijs6">Codeberg profile</a> or in the <a href="https://git.dupunkto.org">{du}punkto repos</a>.
     </p>
