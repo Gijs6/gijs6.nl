@@ -6,8 +6,8 @@
 
 {% block content %}
     <h1>Colophon</h1>
-    <figure>
-        <pre aria-hidden="true">
+    <figure class="colophon-mark">
+        <pre class="colophon-mark__art" aria-hidden="true">
                                             6666
                                           666666666
                                          66      666
@@ -26,7 +26,7 @@
                     666                             </pre>
     </figure>
     <section aria-label="About this site">
-        <h2>About this site</h2>
+        <h2 class="page__heading">About this site</h2>
         <p>
             This site was built with a custom and completely non-messy and well-structured <a href="https://github.com/Gijs6/gijs6.nl/blob/main/engine.py">Python script</a> (it's horrendous but it kinda works (sometimes)).
         </p>
@@ -38,13 +38,13 @@
         </p>
     </section>
     <section aria-label="Timecapsule">
-        <h2>Timecapsule</h2>
+        <h2 class="page__heading">Timecapsule</h2>
         <p>
             This amazing design is not always how this site has looked. You can pretty much all earlier versions of this site on <a href="https://timecapsule.gijs6.nl">timecapsule.gijs6.nl</a>.
         </p>
     </section>
     <section aria-label="Privacy">
-        <h2>Privacy</h2>
+        <h2 class="page__heading">Privacy</h2>
         <p>This site does not track you or store your personal information. However, I can't control what your browser, ISP (everyone's favourite companies), or other software on your device might do. That's between you and them, so please feel free to complain to your ISP.</p>
         <p>
             Oh, and everything on this site is also self-hosted: no external resources, no fonts from Google, no <a href="https://en.wikipedia.org/wiki/Npm_left-pad_incident">scripts to add chars at the start of a string</a> from some CDN. Just plain files served from my own server.
