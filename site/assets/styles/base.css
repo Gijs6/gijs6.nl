@@ -123,7 +123,7 @@ body {
             }
         }
 
-        > .sidebar__nav {
+        > nav > .sidebar__nav {
             display: flex;
             flex-direction: column;
             gap: var(--spacing-md);
