@@ -28,6 +28,7 @@ body > .page > .project-list {
 
         > .project-list__links {
             display: flex;
+            flex-wrap: wrap;
             gap: var(--spacing-sm);
             margin: 0;
 

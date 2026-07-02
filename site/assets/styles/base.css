@@ -159,6 +159,11 @@ body {
                         position: absolute;
                         right: 100%;
                         padding-inline-end: var(--spacing-2xs);
+
+                        @media (max-width: 750px) {
+                            position: static;
+                            padding-inline-end: 0;
+                        }
                     }
                 }
             }

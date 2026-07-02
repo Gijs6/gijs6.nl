@@ -20,6 +20,10 @@ body > .page > .post-list {
         > .post-list__date {
             color: var(--color-fg-muted);
             font-size: var(--font-size-xs);
+
+            @media (max-width: 750px) {
+                flex-basis: 100%;
+            }
         }
 
         > .post-list__title {
