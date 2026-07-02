@@ -127,6 +127,9 @@ body {
             display: flex;
             flex-direction: column;
             gap: var(--spacing-md);
+            margin: 0;
+            padding-inline-start: 0;
+            list-style: none;
             font-weight: var(--font-weight-bold);
             font-size: var(--font-size-base);
 
@@ -137,7 +140,11 @@ body {
                 font-size: var(--font-size-sm);
             }
 
-            > .sidebar__nav-link {
+            > li {
+                margin-block: 0;
+            }
+
+            > li > .sidebar__nav-link {
                 color: var(--color-sidebar-fg-muted);
                 text-decoration: none;
 

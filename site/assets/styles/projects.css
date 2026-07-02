@@ -31,9 +31,20 @@ body > .page > .project-list {
             flex-wrap: wrap;
             gap: var(--spacing-sm);
             margin: 0;
+            list-style: none;
+            padding-inline-start: 0;
 
-            > .project-list__link {
-                font-size: var(--font-size-xs);
+            > .project-list__link-item {
+                margin-block: 0;
+                padding-inline-start: 0;
+
+                &::before {
+                    content: none;
+                }
+
+                > .project-list__link {
+                    font-size: var(--font-size-xs);
+                }
             }
         }
     }

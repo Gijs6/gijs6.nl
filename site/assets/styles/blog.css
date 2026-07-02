@@ -1,3 +1,25 @@
+body > .page > .page__feeds > .page__feeds-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-2xs);
+    margin: 0;
+    padding-inline-start: 0;
+    list-style: none;
+
+    > li {
+        margin-block: 0;
+        padding-inline-start: 0;
+
+        &::before {
+            content: none;
+        }
+
+        &:not(:last-child)::after {
+            content: " \00b7";
+        }
+    }
+}
+
 body > .page > .post-list {
     list-style: none;
     padding-inline-start: 0;
@@ -27,6 +49,7 @@ body > .page > .post-list {
         }
 
         > .post-list__title {
+            margin-block: 0;
             font-family: var(--font-heading);
             font-weight: var(--font-weight-bold);
             font-size: var(--font-size-base);

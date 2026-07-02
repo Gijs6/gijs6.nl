@@ -12,12 +12,16 @@
         </p>
     </hgroup>
     <nav class="page__feeds" aria-label="Feeds">
-        <a class="page__feeds-link" rel="alternate" type="application/rss+xml" href="/blog/rss.xml">RSS</a> &middot; <a class="page__feeds-link" rel="alternate" type="application/atom+xml" href="/blog/atom.xml">Atom</a> &middot; <a class="page__feeds-link" rel="alternate" type="application/feed+json" href="/blog/feed.json">JSON</a>
+        <ul class="page__feeds-list">
+            <li><a class="page__feeds-link" rel="alternate" type="application/rss+xml" href="/blog/rss.xml">RSS</a></li>
+            <li><a class="page__feeds-link" rel="alternate" type="application/atom+xml" href="/blog/atom.xml">Atom</a></li>
+            <li><a class="page__feeds-link" rel="alternate" type="application/feed+json" href="/blog/feed.json">JSON</a></li>
+        </ul>
     </nav>
     <ol class="post-list">
         {% for post in posts %}
             <li class="post-list__item">
-                <a class="post-list__title" href="/blog/{{ post.slug }}">{{ post.title }}</a>
+                <h2 class="post-list__title"><a href="/blog/{{ post.slug }}">{{ post.title }}</a></h2>
                 {%- if post.date -%}<time class="post-list__date" datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }}</time>{%- endif %}
             </li>
         {% endfor %}

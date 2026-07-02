@@ -34,7 +34,7 @@ Instead of just complaining, I decided to design something better. My proposal b
 
 ## The cover
 
-The cover has a lot to communicate: the subject, the school level, the year, the <em lang="nl">tijdvak</em> (which sitting of the exam it is, because there are multiple each year), the date and time, and which document you're holding. For the exercise booklet specifically, it also shows the number of questions and the maximum score.
+The cover has a lot to communicate: the subject, the school level, the year, the <i lang="nl">tijdvak</i> (which sitting of the exam it is, because there are multiple each year), the date and time, and which document you're holding. For the exercise booklet specifically, it also shows the number of questions and the maximum score.
 
 Not all of that is equally important. When you pick up the booklet, the first thing you need to know is *what you are holding*. Subject, year, and document type need to be immediately obvious. Date and time matter much less. So in my design, those three key pieces are the largest and boldest, and everything secondary is smaller and quieter.
 
