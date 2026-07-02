@@ -11,7 +11,7 @@
     --color-sidebar-fg: #ffffff;
     --color-sidebar-fg-muted: #d3b8f0;
 
-    --font-body: "Hanken Grotesk Variable", sans-serif;
+    --font-body: "Hanken Grotesk Variable", "Inter", sans-serif;
     --font-heading: "Bricolage Grotesque Variable", sans-serif;
     --font-mono: "Source Code Pro Variable", monospace;
 
