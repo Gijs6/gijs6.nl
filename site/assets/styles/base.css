@@ -179,7 +179,7 @@ body {
 
     > .page {
         grid-area: main;
-        max-width: 740px;
+        max-width: 1000px;
         padding: var(--spacing-2xl);
 
         @media (max-width: 750px) {
@@ -201,7 +201,6 @@ body {
             font-family: var(--font-heading);
             font-weight: var(--font-weight-extrabold);
             line-height: 1.15;
-            letter-spacing: -0.01em;
         }
 
         h1 {
@@ -314,10 +313,6 @@ body {
             border-top: 1px solid var(--color-border);
         }
 
-        img {
-            border-radius: var(--spacing-2xs);
-        }
-
         .page__intro > .page__title,
         .page__intro > h2:first-child {
             margin-block-end: var(--spacing-2xs);
@@ -360,7 +355,6 @@ body {
             }
 
             > time {
-                color: var(--color-fg);
                 font-weight: var(--font-weight-bold);
             }
         }
