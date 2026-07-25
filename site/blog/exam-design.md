@@ -4,18 +4,15 @@ title: The new Dutch exam design is worse
 
 <style>
     figure {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         gap: var(--spacing-md);
-        margin: 0;
-        justify-content: space-between
+        margin: 0
     }
 
     figure a {
         max-width: 340px;
-        width: 100%;
-        flex: 1 1 260px
+        width: 100%
     }
 
     figure:has(a:only-child) a {
@@ -23,7 +20,7 @@ title: The new Dutch exam design is worse
     }
 
     figcaption {
-        flex-basis: 100%;
+        grid-column: 1 / -1;
         font-style: italic
     }
 </style>
