@@ -27,7 +27,7 @@ title: My proposal for the Dutch national exam design
 
 *This is a follow-up to [my post about the new Dutch exam design](exam-design)*
 
-Instead of just complaining, I decided to design something better. My proposal borrows heavily from the old design, because I still think the 2025 layout gets most things right. But it also fixes a few things that were already slightly off before the <span lang="nl">CvTE</span> made them worse.
+Instead of just complaining, I decided to design something better. My proposal borrows heavily from the old design, because I still think the <time datetime="2025">2025</time> layout gets most things right. But it also fixes a few things that were already slightly off before the <span lang="nl">CvTE</span> made them worse.
 
 ## The cover
 

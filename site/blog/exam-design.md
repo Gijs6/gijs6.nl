@@ -34,7 +34,7 @@ For those unfamiliar with Dutch national exams: the design is pretty plain. No f
 <figure>
     <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/2025/opgaven.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/2025/opgaven/page-01.png" alt="Cover of the 2025 vwo English exercise booklet"></a>
     <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/2025/teksten.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/2025/teksten/page-01.png" alt="Cover of the 2025 vwo English texts booklet"></a>
-    <figcaption>The 2025 vwo English exam: exercise booklet cover (left) and texts booklet cover (right)</figcaption>
+    <figcaption>The <time datetime="2025">2025</time> vwo English exam: exercise booklet cover (left) and texts booklet cover (right)</figcaption>
 </figure>
 
 Honestly, this design is fine. There's room for improvement (the line-height is a bit tight, and the cover is not always clear), but it does its job. Everything that needs to be communicated is communicated, clearly and without any distractions.
@@ -42,7 +42,7 @@ Honestly, this design is fine. There's room for improvement (the line-height is 
 <figure>
     <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/2025/opgaven.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/2025/opgaven/page-02.png" alt="First questions page of the 2025 vwo English exercise booklet"></a>
     <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/2025/teksten.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/2025/teksten/page-02.png" alt="First text page of the 2025 vwo English texts booklet"></a>
-    <figcaption>The 2025 vwo English exam: exercise booklet questions page (left) and texts booklet text page (right)</figcaption>
+    <figcaption>The <time datetime="2025">2025</time> vwo English exam: exercise booklet questions page (left) and texts booklet text page (right)</figcaption>
 </figure>
 
 That's what exam design should do. The goal isn't to look good or feel modern: it's to get information across as clearly as possible to as many candidates as possible. <strong>A good exam design goes completely unnoticed.</strong>
@@ -52,7 +52,7 @@ So when you compare the old design to the <a href="https://www.examenblad.nl/202
 <figure>
     <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/2026/opgaven.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/2026/opgaven/page-01.png" alt="Cover of the 2026 vwo English exercise booklet"></a>
     <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/2026/teksten.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/2026/teksten/page-01.png" alt="Cover of the 2026 vwo English texts booklet"></a>
-    <figcaption>The 2026 vwo English exam: exercise booklet cover (left) and texts booklet cover (right)</figcaption>
+    <figcaption>The <time datetime="2026">2026</time> vwo English exam: exercise booklet cover (left) and texts booklet cover (right)</figcaption>
 </figure>
 
 The new design is full of visual clutter. There are decorative diagonal shapes on the cover, text with weird borders snaking around it, icons, text blocks with grey backgrounds, grey text all over the place, and the word <span lang="nl">"Vraag"</span> printed in front of every single question number. None of this adds information. It just adds noise, which is exactly what you don't want when someone is trying to concentrate.
@@ -60,7 +60,7 @@ The new design is full of visual clutter. There are decorative diagonal shapes o
 <figure>
     <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/2026/opgaven.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/2026/opgaven/page-02.png" alt="First questions page of the 2026 vwo English exercise booklet"></a>
     <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/2026/teksten.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/2026/teksten/page-03.png" alt="First text page of the 2026 vwo English texts booklet"></a>
-    <figcaption>The 2026 vwo English exam: exercise booklet questions page (left) and texts booklet text page (right)</figcaption>
+    <figcaption>The <time datetime="2026">2026</time> vwo English exam: exercise booklet questions page (left) and texts booklet text page (right)</figcaption>
 </figure>
 
 The accessibility argument is also hard to take seriously when you look at the grey background blocks they've introduced. Those blocks actually have worse contrast than anything in the old design. For some of the blocks, the contrast ratio is 6.89:1, which actually **fails** <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> AAA. The old design, boring as it was, had black text on white paper.
