@@ -177,7 +177,7 @@ def process_blog(build_dir, template_env, md_processor, data):
         )
 
     posts.sort(
-        key=lambda p: p["date"] or datetime.min.replace(tzinfo=LOCAL_TZ),
+        key=lambda p: p["date"] or datetime.max.replace(tzinfo=LOCAL_TZ),
         reverse=True,
     )
 
