@@ -232,19 +232,12 @@ body {
 
         ul {
             list-style: none;
-            padding-inline-start: 0;
+            padding-inline-start: var(--spacing-lg);
 
-            > li {
-                position: relative;
-                padding-inline-start: var(--spacing-lg);
-
-                &::before {
-                    content: "→";
-                    position: absolute;
-                    left: 0;
-                    color: var(--color-accent);
-                    font-weight: var(--font-weight-extrabold);
-                }
+            > li::marker {
+                content: "→ ";
+                color: var(--color-accent);
+                font-weight: var(--font-weight-extrabold);
             }
         }
 

@@ -12,7 +12,7 @@ body > .page > .project-list {
         border: 1px solid var(--color-border);
         border-radius: var(--spacing-xs);
 
-        &::before {
+        &::marker {
             content: none;
         }
 
