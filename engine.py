@@ -80,7 +80,7 @@ def get_git_commit_info():
                     "hash": {"short": short_hash, "long": long_hash},
                     "dt": {
                         "date": {
-                            "long": commit_dt.strftime("%B %d, %Y"),
+                            "long": commit_dt.strftime("%-d %B %Y"),
                             "short": commit_dt.strftime("%Y-%m-%d"),
                         },
                         "time": commit_dt.strftime("%H:%M:%S"),
@@ -98,7 +98,7 @@ def get_data():
         "last_commit": get_git_commit_info(),
         "now": {
             "date": {
-                "long": now.strftime("%B %d, %Y"),
+                "long": now.strftime("%-d %B %Y"),
                 "short": now.strftime("%Y-%m-%d"),
             },
             "time": now.strftime("%H:%M:%S"),
@@ -213,7 +213,7 @@ def process_blog(build_dir, template_env, md_processor, data):
     fg.description(SITE_DESCRIPTION)
     fg.id(SITE_URL)
     fg.link(href=f"{SITE_URL}/{blog_section}", rel="alternate")
-    fg.language("en")
+    fg.language("en-GB")
     fg.author(name=AUTHOR_NAME, email=AUTHOR_EMAIL, uri=SITE_URL)
 
     for post in posts:
