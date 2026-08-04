@@ -1,9 +1,8 @@
 #!/bin/bash
 
 setup() {
-  python -m venv .venv
-  .venv/bin/pip install -r requirements.txt
-  npm install
+  i:venv
+  i:npm_install
 }
 
 serve() {
@@ -19,30 +18,5 @@ build() {
 
 deploy() {
   build
-  lift deploy && echo "Deployed successfully to https://$(yq .name Liftfile)"
-}
-
-publish() {
-  if ! git diff-index --quiet HEAD --; then
-    git stash push -m "bake-publish"
-    STASHED=1
-  else
-    STASHED=0
-  fi
-
-  format || true
-  git commit -a -m "Format repo" || true
-
-  if [ "$STASHED" -eq 1 ]; then
-    git stash pop
-  fi
-
-  git push & deploy & wait
-}
-
-format() {
-  ruff format .
-  prettier --write "**/*.{css,js,json,xml}"
-  djlint . --reformat
-  markdownlint --fix "**/*.md" || true
+  g:deploy
 }
