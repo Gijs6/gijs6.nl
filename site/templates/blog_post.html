@@ -8,12 +8,17 @@
     <article class="page__article">
         <hgroup class="page__intro">
             <h1 class="page__title">{{ post.title }}</h1>
-            {% if post.date %}
-                <p class="page__subtitle">
-                    <time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }}</time>
-                </p>
-            {% endif %}
+            <p class="page__subtitle">
+                {%- if post.date -%}
+                    <time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }}</time> ·
+                {%- endif %}
+                {{ post.reading_time }} min read · {{ post.word_count }} words
+            </p>
         </hgroup>
         {{ post.content | safe }}
     </article>
+    <hr />
+    <p>
+        I'm always interested in hearing different perspectives. <a href="https://contact.gijs6.nl">Reply to this post</a>
+    </p>
 {% endblock content %}

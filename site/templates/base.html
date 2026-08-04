@@ -79,6 +79,11 @@
             <p class="footer__line">
                 Built from commit <a href="https://github.com/Gijs6/gijs6.nl/commit/{{ data.last_commit.hash.long }}"><code>{{ data.last_commit.hash.short }}</code></a>, deployed on <time datetime="{{ data.now.iso }}">{{ data.now.date.long }} at {{ data.now.time }} {{ data.now.tz }}</time>
             </p>
+            {% if source_path %}
+                <p class="footer__line">
+                    <a href="https://github.com/Gijs6/gijs6.nl/blob/{{ data.last_commit.hash.long }}/{{ source_path }}">View this page's source <span aria-hidden="true">↗</span></a>
+                </p>
+            {% endif %}
         </footer>
     </body>
 </html>

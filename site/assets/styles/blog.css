@@ -39,7 +39,8 @@ body > .page > .post-list {
         justify-content: space-between;
         gap: var(--spacing-sm);
 
-        > .post-list__date {
+        > .post-list__meta {
+            margin-block: 0;
             color: var(--color-card-fg-muted);
             font-size: var(--font-size-xs);
 

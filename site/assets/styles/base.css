@@ -53,6 +53,11 @@ a {
     font-weight: var(--font-weight-bold);
 }
 
+::selection {
+    background-color: var(--color-card-accent);
+    color: var(--color-card-bg);
+}
+
 code,
 pre,
 samp {

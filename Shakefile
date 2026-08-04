@@ -1,4 +1,5 @@
 #!/bin/bash
+FORMAT_HTML=1
 
 setup() {
   i:venv

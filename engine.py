@@ -167,12 +167,16 @@ def process_blog(build_dir, template_env, md_processor, data):
         if not date:
             warn(f"No date found for blog post: {filename}")
 
+        word_count = len(re.sub(r"<[^>]+>", " ", html_content).split())
+
         posts.append(
             {
                 "title": metadata.get("title", slug.replace("-", " ").title()),
                 "slug": slug,
                 "content": html_content,
                 "date": date,
+                "word_count": word_count,
+                "reading_time": max(1, round(word_count / 200)),
             }
         )
 
@@ -193,6 +197,7 @@ def process_blog(build_dir, template_env, md_processor, data):
                 active_page=blog_section,
                 canonical_path=f"/{blog_section}/",
                 data=data,
+                source_path=os.path.join(TEMPLATES_DIR, BLOG_INDEX_TEMPLATE),
             )
         )
 
@@ -205,6 +210,7 @@ def process_blog(build_dir, template_env, md_processor, data):
                     active_page=blog_section,
                     canonical_path=f"/{blog_section}/{post['slug']}",
                     data=data,
+                    source_path=os.path.join(BLOG_DIR, f"{post['slug']}.md"),
                 )
             )
 
@@ -312,7 +318,9 @@ def process_site_files(build_dir, template_env, md_processor, data):
                         page_data["canonical_path"] = canonical_path
 
                     template = template_env.get_template(template_name)
-                    rendered = template.render(page=page_data, data=data)
+                    rendered = template.render(
+                        page=page_data, data=data, source_path=filepath
+                    )
 
                     with open(output_path, "w", encoding="utf-8") as f:
                         f.write(rendered)
@@ -338,7 +346,9 @@ def process_site_files(build_dir, template_env, md_processor, data):
                             page_data["canonical_path"] = canonical_path
 
                         template = template_env.get_template(template_name)
-                        rendered = template.render(page=page_data, data=data)
+                        rendered = template.render(
+                            page=page_data, data=data, source_path=filepath
+                        )
                     except Exception as e:
                         warn(f"Failed to render {filepath}: {e}")
                         continue
@@ -350,6 +360,7 @@ def process_site_files(build_dir, template_env, md_processor, data):
                             active_page=active_page,
                             canonical_path=canonical_path,
                             data=data,
+                            source_path=filepath,
                         )
                     except Exception as e:
                         warn(f"Failed to render {filepath}: {e}")

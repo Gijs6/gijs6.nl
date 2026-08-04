@@ -30,7 +30,10 @@
                 <h2 class="post-list__title">
                     <a href="/blog/{{ post.slug }}">{{ post.title }}</a>
                 </h2>
-                {%- if post.date -%}<time class="post-list__date" datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }}</time>{%- endif %}
+                <p class="post-list__meta">
+                    {%- if post.date -%}<time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }}</time> ·{%- endif %}
+                    {{ post.reading_time }} min read · {{ post.word_count }} words
+                </p>
             </li>
         {% endfor %}
     </ol>
