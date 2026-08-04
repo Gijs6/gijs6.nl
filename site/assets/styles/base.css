@@ -1,15 +1,15 @@
 :root {
     color-scheme: light dark;
 
-    --color-bg: #ffffff;
-    --color-fg: #16181a;
-    --color-fg-muted: #5b5f63;
-    --color-border: #e2e2de;
-    --color-accent: #551b9a;
+    --color-card-bg: #ece9e4;
+    --color-card-fg: #16181a;
+    --color-card-fg-muted: #5b5f63;
+    --color-card-border: #d3d0c8;
+    --color-card-accent: #551b9a;
 
-    --color-sidebar: #551b9a;
-    --color-sidebar-fg: #ffffff;
-    --color-sidebar-fg-muted: #d3b8f0;
+    --color-body-bg: #551b9a;
+    --color-body-fg: #ffffff;
+    --color-body-fg-muted: #d3b8f0;
 
     --font-body: "Hanken Grotesk Variable", "Inter", sans-serif;
     --font-heading: "Bricolage Grotesque Variable", sans-serif;
@@ -40,11 +40,11 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-bg: #17191b;
-        --color-fg: #f2f0ea;
-        --color-fg-muted: #a6aaa8;
-        --color-border: #2c2f2f;
-        --color-accent: #b48aef;
+        --color-card-bg: #1e2023;
+        --color-card-fg: #f2f0ea;
+        --color-card-fg-muted: #a6aaa8;
+        --color-card-border: #45494e;
+        --color-card-accent: #b48aef;
     }
 }
 
@@ -61,13 +61,13 @@ samp {
 
 body {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: auto 1fr;
     grid-template-rows: 1fr auto;
     grid-template-areas: "sidebar main" "sidebar footer";
     font-family: var(--font-body);
     line-height: 1.5;
-    background-color: var(--color-bg);
-    color: var(--color-fg);
+    background-color: var(--color-body-bg);
+    color: var(--color-card-fg);
 
     @media (max-width: 750px) {
         grid-template-columns: 1fr;
@@ -81,9 +81,10 @@ body {
         align-self: start;
         height: 100vh;
         overflow-y: auto;
-        padding: var(--spacing-2xl);
-        background-color: var(--color-sidebar);
-        color: var(--color-sidebar-fg);
+        padding: var(--spacing-xl);
+        padding-top: var(--spacing-2xl);
+        padding-inline: var(--spacing-2xl);
+        color: var(--color-body-fg);
 
         @media (max-width: 750px) {
             position: static;
@@ -92,16 +93,16 @@ body {
         }
 
         > .sidebar__logo {
-            display: block;
+            display: inline-flex;
+            align-items: baseline;
             margin-block-end: var(--spacing-xl);
             font-family: var(--font-heading);
-            color: var(--color-sidebar-fg);
+            color: var(--color-body-fg);
             font-size: var(--font-size-xl);
             font-weight: var(--font-weight-black);
             line-height: 1.15;
             text-decoration: none;
             transition: color 0.2s ease;
-            width: fit-content;
 
             @media (max-width: 750px) {
                 margin-block-end: var(--spacing-md);
@@ -109,17 +110,30 @@ body {
 
             &:hover,
             &:focus-visible {
-                color: var(--color-sidebar-fg-muted);
+                color: var(--color-body-fg-muted);
             }
 
-            > .sidebar__logo-accent {
-                color: var(--color-sidebar-fg-muted);
+            > .sidebar__logo-first {
+                order: -1;
+                display: inline-block;
+            }
+
+            > .sidebar__logo-last {
+                order: 1;
+                display: inline-block;
+                color: var(--color-body-fg-muted);
                 transition: color 0.2s ease;
             }
 
-            &:hover > .sidebar__logo-accent,
-            &:focus-visible > .sidebar__logo-accent {
-                color: var(--color-sidebar-fg);
+            &:hover > .sidebar__logo-first,
+            &:focus-visible > .sidebar__logo-first {
+                order: 1;
+            }
+
+            &:hover > .sidebar__logo-last,
+            &:focus-visible > .sidebar__logo-last {
+                order: -1;
+                color: var(--color-body-fg);
             }
         }
 
@@ -145,21 +159,21 @@ body {
             }
 
             > li > .sidebar__nav-link {
-                color: var(--color-sidebar-fg-muted);
+                color: var(--color-body-fg-muted);
                 text-decoration: none;
 
                 &:hover,
                 &:focus-visible {
-                    color: var(--color-sidebar-fg);
+                    color: var(--color-body-fg);
                 }
 
                 &:focus-visible {
-                    outline-color: var(--color-sidebar-fg);
+                    outline-color: var(--color-body-fg);
                 }
 
                 &.sidebar__nav-link--active {
                     position: relative;
-                    color: var(--color-sidebar-fg);
+                    color: var(--color-body-fg);
 
                     &::before {
                         content: "→ ";
@@ -180,9 +194,14 @@ body {
     > .page {
         grid-area: main;
         max-width: 1000px;
+        margin: var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl) 0;
         padding: var(--spacing-2xl);
+        background-color: var(--color-card-bg);
+        border-radius: var(--spacing-lg);
 
         @media (max-width: 750px) {
+            margin: var(--spacing-lg);
+            margin-top: 0;
             padding: var(--spacing-lg);
         }
 
@@ -218,7 +237,7 @@ body {
         }
 
         a {
-            color: var(--color-accent);
+            color: var(--color-card-accent);
             text-decoration-thickness: 1.5px;
             text-underline-offset: 3px;
         }
@@ -236,7 +255,7 @@ body {
 
             > li::marker {
                 content: "→ ";
-                color: var(--color-accent);
+                color: var(--color-card-accent);
                 font-weight: var(--font-weight-extrabold);
             }
         }
@@ -245,7 +264,7 @@ body {
             padding-inline-start: var(--spacing-lg);
 
             > li::marker {
-                color: var(--color-accent);
+                color: var(--color-card-accent);
                 font-weight: var(--font-weight-extrabold);
             }
         }
@@ -254,15 +273,15 @@ body {
             margin-block: 0 var(--spacing-lg);
             margin-inline: 0;
             padding-inline-start: var(--spacing-lg);
-            border-inline-start: 3px solid var(--color-accent);
-            color: var(--color-fg-muted);
+            border-inline-start: 3px solid var(--color-card-accent);
+            color: var(--color-card-fg-muted);
             font-style: italic;
         }
 
         pre {
             margin-block: 0 var(--spacing-lg);
             padding: var(--spacing-lg);
-            border: 1px solid var(--color-border);
+            border: 1px solid var(--color-card-border);
             border-radius: var(--spacing-2xs);
 
             > code {
@@ -279,7 +298,7 @@ body {
         code {
             padding: var(--spacing-3xs) var(--spacing-xs);
             border-radius: var(--spacing-2xs);
-            border: 1px solid var(--color-border);
+            border: 1px solid var(--color-card-border);
             font-size: var(--font-size-xs);
         }
 
@@ -290,12 +309,12 @@ body {
             th,
             td {
                 padding: var(--spacing-xs) var(--spacing-sm);
-                border-bottom: 1px solid var(--color-border);
+                border-bottom: 1px solid var(--color-card-border);
                 text-align: left;
             }
 
             th {
-                border-bottom: 2px solid var(--color-accent);
+                border-bottom: 2px solid var(--color-card-accent);
                 font-family: var(--font-heading);
             }
         }
@@ -303,7 +322,7 @@ body {
         hr {
             margin-block: var(--spacing-lg);
             border: none;
-            border-top: 1px solid var(--color-border);
+            border-top: 1px solid var(--color-card-border);
         }
 
         .page__intro > .page__title,
@@ -313,7 +332,7 @@ body {
 
         .page__intro > .page__subtitle {
             margin-block: 0 var(--spacing-lg);
-            color: var(--color-fg-muted);
+            color: var(--color-card-fg-muted);
             font-size: var(--font-size-base);
             font-weight: var(--font-weight-semibold);
         }
@@ -322,11 +341,13 @@ body {
     > .footer {
         grid-area: footer;
         padding: var(--spacing-2xl);
-        border-top: 1px solid var(--color-border);
-        color: var(--color-fg-muted);
+        padding-top: 0;
+        padding-left: 0;
+        color: var(--color-body-fg-muted);
 
         @media (max-width: 750px) {
             padding: var(--spacing-lg);
+            padding-top: 0;
         }
 
         > .footer__line {
@@ -342,7 +363,7 @@ body {
             }
 
             > a {
-                color: var(--color-accent);
+                color: var(--color-body-fg);
                 text-decoration-thickness: 1.5px;
                 text-underline-offset: 3px;
             }

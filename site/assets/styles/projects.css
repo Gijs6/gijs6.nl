@@ -9,7 +9,7 @@ body > .page > .project-list {
     > .project-list__item {
         margin-block: 0;
         padding: var(--spacing-lg);
-        border: 1px solid var(--color-border);
+        border: 1px solid var(--color-card-border);
         border-radius: var(--spacing-xs);
 
         &::marker {
@@ -23,7 +23,7 @@ body > .page > .project-list {
 
         > .project-list__description {
             margin-block: 0 var(--spacing-sm);
-            color: var(--color-fg-muted);
+            color: var(--color-card-fg-muted);
         }
 
         > .project-list__links {
