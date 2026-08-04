@@ -181,7 +181,7 @@ body {
                     color: var(--color-body-fg);
 
                     &::before {
-                        content: "→ ";
+                        content: "→ " / "";
                         position: absolute;
                         right: 100%;
                         padding-inline-end: var(--spacing-2xs);
@@ -259,7 +259,7 @@ body {
             padding-inline-start: var(--spacing-lg);
 
             > li::marker {
-                content: "→ ";
+                content: "→ " / "";
                 color: var(--color-card-accent);
                 font-weight: var(--font-weight-extrabold);
             }
