@@ -85,6 +85,7 @@ body {
         top: 0;
         align-self: start;
         height: 100vh;
+        min-width: 250px;
         overflow-y: auto;
         padding: var(--spacing-xl);
         padding-top: var(--spacing-2xl);
@@ -94,6 +95,7 @@ body {
         @media (max-width: 750px) {
             position: static;
             height: auto;
+            min-width: 0;
             padding: var(--spacing-lg);
         }
 
