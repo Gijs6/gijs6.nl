@@ -355,6 +355,10 @@ body {
             padding-top: 0;
         }
 
+        > .footer__reply {
+            margin-block: 0 var(--spacing-xl);
+        }
+
         > .footer__line {
             margin-block: var(--spacing-xs);
             font-style: normal;

@@ -17,8 +17,8 @@
         </hgroup>
         {{ post.content | safe }}
     </article>
-    <hr />
-    <p>
-        I'm always interested in hearing different perspectives. <a href="https://contact.gijs6.nl">Reply to this post</a>
-    </p>
 {% endblock content %}
+
+{% block footer_extra %}
+    <p class="footer__reply"><a href="https://contact.gijs6.nl">Reply to this post</a></p>
+{% endblock footer_extra %}
