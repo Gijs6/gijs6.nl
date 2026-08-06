@@ -48,6 +48,10 @@
     }
 }
 
+html {
+    font-size: clamp(0.9rem, 0.7rem + 0.5vw, 1.05rem);
+}
+
 a {
     color: currentColor;
     font-weight: var(--font-weight-bold);
@@ -87,6 +91,7 @@ body {
         height: 100vh;
         min-width: 250px;
         overflow-y: auto;
+        overflow-x: hidden;
         padding: var(--spacing-xl);
         padding-top: var(--spacing-2xl);
         padding-inline: var(--spacing-2xl);
@@ -200,11 +205,13 @@ body {
 
     > .page {
         grid-area: main;
+        min-width: 0;
         max-width: 1000px;
         margin: var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl) 0;
         padding: var(--spacing-2xl);
         background-color: var(--color-card-bg);
         border-radius: var(--spacing-lg);
+        overflow-x: hidden;
 
         @media (max-width: 750px) {
             margin: var(--spacing-lg);
@@ -232,6 +239,7 @@ body {
         h1 {
             font-size: var(--font-size-xl);
             margin-block: 0 var(--spacing-lg);
+            word-break: break-word;
         }
 
         h2,
