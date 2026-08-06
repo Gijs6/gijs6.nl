@@ -15,6 +15,6 @@ As far as I'm concerned we should just abolish the whole inheritance system. And
 
 And before anyone starts: no, I'm not saying you have to sell your grandma's ring or her photo albums, stuff that actually has sentimental value you can just keep. I'm talking about the million-euro house and the 300k sitting in some account that you're about to inherit.
 
-> By the way, hii to all the VVD voters reading this, you're probably sitting super mad in your own house right now (paid for with money you got from an inheritance), but I'd love to remind you that liberal economics makes a very clear difference between earned income (where you actually did something) and unearned income, and unless you commit murder, your parents dying isn't something you had to do anything for
+By the way, hii to all the VVD voters reading this, you're probably sitting super mad in your own house right now (paid for with money you got from an inheritance), but I'd love to remind you that liberal economics makes a very clear difference between earned income (where you actually did something) and unearned income, and unless you commit murder, your parents dying isn't something you had to do anything for
 
 <!-- Oke en nog 2 dingen, mensen die 'sterfbelasting' zeggen kunnen moeilijk hard de tering krijgen en mensen die 'daar is al een keer belasting over betaald' zeggen moeten verplicht nog even 3havo economie volgen want dat is gewoon niet hoe belasting werkt -->
