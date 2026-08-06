@@ -369,14 +369,11 @@ body {
                 margin-block-end: 0;
             }
 
-            > a {
+            > a, > time {
                 color: var(--color-body-fg);
                 text-decoration-thickness: 1.5px;
                 text-underline-offset: 3px;
-            }
-
-            > time {
-                font-weight: var(--font-weight-bold);
+                font-weight: var(--font-weight-bold)
             }
         }
 
