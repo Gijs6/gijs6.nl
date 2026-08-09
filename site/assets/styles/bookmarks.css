@@ -1,10 +1,6 @@
-body > .page:has(> .bookmarks) {
-    max-width: 1000px;
-}
-
 body > .page > .bookmarks {
     column-count: 2;
-    column-gap: var(--spacing-lg);
+    column-gap: var(--spacing-md);
 
     @media (max-width: 750px) {
         column-count: 1;
@@ -12,9 +8,9 @@ body > .page > .bookmarks {
 
     > .bookmarks__group {
         margin-block-end: var(--spacing-md);
-        padding: var(--spacing-lg);
+        padding: var(--spacing-md);
         border: 1px solid var(--color-card-border);
-        border-radius: var(--spacing-xs);
+        border-radius: var(--radius-md);
         break-inside: avoid;
         page-break-inside: avoid;
 
@@ -28,6 +24,10 @@ body > .page > .bookmarks {
 
         > .bookmark-list {
             margin-block: 0;
+
+            > li:not(:last-child) {
+                margin-block-end: var(--spacing-xs);
+            }
         }
     }
 }

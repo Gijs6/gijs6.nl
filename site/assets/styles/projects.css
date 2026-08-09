@@ -1,23 +1,23 @@
 body > .page > .project-list {
     list-style: none;
     padding-inline-start: 0;
-    margin-block: var(--spacing-lg);
+    margin-block: 0 var(--flow-gap);
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
 
     > .project-list__item {
         margin-block: 0;
-        padding: var(--spacing-lg);
+        padding: var(--spacing-md);
         border: 1px solid var(--color-card-border);
-        border-radius: var(--spacing-xs);
+        border-radius: var(--radius-md);
 
         &::marker {
             content: none;
         }
 
         > .project-list__title {
-            margin-block: 0 var(--spacing-2xs);
+            margin-block: 0 var(--spacing-xs);
             font-size: var(--font-size-md);
         }
 
@@ -29,7 +29,7 @@ body > .page > .project-list {
         > .project-list__links {
             display: flex;
             flex-wrap: wrap;
-            gap: var(--spacing-sm);
+            gap: var(--spacing-xs) var(--spacing-md);
             margin: 0;
             list-style: none;
             padding-inline-start: 0;
