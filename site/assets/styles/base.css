@@ -79,7 +79,7 @@
 }
 
 html {
-    font-size: clamp(0.9rem, 0.7rem + 0.5vw, 1.05rem);
+    font-size: clamp(0.9rem, 0.75rem + 0.35vw, 1rem);
 }
 
 a {
