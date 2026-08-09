@@ -17,10 +17,14 @@
 
     --font-size-xs: 0.875rem;
     --font-size-sm: 1rem;
-    --font-size-base: 1.125rem;
     --font-size-md: 1.25rem;
-    --font-size-lg: 1.75rem;
-    --font-size-xl: 3rem;
+    --font-size-lg: 1.5rem;
+    --font-size-xl: 1.875rem;
+    --font-size-2xl: 2.375rem;
+    --font-size-3xl: 3rem;
+
+    --line-height-body: 1.5;
+    --line-height-heading: 1.15;
 
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
@@ -89,7 +93,7 @@ body {
     grid-template-rows: 1fr auto;
     grid-template-areas: "sidebar main" "sidebar footer";
     font-family: var(--font-body);
-    line-height: 1.5;
+    line-height: var(--line-height-body);
     background-color: var(--color-body-bg);
     color: var(--color-card-fg);
 
@@ -122,9 +126,9 @@ body {
             margin-block-end: var(--spacing-xl);
             font-family: var(--font-heading);
             color: var(--color-body-fg);
-            font-size: var(--font-size-xl);
+            font-size: var(--font-size-3xl);
             font-weight: var(--font-weight-black);
-            line-height: 1.15;
+            line-height: var(--line-height-heading);
             text-decoration: none;
             transition: color 0.2s ease;
 
@@ -169,7 +173,7 @@ body {
             padding-inline-start: 0;
             list-style: none;
             font-weight: var(--font-weight-bold);
-            font-size: var(--font-size-base);
+            font-size: var(--font-size-md);
 
             @media (max-width: 750px) {
                 flex-direction: row;
@@ -247,26 +251,26 @@ body {
             margin-block: var(--spacing-lg) var(--spacing-sm);
             font-family: var(--font-heading);
             font-weight: var(--font-weight-extrabold);
-            line-height: 1.15;
+            line-height: var(--line-height-heading);
         }
 
         h1 {
-            font-size: var(--font-size-xl);
+            font-size: var(--font-size-3xl);
             margin-block: 0 var(--spacing-lg);
             word-break: break-word;
 
             @media (max-width: 750px) {
-                font-size: 2.25rem;
+                font-size: var(--font-size-2xl);
             }
         }
 
         h2 {
             margin-block-start: var(--spacing-xl);
-            font-size: var(--font-size-lg);
+            font-size: var(--font-size-xl);
         }
 
         h3 {
-            font-size: var(--font-size-md);
+            font-size: var(--font-size-lg);
         }
 
         a {
@@ -373,7 +377,7 @@ body {
         .page__intro > .page__subtitle {
             margin-block: 0 var(--spacing-lg);
             color: var(--color-card-fg-muted);
-            font-size: var(--font-size-base);
+            font-size: var(--font-size-md);
             font-weight: var(--font-weight-semibold);
         }
     }
