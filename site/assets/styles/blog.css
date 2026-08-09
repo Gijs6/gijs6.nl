@@ -19,7 +19,7 @@ body > .page > .page__feeds > .page__feeds-list {
         }
 
         &:not(:last-child)::after {
-            content: " \00b7";
+            content: " \00b7" / "";
         }
     }
 }

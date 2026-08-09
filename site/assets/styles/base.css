@@ -1,15 +1,26 @@
 :root {
     color-scheme: light dark;
 
-    --color-card-bg: #ece9e4;
-    --color-card-fg: #16181a;
-    --color-card-fg-muted: #5b5f63;
-    --color-card-border: #d3d0c8;
-    --color-card-accent: #551b9a;
+    --color-white: #ffffff;
+    --color-off-white: #efece7;
+    --color-black: #1a1c1e;
+    --color-gray-light: #d3d0c8;
+    --color-gray: #a6aaa8;
+    --color-gray-dark: #5b5f63;
+    --color-gray-darker: #45494e;
+    --color-purple: #551b9a;
+    --color-purple-light: #b48aef;
+    --color-purple-lighter: #d3b8f0;
 
-    --color-body-bg: #551b9a;
-    --color-body-fg: #ffffff;
-    --color-body-fg-muted: #d3b8f0;
+    --color-card-bg: var(--color-off-white);
+    --color-card-fg: var(--color-black);
+    --color-card-fg-muted: var(--color-gray-dark);
+    --color-card-border: var(--color-gray-light);
+    --color-card-accent: var(--color-purple);
+
+    --color-body-bg: var(--color-purple);
+    --color-body-fg: var(--color-white);
+    --color-body-fg-muted: var(--color-purple-lighter);
 
     --font-body: "Hanken Grotesk Variable", "Inter", sans-serif;
     --font-heading: "Bricolage Grotesque Variable", sans-serif;
@@ -59,11 +70,11 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-card-bg: #1e2023;
-        --color-card-fg: #f2f0ea;
-        --color-card-fg-muted: #a6aaa8;
-        --color-card-border: #45494e;
-        --color-card-accent: #b48aef;
+        --color-card-bg: var(--color-black);
+        --color-card-fg: var(--color-off-white);
+        --color-card-fg-muted: var(--color-gray);
+        --color-card-border: var(--color-gray-darker);
+        --color-card-accent: var(--color-purple-light);
     }
 }
 
@@ -79,6 +90,22 @@ a {
 ::selection {
     background-color: var(--color-card-accent);
     color: var(--color-card-bg);
+}
+
+.sidebar ::selection,
+.footer ::selection {
+    background-color: var(--color-body-fg);
+    color: var(--color-body-bg);
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-card-accent);
+    outline-offset: 2px;
+}
+
+.sidebar :focus-visible,
+.footer :focus-visible {
+    outline-color: var(--color-body-fg);
 }
 
 code,
@@ -193,10 +220,6 @@ body {
                 &:hover,
                 &:focus-visible {
                     color: var(--color-body-fg);
-                }
-
-                &:focus-visible {
-                    outline-color: var(--color-body-fg);
                 }
 
                 &.sidebar__nav-link--active {
