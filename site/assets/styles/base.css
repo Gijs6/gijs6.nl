@@ -258,13 +258,6 @@ body {
             margin-inline-start: var(--layout-gutter);
             padding-block: var(--spacing-xl);
         }
-
-        > :last-child,
-        > :last-child > :last-child,
-        > :last-child > :last-child > :last-child {
-            margin-block-end: 0;
-        }
-
         h1,
         h2,
         h3,
