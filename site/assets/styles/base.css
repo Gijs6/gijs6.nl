@@ -258,7 +258,7 @@ body {
         a {
             color: var(--color-card-accent);
             text-decoration-thickness: 1.5px;
-            text-underline-offset: 3px;
+            text-underline-offset: 1px;
         }
 
         p,
@@ -385,7 +385,7 @@ body {
             > time {
                 color: var(--color-body-fg);
                 text-decoration-thickness: 1.5px;
-                text-underline-offset: 3px;
+                text-underline-offset: 1px;
                 font-weight: var(--font-weight-bold);
             }
         }
