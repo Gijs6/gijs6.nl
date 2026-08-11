@@ -111,13 +111,17 @@
     }
 
     &.body--bare {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-        grid-template-areas: "main";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100dvh;
         color: var(--color-body-fg);
+        text-align: center;
 
         > .page {
-            margin-inline: auto;
+            width: 100%;
+            max-width: 740px;
+            margin: 0;
             background-color: transparent;
             border-radius: 0;
         }
