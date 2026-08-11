@@ -68,9 +68,7 @@
             </header>
         {% endif %}
         <main class="page">
-            {% if bare_page %}
-                <a class="page__brand" href="/"><span class="page__brand-first">G</span>ijs<span class="page__brand-last">6</span></a>
-            {% endif %}
+            {% if bare_page %}<a class="page__brand" href="/"><span class="page__brand-first">G</span>ijs<span class="page__brand-last">6</span></a>{% endif %}
             {% block content %}
             {% endblock content %}
         </main>
