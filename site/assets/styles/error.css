@@ -1,6 +1,6 @@
 html > .body.body--bare > .page {
     > .page__error-heading {
-        --404-spacing: .4em;
+        --404-spacing: 0.4em;
 
         position: relative;
         display: inline-flex;
