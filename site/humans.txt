@@ -1,0 +1,7 @@
+/* TEAM */
+    Developer: Gijs6 (Gijs ten Berg)
+    Site: https://gijs6.nl
+    From: Schiedam, the Netherlands
+
+/* THANKS */
+    Everyone who ever replied to a blog post, sent an email, or contributed in some way

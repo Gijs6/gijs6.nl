@@ -38,6 +38,13 @@
         <link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Blog - RSS" />
         <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Blog - Atom" />
         <link rel="alternate" type="application/feed+json" href="/blog/feed.json" title="Blog - JSON" />
+
+        {# djlint:off #}
+        <script type="application/ld+json">{{ data.jsonld_site | safe }}</script>
+        {# djlint:on #}
+
+        {% block additional_head %}
+        {% endblock additional_head %}
     </head>
 
     <body class="body{% if bare_page %} body--bare{% endif %}">
@@ -47,19 +54,19 @@
                 <nav aria-label="Site">
                     <ul class="sidebar__nav">
                         <li>
-                            <a class="sidebar__nav-link {% if active_page=='home' %}sidebar__nav-link--active{% endif %}" {% if active_page=='home' %}aria-current="page"{% endif %} href="/">Home</a>
+                            <a class="sidebar__nav-link{% if active_page=='home' %} sidebar__nav-link--active{% endif %}" {% if active_page=='home' %}aria-current="page"{% endif %} href="/">Home</a>
                         </li>
                         <li>
-                            <a class="sidebar__nav-link {% if active_page=='blog' %}sidebar__nav-link--active{% endif %}" {% if active_page=='blog' %}aria-current="page"{% endif %} href="/blog/">Blog</a>
+                            <a class="sidebar__nav-link{% if active_page=='blog' %} sidebar__nav-link--active{% endif %}" {% if active_page=='blog' %}aria-current="page"{% endif %} href="/blog/">Blog</a>
                         </li>
                         <li>
-                            <a class="sidebar__nav-link {% if active_page=='projects' %}sidebar__nav-link--active{% endif %}" {% if active_page=='projects' %}aria-current="page"{% endif %} href="/projects">Projects</a>
+                            <a class="sidebar__nav-link{% if active_page=='projects' %} sidebar__nav-link--active{% endif %}" {% if active_page=='projects' %}aria-current="page"{% endif %} href="/projects">Projects</a>
                         </li>
                         <li>
-                            <a class="sidebar__nav-link {% if active_page=='bookmarks' %}sidebar__nav-link--active{% endif %}" {% if active_page=='bookmarks' %}aria-current="page"{% endif %} href="/bookmarks">Bookmarks</a>
+                            <a class="sidebar__nav-link{% if active_page=='bookmarks' %} sidebar__nav-link--active{% endif %}" {% if active_page=='bookmarks' %}aria-current="page"{% endif %} href="/bookmarks">Bookmarks</a>
                         </li>
                         <li>
-                            <a class="sidebar__nav-link {% if active_page=='colophon' %}sidebar__nav-link--active{% endif %}" {% if active_page=='colophon' %}aria-current="page"{% endif %} href="/colophon">Colophon</a>
+                            <a class="sidebar__nav-link{% if active_page=='colophon' %} sidebar__nav-link--active{% endif %}" {% if active_page=='colophon' %}aria-current="page"{% endif %} href="/colophon">Colophon</a>
                         </li>
                         <li>
                             <a class="sidebar__nav-link" href="https://contact.gijs6.nl">Contact</a>

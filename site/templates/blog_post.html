@@ -4,18 +4,28 @@
     {{ post.title }}
 {%- endblock title %}
 
+{% block additional_head %}
+    {# djlint:off #}
+    <script type="application/ld+json">{{ post.jsonld | safe }}</script>
+    {# djlint:on #}
+{% endblock additional_head %}
+
 {% block content %}
-    <article class="page__article">
+    <article class="page__article h-entry" itemscope itemtype="https://schema.org/BlogPosting" itemid="{{ post.url }}">
+        <meta itemprop="url" content="{{ post.url }}" />
+        <meta itemprop="wordCount" content="{{ post.word_count }}" />
+        <meta itemprop="license" content="https://unlicense.org/" />
         <hgroup class="page__intro">
-            <h1 class="page__title">{{ post.title }}</h1>
+            <h1 class="page__title p-name" itemprop="headline">{{ post.title }}</h1>
             <p class="page__subtitle">
+                By <a class="p-author h-card u-url p-name" href="/" itemprop="author" itemscope itemtype="https://schema.org/Person" itemid="{{ data.person_id }}"><span itemprop="name">Gijs6</span></a> ·
                 {%- if post.date -%}
-                    <time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }}</time> ·
+                    <a href="{{ canonical_path }}"><time class="dt-published" itemprop="datePublished" datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }}</time></a> ·
                 {%- endif %}
                 {{ post.reading_time }} min read · {{ post.word_count }} words
             </p>
         </hgroup>
-        {{ post.content | safe }}
+        <div class="e-content" itemprop="articleBody">{{ post.content | safe }}</div>
     </article>
 {% endblock content %}
 

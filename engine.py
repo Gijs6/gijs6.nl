@@ -45,8 +45,29 @@ DEFAULT_TEMPLATE = "base.html"
 SITE_URL = "https://gijs6.nl"
 SITE_TITLE = "Gijs6"
 SITE_DESCRIPTION = "A big mess of fun pages, interesting projects, my own thoughts and opinions and more."
+SITE_LANGUAGE = "en-GB"
+SITE_REPOS = [
+    "https://github.com/Gijs6/gijs6.nl",
+    "https://gitlab.com/ggijs/gijs6.nl",
+    "https://codeberg.org/gijs6/gijs6.nl",
+    "https://git.dupunkto.org/sites/gijs6.nl",
+]
 AUTHOR_NAME = "Gijs6"
 AUTHOR_EMAIL = "me@gijs6.nl"
+AUTHOR_IMAGE = "https://cdn.gijs6.nl/images/me.jpg"
+AUTHOR_GIVEN_NAME = "Gijs"
+AUTHOR_FAMILY_NAME = "ten Berg"
+AUTHOR_ALTERNATE_NAMES = ["Gijs", "Gijs ten Berg", "gijsz", "ggijs", "ggijs109"]
+LICENSE_URL = "https://unlicense.org/"
+
+PERSON_ID = f"{SITE_URL}/#person"
+WEBSITE_ID = f"{SITE_URL}/#website"
+QDENTITY_ID = f"{SITE_URL}/#qdentity"
+SCHOOL_ID = f"{SITE_URL}/#school"
+DUPUNKTO_ID = f"{SITE_URL}/#dupunkto"
+
+BLOG_SECTION = os.path.basename(BLOG_DIR)
+BLOG_ID = f"{SITE_URL}/{BLOG_SECTION}/#blog"
 
 FRONT_MATTER_PATTERN = re.compile(r"^---\n(.*?)\n---", re.DOTALL)
 
@@ -92,6 +113,95 @@ def get_git_commit_info():
     return None
 
 
+def site_jsonld():
+    return json.dumps(
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": ["WebSite", "SoftwareSourceCode"],
+                    "@id": WEBSITE_ID,
+                    "url": f"{SITE_URL}/",
+                    "name": SITE_TITLE,
+                    "description": SITE_DESCRIPTION,
+                    "inLanguage": SITE_LANGUAGE,
+                    "author": {"@id": PERSON_ID},
+                    "license": LICENSE_URL,
+                    "hasPart": {"@id": BLOG_ID},
+                    "codeRepository": SITE_REPOS,
+                    "programmingLanguage": "Python",
+                },
+                {
+                    "@type": "Blog",
+                    "@id": BLOG_ID,
+                    "name": f"{SITE_TITLE} - {BLOG_SECTION}",
+                    "url": f"{SITE_URL}/{BLOG_SECTION}/",
+                    "inLanguage": SITE_LANGUAGE,
+                    "isPartOf": {"@id": WEBSITE_ID},
+                    "author": {"@id": PERSON_ID},
+                },
+                {
+                    "@type": "Person",
+                    "@id": PERSON_ID,
+                    "name": AUTHOR_NAME,
+                    "givenName": AUTHOR_GIVEN_NAME,
+                    "familyName": AUTHOR_FAMILY_NAME,
+                    "alternateName": AUTHOR_ALTERNATE_NAMES,
+                    "url": f"{SITE_URL}/",
+                    "image": AUTHOR_IMAGE,
+                    "email": AUTHOR_EMAIL,
+                    "sameAs": [
+                        "https://github.com/Gijs6",
+                        "https://gitlab.com/ggijs",
+                        "https://codeberg.org/Gijs6",
+                        "https://contact.gijs6.nl",
+                    ],
+                    "worksFor": {"@id": QDENTITY_ID},
+                    "alumniOf": {"@id": SCHOOL_ID},
+                    "memberOf": {"@id": DUPUNKTO_ID},
+                },
+                {
+                    "@type": "Organization",
+                    "@id": QDENTITY_ID,
+                    "name": "Qdentity",
+                    "url": "https://qdentity.com",
+                },
+                {
+                    "@type": "HighSchool",
+                    "@id": SCHOOL_ID,
+                    "name": "Lyceum Schravenlant",
+                    "url": "https://www.lyceumschravenlant.nl/",
+                },
+                {
+                    "@type": "Organization",
+                    "@id": DUPUNKTO_ID,
+                    "name": "{du}punkto",
+                    "url": "https://dupunkto.org/",
+                },
+            ],
+        },
+        ensure_ascii=False,
+    )
+
+
+def blog_posting_jsonld(post):
+    ld = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "@id": post["url"],
+        "headline": post["title"],
+        "url": post["url"],
+        "author": {"@id": PERSON_ID},
+        "publisher": {"@id": PERSON_ID},
+        "isPartOf": {"@id": BLOG_ID},
+        "wordCount": post["word_count"],
+        "license": LICENSE_URL,
+    }
+    if post["date"]:
+        ld["datePublished"] = post["date"].isoformat()
+    return json.dumps(ld, ensure_ascii=False)
+
+
 def get_data():
     now = datetime.now(LOCAL_TZ)
     return {
@@ -105,6 +215,13 @@ def get_data():
             "tz": now.strftime("%Z"),
             "iso": now.isoformat(),
         },
+        "jsonld_site": site_jsonld(),
+        "person_id": PERSON_ID,
+        "website_id": WEBSITE_ID,
+        "blog_id": BLOG_ID,
+        "qdentity_id": QDENTITY_ID,
+        "school_id": SCHOOL_ID,
+        "dupunkto_id": DUPUNKTO_ID,
     }
 
 
@@ -142,6 +259,7 @@ def get_post_date(filepath):
 def process_blog(build_dir, template_env, md_processor, data):
     posts = []
     blog_slugs = set()
+    blog_section = BLOG_SECTION
 
     if not os.path.exists(BLOG_DIR):
         return posts
@@ -169,24 +287,23 @@ def process_blog(build_dir, template_env, md_processor, data):
 
         word_count = len(re.sub(r"<[^>]+>", " ", html_content).split())
 
-        posts.append(
-            {
-                "title": metadata.get("title", slug.replace("-", " ").title()),
-                "slug": slug,
-                "content": html_content,
-                "date": date,
-                "word_count": word_count,
-                "reading_time": max(1, round(word_count / 200)),
-            }
-        )
+        post = {
+            "title": metadata.get("title", slug.replace("-", " ").title()),
+            "slug": slug,
+            "content": html_content,
+            "date": date,
+            "word_count": word_count,
+            "reading_time": max(1, round(word_count / 200)),
+            "url": f"{SITE_URL}/{blog_section}/{slug}",
+        }
+        post["jsonld"] = blog_posting_jsonld(post)
+        posts.append(post)
 
     posts.sort(
         key=lambda p: p["date"] or datetime.max.replace(tzinfo=LOCAL_TZ),
         reverse=True,
     )
 
-    # Derive blog section name from BLOG_DIR (e.g., "site/blog" -> "blog")
-    blog_section = os.path.basename(BLOG_DIR)
     blog_dir = os.path.join(build_dir, blog_section)
     os.makedirs(blog_dir, exist_ok=True)
 
@@ -220,13 +337,13 @@ def process_blog(build_dir, template_env, md_processor, data):
     fg.id(SITE_URL)
     fg.link(href=f"{SITE_URL}/{blog_section}", rel="alternate")
     fg.language("en-GB")
-    fg.author(name=AUTHOR_NAME, email=AUTHOR_EMAIL, uri=SITE_URL)
+    fg.author(name=AUTHOR_NAME, email=AUTHOR_EMAIL, uri=f"{SITE_URL}/")
 
     for post in posts:
         fe = fg.add_entry()
         fe.title(post["title"])
-        fe.link(href=f"{SITE_URL}/{blog_section}/{post['slug']}")
-        fe.id(f"{SITE_URL}/{blog_section}/{post['slug']}")
+        fe.link(href=post["url"])
+        fe.id(post["url"])
         fe.description(post["content"])
         if post["date"]:
             fe.pubDate(post["date"])
@@ -243,11 +360,11 @@ def process_blog(build_dir, template_env, md_processor, data):
         "home_page_url": f"{SITE_URL}/",
         "feed_url": f"{SITE_URL}/{blog_section}/feed.json",
         "description": SITE_DESCRIPTION,
-        "author": {"name": AUTHOR_NAME, "url": SITE_URL},
+        "author": {"name": AUTHOR_NAME, "url": f"{SITE_URL}/"},
         "items": [
             {
-                "id": f"{SITE_URL}/{blog_section}/{post['slug']}",
-                "url": f"{SITE_URL}/{blog_section}/{post['slug']}",
+                "id": post["url"],
+                "url": post["url"],
                 "title": post["title"],
                 "content_html": post["content"],
                 "date_published": post["date"].isoformat() if post["date"] else None,

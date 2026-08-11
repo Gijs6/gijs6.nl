@@ -24,14 +24,19 @@
             </li>
         </ul>
     </nav>
-    <ol class="post-list">
+    <ol class="post-list h-feed" itemscope itemtype="https://schema.org/Blog" itemid="{{ data.blog_id }}">
         {% for post in posts %}
-            <li class="post-list__item">
+            <li class="post-list__item h-entry" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting" itemid="{{ post.url }}">
+                <meta itemprop="url" content="{{ post.url }}" />
+                <meta itemprop="wordCount" content="{{ post.word_count }}" />
+                <span itemprop="author" itemscope itemtype="https://schema.org/Person" itemid="{{ data.person_id }}">
+                    <meta itemprop="name" content="Gijs6" />
+                </span>
                 <h2 class="post-list__title">
-                    <a href="/blog/{{ post.slug }}">{{ post.title }}</a>
+                    <a class="p-name u-url" href="/blog/{{ post.slug }}"><span itemprop="headline">{{ post.title }}</span></a>
                 </h2>
                 <p class="post-list__meta">
-                    {%- if post.date -%}<time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }}</time> ·{%- endif %}
+                    {%- if post.date -%}<time class="dt-published" itemprop="datePublished" datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }}</time> ·{%- endif %}
                     {{ post.reading_time }} min read · {{ post.word_count }} words
                 </p>
             </li>

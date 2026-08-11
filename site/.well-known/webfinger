@@ -1,0 +1,12 @@
+{
+    "subject": "acct:me@gijs6.nl",
+    "aliases": ["https://gijs6.nl/", "https://gijs6.nl/#person"],
+    "links": [
+        { "rel": "http://webfinger.net/rel/profile-page", "type": "text/html", "href": "https://gijs6.nl/" },
+        { "rel": "http://webfinger.net/rel/avatar", "type": "image/jpeg", "href": "https://cdn.gijs6.nl/images/me.jpg" },
+        { "rel": "me", "href": "https://github.com/Gijs6" },
+        { "rel": "me", "href": "https://gitlab.com/ggijs" },
+        { "rel": "me", "href": "https://codeberg.org/Gijs6" },
+        { "rel": "me", "href": "https://contact.gijs6.nl" }
+    ]
+}

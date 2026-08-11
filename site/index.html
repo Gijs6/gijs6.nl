@@ -5,54 +5,62 @@
 {%- endblock title %}
 
 {% block content %}
-    <h1>Haii!</h1>
-    <p>
-        Welcome! I'm Gijs (<span lang="nl">/ɣɛis/</span>), also known as <i>gijs6</i>, <i>gijsz</i>, <i>ggijs</i>, and many other variations. I'm a 17-year-old developer, part-time overthinker, professional procrastinator, and full-time enthusiastic mess from Schiedam (in the Netherlands), and this is my little corner of the interwebs.
-    </p>
-
-    <section aria-labelledby="about-heading">
-        <h2 id="about-heading">About me</h2>
-        <p>I don't have a clue how to describe myself, so please annoy other people by asking them about me instead. They'll probably have a much more accurate answer anyway. But since you somehow ended up on my website, you probably already know me (or maybe I really am famous).</p>
-        <p>Here's what I'm up to right now:</p>
-
-        <ul>
-            <li>
-                studying <span lang="nl">5<a href="https://en.wikipedia.org/wiki/Voorbereidend_wetenschappelijk_onderwijs"><abbr title="voorbereidend wetenschappelijk onderwijs">vwo</abbr></a></span> (which I think is roughly comparable to year 12 in the UK and 11th grade in the US) at <a href="https://www.lyceumschravenlant.nl/" hreflang="nl">Lyceum Schravenlant</a>, doing <i lang="nl">natuur & techniek</i>, which means physics, chemistry, biology (unfortunately), <a href="https://nl.wikipedia.org/wiki/Natuur,_leven_en_technologie" hreflang="nl" lang="nl">NLT</a>, and <span lang="fr">français (bien sûr!)</span>
-            </li>
-            <li>
-                working as a junior developer at <a href="https://qdentity.com">Qdentity</a>
-            </li>
-            <li>
-                being a member of the <a href="https://nl.wikipedia.org/wiki/Medezeggenschap" hreflang="nl" lang="nl">medezeggenschapsraad</a> (school council) at my school
-            </li>
-            <li>procrastinating on choosing my next study</li>
-            <li>messing around with just about anything that seems remotely interesting</li>
-        </ul>
-
-        <p>
-            I'm also part of <a href="https://dupunkto.org/">{du}punkto</a>, a small collective that I run with three friends. We mostly make things, break things, talk about making things, and occasionally actually finish something. It's a lot of fun!
+    <div itemscope itemtype="https://schema.org/Person" itemid="{{ data.person_id }}">
+        <meta itemprop="name" content="Gijs6" />
+        <meta itemprop="givenName" content="Gijs" />
+        <meta itemprop="familyName" content="ten Berg" />
+        <meta itemprop="alternateName" content="Gijs ten Berg" />
+        <h1>Haii!</h1>
+        <p class="h-card">
+            Welcome! I'm <a class="p-name u-url" href="/" itemprop="url"><span itemprop="alternateName">Gijs</span></a> (<span lang="nl">/ɣɛis/</span>), also known as <i class="p-nickname" itemprop="alternateName">gijs6</i>, <i class="p-nickname" itemprop="alternateName">gijsz</i>, <i class="p-nickname" itemprop="alternateName">ggijs</i>, <i class="p-nickname" itemprop="alternateName">ggijs109</i>, and many other variations. I'm a 17-year-old developer, part-time overthinker, professional procrastinator, and full-time enthusiastic mess from <span itemprop="homeLocation" itemscope itemtype="https://schema.org/Place"><span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span class="p-locality" itemprop="addressLocality">Schiedam</span> (in <span class="p-country-name" itemprop="addressCountry">the Netherlands</span>)</span></span>, and this is my little corner of the interwebs.
         </p>
 
-        <p>I mainly use (the best language of all) Python, on Arch Linux btw, but I also occasionally use Elixir and, sadly, JavaScript.</p>
-        <p>
-            Pretty much all the code I write is open-source and publicly available for you to <s>judge</s> see. Some of my projects are available on the <a href="/projects">projects page</a>, although I have a tendency to start more projects than I finish. Pretty much all my repos are mirrored to <a href="https://github.com/Gijs6">GitHub</a>, <a href="https://gitlab.com/ggijs">GitLab</a>, and <a href="https://codeberg.org/Gijs6">Codeberg</a>, and some repos are also mirrored to the <a href="https://git.dupunkto.org">{du}punkto git server</a>.
-        </p>
+        <section aria-labelledby="about-heading">
+            <h2 id="about-heading">About me</h2>
+            <p>I don't have a clue how to describe myself, so please annoy other people by asking them about me instead. They'll probably have a much more accurate answer anyway. But since you somehow ended up on my website, you probably already know me (or maybe I really am famous).</p>
+            <p>Here's what I'm up to right now:</p>
 
-        <p>
-            I also enjoy graphic design, listening to <a href="https://open.spotify.com/playlist/37i9dQZF1EpfNaZch4604X">music</a>, playing <a href="https://steamcommunity.com/id/Gijs6/">a nice game</a> every once in a while, and generally messing around with computers.
-        </p>
-        <p>
-            I occasionally <a href="/blog/">write</a> too (usually when I have an unnecessarily complicated opinion about something). Sometimes I even write for <a href="https://nl.wikipedia.org/wiki/Gebruiker:Gijsz">Wikipedia</a>!
-        </p>
-    </section>
+            <ul>
+                <li itemprop="alumniOf" itemscope itemtype="https://schema.org/HighSchool" itemid="{{ data.school_id }}">
+                    studying <span lang="nl">5<a href="https://en.wikipedia.org/wiki/Voorbereidend_wetenschappelijk_onderwijs"><abbr title="voorbereidend wetenschappelijk onderwijs">vwo</abbr></a></span> (which I think is roughly comparable to year 12 in the UK and 11th grade in the US) at <a itemprop="url" href="https://www.lyceumschravenlant.nl/" hreflang="nl"><span itemprop="name">Lyceum Schravenlant</span></a>, doing <i lang="nl">natuur & techniek</i>, which means physics, chemistry, biology (unfortunately), <a href="https://nl.wikipedia.org/wiki/Natuur,_leven_en_technologie" hreflang="nl" lang="nl">NLT</a>, and <span lang="fr">français (bien sûr!)</span>
+                </li>
+                <li itemprop="worksFor" itemscope itemtype="https://schema.org/Organization" itemid="{{ data.qdentity_id }}">
+                    working as a junior developer at <a itemprop="url" href="https://qdentity.com"><span itemprop="name">Qdentity</span></a>
+                </li>
+                <li>
+                    being a member of the <a href="https://nl.wikipedia.org/wiki/Medezeggenschap" hreflang="nl" lang="nl">medezeggenschapsraad</a> (school council) at my school
+                </li>
+                <li>procrastinating on choosing my next study</li>
+                <li>messing around with just about anything that seems remotely interesting</li>
+            </ul>
 
-    <section aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Contact</h2>
-        <p>There are many ways to reach out. You could send a carrier pigeon, write a letter, use a telegraph, shout very loudly in my general direction, or, if you're feeling particularly modern, send an email.</p>
-        <p>Feel free to say hi. I always love a good conversation. I speak Dutch (natively) and English (pretty well), so both are fine. My address is below:</p>
-        <address>me at gijs6 dot nl</address>
-        <p>
-            You can also find contact information at <a href="https://contact.gijs6.nl">contact.gijs6.nl</a> :)
-        </p>
-    </section>
+            <p itemprop="memberOf" itemscope itemtype="https://schema.org/Organization" itemid="{{ data.dupunkto_id }}">
+                I'm also part of <a itemprop="url" href="https://dupunkto.org/"><span itemprop="name">{du}punkto</span></a>, a small collective that I run with three friends. We mostly make things, break things, talk about making things, and occasionally actually finish something. It's a lot of fun!
+            </p>
+
+            <p>I mainly use (the best language of all) Python, on Arch Linux btw, but I also occasionally use Elixir and, sadly, JavaScript.</p>
+            <p>
+                Pretty much all the code I write is open-source and publicly available for you to <s>judge</s> see. Some of my projects are available on the <a href="/projects">projects page</a>, although I have a tendency to start more projects than I finish. Pretty much all my repos are mirrored to <a href="https://github.com/Gijs6">GitHub</a>, <a href="https://gitlab.com/ggijs">GitLab</a>, and <a href="https://codeberg.org/Gijs6">Codeberg</a>, and some repos are also mirrored to the <a href="https://git.dupunkto.org">{du}punkto git server</a>.
+            </p>
+
+            <p>
+                I also enjoy graphic design, listening to <a href="https://open.spotify.com/playlist/37i9dQZF1EpfNaZch4604X">music</a>, playing <a href="https://steamcommunity.com/id/Gijs6/">a nice game</a> every once in a while, and generally messing around with computers.
+            </p>
+            <p>
+                I occasionally <a href="/blog/">write</a> too (usually when I have an unnecessarily complicated opinion about something). Sometimes I even write for <a href="https://nl.wikipedia.org/wiki/Gebruiker:Gijsz">Wikipedia</a>!
+            </p>
+        </section>
+
+        <section aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact</h2>
+            <p>There are many ways to reach out. You could send a carrier pigeon, write a letter, use a telegraph, shout very loudly in my general direction, or, if you're feeling particularly modern, send an email.</p>
+            <p>
+                Feel free to say hi. I always love a good conversation. I speak <span itemprop="knowsLanguage">Dutch</span> (natively) and <span itemprop="knowsLanguage">English</span> (pretty well), so both are fine. My address is below:
+            </p>
+            <address>me at gijs6 dot nl</address>
+            <p>
+                You can also find contact information at <a href="https://contact.gijs6.nl">contact.gijs6.nl</a> :)
+            </p>
+        </section>
+    </div>
 {% endblock content %}

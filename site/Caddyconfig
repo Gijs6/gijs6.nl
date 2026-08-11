@@ -12,6 +12,8 @@ handle @gijs6.nl {
 
 	redir /security.txt /.well-known/security.txt permanent
 
+	header /.well-known/webfinger Content-Type "application/jrd+json"
+
 	redir /priv/absjdwaidajsijasd https://api.gijs6.nl{uri} permanent
 	redir /check/cijfer https://leerling.somtoday.nl/cijfers permanent
 	redir /priv/grade https://leerling.somtoday.nl/cijfers permanent
