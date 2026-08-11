@@ -213,7 +213,7 @@ def get_data():
             },
             "time": now.strftime("%H:%M:%S"),
             "tz": now.strftime("%Z"),
-            "iso": now.isoformat(),
+            "iso": now.isoformat(timespec="milliseconds"),
         },
         "jsonld_site": site_jsonld(),
         "person_id": PERSON_ID,
