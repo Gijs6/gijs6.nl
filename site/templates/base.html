@@ -39,53 +39,60 @@
         <link rel="alternate" type="application/feed+json" href="/blog/feed.json" title="Blog - JSON" />
     </head>
 
-    <body>
-        <header class="sidebar">
-            <a class="sidebar__logo" href="/"><span class="sidebar__logo-first">G</span>ijs<span class="sidebar__logo-last">6</span></a>
-            <nav aria-label="Site">
-                <ul class="sidebar__nav">
-                    <li>
-                        <a class="sidebar__nav-link {% if active_page=='home' %}sidebar__nav-link--active{% endif %}" {% if active_page=='home' %}aria-current="page"{% endif %} href="/">Home</a>
-                    </li>
-                    <li>
-                        <a class="sidebar__nav-link {% if active_page=='blog' %}sidebar__nav-link--active{% endif %}" {% if active_page=='blog' %}aria-current="page"{% endif %} href="/blog/">Blog</a>
-                    </li>
-                    <li>
-                        <a class="sidebar__nav-link {% if active_page=='projects' %}sidebar__nav-link--active{% endif %}" {% if active_page=='projects' %}aria-current="page"{% endif %} href="/projects">Projects</a>
-                    </li>
-                    <li>
-                        <a class="sidebar__nav-link {% if active_page=='bookmarks' %}sidebar__nav-link--active{% endif %}" {% if active_page=='bookmarks' %}aria-current="page"{% endif %} href="/bookmarks">Bookmarks</a>
-                    </li>
-                    <li>
-                        <a class="sidebar__nav-link {% if active_page=='colophon' %}sidebar__nav-link--active{% endif %}" {% if active_page=='colophon' %}aria-current="page"{% endif %} href="/colophon">Colophon</a>
-                    </li>
-                    <li>
-                        <a class="sidebar__nav-link" href="https://contact.gijs6.nl">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+    <body class="body{% if bare_page %} body--bare{% endif %}">
+        {% if not bare_page %}
+            <header class="sidebar">
+                <a class="sidebar__logo" href="/"><span class="sidebar__logo-first">G</span>ijs<span class="sidebar__logo-last">6</span></a>
+                <nav aria-label="Site">
+                    <ul class="sidebar__nav">
+                        <li>
+                            <a class="sidebar__nav-link {% if active_page=='home' %}sidebar__nav-link--active{% endif %}" {% if active_page=='home' %}aria-current="page"{% endif %} href="/">Home</a>
+                        </li>
+                        <li>
+                            <a class="sidebar__nav-link {% if active_page=='blog' %}sidebar__nav-link--active{% endif %}" {% if active_page=='blog' %}aria-current="page"{% endif %} href="/blog/">Blog</a>
+                        </li>
+                        <li>
+                            <a class="sidebar__nav-link {% if active_page=='projects' %}sidebar__nav-link--active{% endif %}" {% if active_page=='projects' %}aria-current="page"{% endif %} href="/projects">Projects</a>
+                        </li>
+                        <li>
+                            <a class="sidebar__nav-link {% if active_page=='bookmarks' %}sidebar__nav-link--active{% endif %}" {% if active_page=='bookmarks' %}aria-current="page"{% endif %} href="/bookmarks">Bookmarks</a>
+                        </li>
+                        <li>
+                            <a class="sidebar__nav-link {% if active_page=='colophon' %}sidebar__nav-link--active{% endif %}" {% if active_page=='colophon' %}aria-current="page"{% endif %} href="/colophon">Colophon</a>
+                        </li>
+                        <li>
+                            <a class="sidebar__nav-link" href="https://contact.gijs6.nl">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        {% endif %}
         <main class="page">
+            {% if bare_page %}
+                <a class="page__brand" href="/"><span class="page__brand-first">G</span>ijs<span class="page__brand-last">6</span></a>
+            {% endif %}
             {% block content %}
             {% endblock content %}
         </main>
-        <footer class="footer">
-            {% block footer_extra %}
-            {% endblock footer_extra %}
-            <address class="footer__line">
-                Made by <a href="https://contact.gijs6.nl">Gijs ten Berg</a>
-            </address>
-            <p class="footer__line">
-                <a href="https://unlicense.org/">No rights reserved</a>: copy it, change it, do something with it, make something cool :)
-            </p>
-            <p class="footer__line">
-                Built from commit <a href="https://github.com/Gijs6/gijs6.nl/commit/{{ data.last_commit.hash.long }}"><code>{{ data.last_commit.hash.short }}</code></a>, deployed on <time datetime="{{ data.now.iso }}">{{ data.now.date.long }} at {{ data.now.time }} {{ data.now.tz }}</time>
-            </p>
-            {% if source_path %}
+        {% if not bare_page %}
+            <footer class="footer">
+                {% block footer_extra %}
+                {% endblock footer_extra %}
+                <address class="footer__line">
+                    Made by <a href="https://contact.gijs6.nl">Gijs ten Berg</a>
+                </address>
                 <p class="footer__line">
-                    <a href="https://github.com/Gijs6/gijs6.nl/blob/{{ data.last_commit.hash.long }}/{{ source_path }}">View this page's source <span aria-hidden="true">↗</span></a>
+                    <a href="https://unlicense.org/">No rights reserved</a>: copy it, change it, do something with it, make something cool :)
                 </p>
-            {% endif %}
-        </footer>
+                <p class="footer__line">
+                    Built from commit <a href="https://github.com/Gijs6/gijs6.nl/commit/{{ data.last_commit.hash.long }}"><code>{{ data.last_commit.hash.short }}</code></a>, deployed on <time datetime="{{ data.now.iso }}">{{ data.now.date.long }} at {{ data.now.time }} {{ data.now.tz }}</time>
+                </p>
+                {% if source_path %}
+                    <p class="footer__line">
+                        <a href="https://github.com/Gijs6/gijs6.nl/blob/{{ data.last_commit.hash.long }}/{{ source_path }}">View this page's source <span aria-hidden="true">↗</span></a>
+                    </p>
+                {% endif %}
+            </footer>
+        {% endif %}
     </body>
 </html>

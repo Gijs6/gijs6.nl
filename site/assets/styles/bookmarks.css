@@ -1,4 +1,4 @@
-body > .page > .bookmarks {
+.body > .page > .bookmarks {
     column-count: 2;
     column-gap: var(--spacing-md);
 

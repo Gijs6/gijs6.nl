@@ -1,4 +1,4 @@
-body > .page {
+.body > .page {
     > .page__feeds {
         margin-block: 0 var(--flow-gap);
 
