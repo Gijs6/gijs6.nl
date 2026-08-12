@@ -44,6 +44,10 @@
             justify-content: space-between;
             gap: var(--spacing-2xs) var(--spacing-md);
 
+            > [itemprop="author"] {
+                display: contents;
+            }
+
             > .post-list__meta {
                 margin-block: 0;
                 color: var(--color-card-fg-muted);
