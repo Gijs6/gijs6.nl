@@ -34,6 +34,6 @@ html > .body.body--bare > .page {
 
     > p {
         font-size: var(--font-size-lg);
-  font-weight: bold;
+        font-weight: bold;
     }
 }
