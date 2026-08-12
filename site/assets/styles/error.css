@@ -31,4 +31,9 @@ html > .body.body--bare > .page {
     > .page__brand {
         font-size: var(--font-size-3xl);
     }
+
+    > p {
+        font-size: var(--font-size-lg);
+  font-weight: bold;
+    }
 }
