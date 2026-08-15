@@ -18,9 +18,9 @@
         <hgroup class="page__intro">
             <h1 class="page__title p-name" itemprop="headline">{{ post.title }}</h1>
             <p class="page__subtitle">
-                By <a class="p-author h-card u-url p-name" href="/" itemprop="author" itemscope itemtype="https://schema.org/Person" itemid="{{ data.person_id }}"><span itemprop="name">Gijs6</span></a> ·
+                <a hidden class="p-author h-card u-url p-name" href="/" itemprop="author" itemscope itemtype="https://schema.org/Person" itemid="{{ data.person_id }}"><span itemprop="name">Gijs6</span></a>
                 {%- if post.date -%}
-                    <a href="{{ canonical_path }}"><time class="dt-published" itemprop="datePublished" datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }}</time></a> ·
+                    <time class="dt-published" itemprop="datePublished" datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }} {{ post.date.strftime("%Z") }}</time> ·
                 {%- endif %}
                 {{ post.reading_time }} min read · {{ post.word_count }} words
             </p>
