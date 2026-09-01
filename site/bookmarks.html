@@ -4,6 +4,8 @@
     Bookmarks
 {%- endblock title %}
 
+{% block page_itemtype %}https://schema.org/CollectionPage{% endblock page_itemtype %}
+
 {% block content %}
     <hgroup class="page__intro">
         <h1 class="page__title">Bookmarks</h1>
@@ -12,7 +14,7 @@
     <div class="bookmarks">
         <section class="bookmarks__group" aria-labelledby="tools-heading">
             <h2 class="bookmarks__heading" id="tools-heading">Tools</h2>
-            <ul class="bookmark-list" itemscope itemtype="https://schema.org/ItemList">
+            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
                 <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
                     <a class="bookmark-list__link" itemprop="url" href="https://picsum.photos"><span itemprop="name">Lorem Picsum</span></a>
                 </li>
@@ -53,7 +55,7 @@
         </section>
         <section class="bookmarks__group" aria-labelledby="web-toys-heading">
             <h2 class="bookmarks__heading" id="web-toys-heading">Web toys</h2>
-            <ul class="bookmark-list" itemscope itemtype="https://schema.org/ItemList">
+            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
                 <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
                     <a class="bookmark-list__link" itemprop="url" href="https://mapoftheuniverse.net"><span itemprop="name">The Map of the Universe</span></a>
                 </li>
@@ -109,7 +111,7 @@
         </section>
         <section class="bookmarks__group" aria-labelledby="galleries-heading">
             <h2 class="bookmarks__heading" id="galleries-heading">Galleries &amp; collections</h2>
-            <ul class="bookmark-list" itemscope itemtype="https://schema.org/ItemList">
+            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
                 <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
                     <a class="bookmark-list__link" itemprop="url" href="https://www.scanofthemonth.com"><span itemprop="name">Scan of the Month</span></a>
                 </li>
@@ -129,7 +131,7 @@
         </section>
         <section class="bookmarks__group" aria-labelledby="tech-heading">
             <h2 class="bookmarks__heading" id="tech-heading">Tech/programming</h2>
-            <ul class="bookmark-list" itemscope itemtype="https://schema.org/ItemList">
+            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
                 <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
                     <a class="bookmark-list__link" itemprop="url" href="https://eev.ee/blog/2012/04/09/php-a-fractal-of-bad-design/"><span itemprop="name">PHP: a fractal of bad design</span></a>
                 </li>
@@ -173,7 +175,7 @@
         </section>
         <section class="bookmarks__group" aria-labelledby="internet-heading">
             <h2 class="bookmarks__heading" id="internet-heading">The internet</h2>
-            <ul class="bookmark-list" itemscope itemtype="https://schema.org/ItemList">
+            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
                 <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
                     <a class="bookmark-list__link" itemprop="url" href="https://www.theverge.com/c/23998379/google-search-seo-algorithm-webpage-optimization"><span itemprop="name">How Google perfected the web</span></a>
                 </li>
@@ -187,7 +189,7 @@
         </section>
         <section class="bookmarks__group" aria-labelledby="stories-heading">
             <h2 class="bookmarks__heading" id="stories-heading">Stories</h2>
-            <ul class="bookmark-list" itemscope itemtype="https://schema.org/ItemList">
+            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
                 <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
                     <a class="bookmark-list__link" itemprop="url" href="https://highline.huffingtonpost.com/articles/en/lotto-winners"><span itemprop="name">The Lottery Hackers</span></a>
                 </li>
@@ -195,7 +197,7 @@
         </section>
         <section class="bookmarks__group" aria-labelledby="math-heading">
             <h2 class="bookmarks__heading" id="math-heading">Maths &amp; science</h2>
-            <ul class="bookmark-list" itemscope itemtype="https://schema.org/ItemList">
+            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
                 <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
                     <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=dtjb2OhEQcU"><span itemprop="name">Double Pendulums are Chaoticn't</span></a>
                 </li>
@@ -236,7 +238,7 @@
         </section>
         <section class="bookmarks__group" aria-labelledby="documentary-heading">
             <h2 class="bookmarks__heading" id="documentary-heading">Documentary-esque</h2>
-            <ul class="bookmark-list" itemscope itemtype="https://schema.org/ItemList">
+            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
                 <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
                     <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=jVpsLMCIB0Y"><span itemprop="name">The Unbreakable Kryptos Code</span></a>
                 </li>
@@ -253,7 +255,7 @@
         </section>
         <section class="bookmarks__group" aria-labelledby="society-heading">
             <h2 class="bookmarks__heading" id="society-heading">Society/history</h2>
-            <ul class="bookmark-list" itemscope itemtype="https://schema.org/ItemList">
+            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
                 <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
                     <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=9oagcP3UHmY" lang="nl"><span itemprop="name">Is de NPO (te) Links?</span></a>
                 </li>
@@ -288,7 +290,7 @@
         </section>
         <section class="bookmarks__group" aria-labelledby="short-films-heading">
             <h2 class="bookmarks__heading" id="short-films-heading">Short films</h2>
-            <ul class="bookmark-list" itemscope itemtype="https://schema.org/ItemList">
+            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
                 <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
                     <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=hif5eI5pBxo"><span itemprop="name">nothing, except everything.</span></a>
                 </li>

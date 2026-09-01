@@ -57,7 +57,23 @@ AUTHOR_EMAIL = "me@gijs6.nl"
 AUTHOR_IMAGE = "https://cdn.gijs6.nl/images/me.jpg"
 AUTHOR_GIVEN_NAME = "Gijs"
 AUTHOR_FAMILY_NAME = "ten Berg"
-AUTHOR_ALTERNATE_NAMES = ["Gijs", "Gijs ten Berg", "gijsz", "ggijs", "ggijs109"]
+AUTHOR_JOB_TITLE = "Junior developer"
+AUTHOR_ALTERNATE_NAMES = ["Gijs6", "Gijs ten Berg", "gijsz", "ggijs", "ggijs109"]
+AUTHOR_SAME_AS = [
+    "https://github.com/Gijs6",
+    "https://gitlab.com/ggijs",
+    "https://codeberg.org/Gijs6",
+]
+AUTHOR_KNOWS_ABOUT = [
+    "Python",
+    "Elixir",
+    "JavaScript",
+    "Web development",
+    "Static site generators",
+    "Graphic design",
+    "Dutch politics",
+    "Education policy",
+]
 LICENSE_URL = "https://unlicense.org/"
 
 PERSON_ID = f"{SITE_URL}/#person"
@@ -65,8 +81,10 @@ WEBSITE_ID = f"{SITE_URL}/#website"
 QDENTITY_ID = f"{SITE_URL}/#qdentity"
 SCHOOL_ID = f"{SITE_URL}/#school"
 DUPUNKTO_ID = f"{SITE_URL}/#dupunkto"
+ALEIDA_ID = f"{SITE_URL}/#aleida"
 
 BLOG_SECTION = os.path.basename(BLOG_DIR)
+BLOG_URL = f"{SITE_URL}/{BLOG_SECTION}/"
 BLOG_ID = f"{SITE_URL}/{BLOG_SECTION}/#blog"
 
 FRONT_MATTER_PATTERN = re.compile(r"^---\n(.*?)\n---", re.DOTALL)
@@ -113,93 +131,42 @@ def get_git_commit_info():
     return None
 
 
-def site_jsonld():
-    return json.dumps(
-        {
-            "@context": "https://schema.org",
-            "@graph": [
-                {
-                    "@type": ["WebSite", "SoftwareSourceCode"],
-                    "@id": WEBSITE_ID,
-                    "url": f"{SITE_URL}/",
-                    "name": SITE_TITLE,
-                    "description": SITE_DESCRIPTION,
-                    "inLanguage": SITE_LANGUAGE,
-                    "author": {"@id": PERSON_ID},
-                    "license": LICENSE_URL,
-                    "hasPart": {"@id": BLOG_ID},
-                    "codeRepository": SITE_REPOS,
-                    "programmingLanguage": "Python",
-                },
-                {
-                    "@type": "Blog",
-                    "@id": BLOG_ID,
-                    "name": f"{SITE_TITLE} - {BLOG_SECTION}",
-                    "url": f"{SITE_URL}/{BLOG_SECTION}/",
-                    "inLanguage": SITE_LANGUAGE,
-                    "isPartOf": {"@id": WEBSITE_ID},
-                    "author": {"@id": PERSON_ID},
-                },
-                {
-                    "@type": "Person",
-                    "@id": PERSON_ID,
-                    "name": AUTHOR_NAME,
-                    "givenName": AUTHOR_GIVEN_NAME,
-                    "familyName": AUTHOR_FAMILY_NAME,
-                    "alternateName": AUTHOR_ALTERNATE_NAMES,
-                    "url": f"{SITE_URL}/",
-                    "image": AUTHOR_IMAGE,
-                    "email": AUTHOR_EMAIL,
-                    "sameAs": [
-                        "https://github.com/Gijs6",
-                        "https://gitlab.com/ggijs",
-                        "https://codeberg.org/Gijs6",
-                        "https://contact.gijs6.nl",
-                    ],
-                    "worksFor": {"@id": QDENTITY_ID},
-                    "alumniOf": {"@id": SCHOOL_ID},
-                    "memberOf": {"@id": DUPUNKTO_ID},
-                },
-                {
-                    "@type": "Organization",
-                    "@id": QDENTITY_ID,
-                    "name": "Qdentity",
-                    "url": "https://qdentity.com",
-                },
-                {
-                    "@type": "HighSchool",
-                    "@id": SCHOOL_ID,
-                    "name": "Lyceum Schravenlant",
-                    "url": "https://www.lyceumschravenlant.nl/",
-                },
-                {
-                    "@type": "Organization",
-                    "@id": DUPUNKTO_ID,
-                    "name": "{du}punkto",
-                    "url": "https://dupunkto.org/",
-                },
-            ],
-        },
-        ensure_ascii=False,
-    )
+def first_paragraph_text(html_content):
+    match = re.search(r"<p[^>]*>(.*?)</p>", html_content, re.DOTALL)
+    if not match:
+        return None
+    text = re.sub(r"<[^>]+>", "", match.group(1))
+    text = re.sub(r"\s+", " ", text).strip()
+    return text or None
 
 
-def blog_posting_jsonld(post):
-    ld = {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "@id": post["url"],
-        "headline": post["title"],
-        "url": post["url"],
-        "author": {"@id": PERSON_ID},
-        "publisher": {"@id": PERSON_ID},
-        "isPartOf": {"@id": BLOG_ID},
-        "wordCount": post["word_count"],
-        "license": LICENSE_URL,
+def schema_constants():
+    return {
+        "site_url": SITE_URL,
+        "site_title": SITE_TITLE,
+        "site_description": SITE_DESCRIPTION,
+        "site_language": SITE_LANGUAGE,
+        "site_repos": SITE_REPOS,
+        "author_name": AUTHOR_NAME,
+        "author_given_name": AUTHOR_GIVEN_NAME,
+        "author_family_name": AUTHOR_FAMILY_NAME,
+        "author_job_title": AUTHOR_JOB_TITLE,
+        "author_alternate_names": AUTHOR_ALTERNATE_NAMES,
+        "author_same_as": AUTHOR_SAME_AS,
+        "author_knows_about": AUTHOR_KNOWS_ABOUT,
+        "author_image": AUTHOR_IMAGE,
+        "author_email": AUTHOR_EMAIL,
+        "license_url": LICENSE_URL,
+        "blog_section": BLOG_SECTION,
+        "blog_url": BLOG_URL,
+        "person_id": PERSON_ID,
+        "website_id": WEBSITE_ID,
+        "blog_id": BLOG_ID,
+        "qdentity_id": QDENTITY_ID,
+        "school_id": SCHOOL_ID,
+        "dupunkto_id": DUPUNKTO_ID,
+        "aleida_id": ALEIDA_ID,
     }
-    if post["date"]:
-        ld["datePublished"] = post["date"].isoformat()
-    return json.dumps(ld, ensure_ascii=False)
 
 
 def get_data():
@@ -215,13 +182,14 @@ def get_data():
             "tz": now.strftime("%Z"),
             "iso": now.isoformat(timespec="milliseconds"),
         },
-        "jsonld_site": site_jsonld(),
+        "schema": schema_constants(),
         "person_id": PERSON_ID,
         "website_id": WEBSITE_ID,
         "blog_id": BLOG_ID,
         "qdentity_id": QDENTITY_ID,
         "school_id": SCHOOL_ID,
         "dupunkto_id": DUPUNKTO_ID,
+        "aleida_id": ALEIDA_ID,
     }
 
 
@@ -242,7 +210,7 @@ def infer_page_metadata(rel_path):
     return active_page, canonical_path
 
 
-def get_post_date(filepath):
+def get_post_dates(filepath):
     try:
         output = subprocess.check_output(
             ["git", "log", "--follow", "--format=%ct", "--", filepath],
@@ -250,10 +218,13 @@ def get_post_date(filepath):
             stderr=subprocess.DEVNULL,
         ).strip()
         if output:
-            return datetime.fromtimestamp(int(output.split("\n")[-1]), tz=LOCAL_TZ)
+            stamps = [int(line) for line in output.split("\n")]
+            published = datetime.fromtimestamp(stamps[-1], tz=LOCAL_TZ)
+            modified = datetime.fromtimestamp(stamps[0], tz=LOCAL_TZ)
+            return published, modified
     except (subprocess.CalledProcessError, FileNotFoundError, ValueError):
         pass
-    return None
+    return None, None
 
 
 def process_blog(build_dir, template_env, md_processor, data):
@@ -281,22 +252,29 @@ def process_blog(build_dir, template_env, md_processor, data):
         html_content = md_processor.convert(markdown_content)
         md_processor.reset()
 
-        date = get_post_date(filepath)
+        date, date_modified = get_post_dates(filepath)
         if not date:
             warn(f"No date found for blog post: {filename}")
 
         word_count = len(re.sub(r"<[^>]+>", " ", html_content).split())
 
+        keywords = metadata.get("tags") or metadata.get("keywords") or []
+        if isinstance(keywords, str):
+            keywords = [k.strip() for k in keywords.split(",") if k.strip()]
+
         post = {
             "title": metadata.get("title", slug.replace("-", " ").title()),
             "slug": slug,
             "content": html_content,
+            "description": metadata.get("description")
+            or first_paragraph_text(html_content),
+            "keywords": keywords,
             "date": date,
+            "date_modified": date_modified,
             "word_count": word_count,
             "reading_time": max(1, round(word_count / 200)),
             "url": f"{SITE_URL}/{blog_section}/{slug}",
         }
-        post["jsonld"] = blog_posting_jsonld(post)
         posts.append(post)
 
     posts.sort(
@@ -647,7 +625,9 @@ def build(output_dir=None):
     print("> Setting up environment... ", end="", flush=True)
     setup_start = time.time()
     temp_build_dir = tempfile.mkdtemp()
-    template_env = Environment(loader=FileSystemLoader([SITE_DIR, TEMPLATES_DIR]))
+    template_env = Environment(
+        loader=FileSystemLoader([SITE_DIR, TEMPLATES_DIR]), autoescape=True
+    )
     md_processor = Markdown(extensions=["meta", "tables", "fenced_code"])
     data = get_data()
     data["is_dev"] = output_dir != BUILD_DIR

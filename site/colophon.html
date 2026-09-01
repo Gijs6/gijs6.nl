@@ -4,6 +4,12 @@
     Colophon
 {%- endblock title %}
 
+{% block page_itemtype %}https://schema.org/AboutPage{% endblock page_itemtype %}
+
+{% block page_schema %}
+    <link itemprop="mainEntity" href="{{ data.website_id }}" />
+{% endblock page_schema %}
+
 {% block content %}
     <h1>Colophon</h1>
     <section aria-labelledby="about-site-heading">

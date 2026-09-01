@@ -4,6 +4,8 @@
     Blog
 {%- endblock title %}
 
+{% block page_itemtype %}https://schema.org/CollectionPage{% endblock page_itemtype %}
+
 {% block content %}
     <hgroup class="page__intro">
         <h1 class="page__title">Blog</h1>
@@ -24,16 +26,29 @@
             </li>
         </ul>
     </nav>
-    <ol class="post-list h-feed" itemscope itemtype="https://schema.org/Blog" itemid="{{ data.blog_id }}">
+    <ol class="post-list h-feed" itemprop="mainEntity" itemscope itemtype="https://schema.org/Blog" itemid="{{ data.blog_id }}">
+        <meta itemprop="name" content="Gijs6 - blog" />
+        <link itemprop="url" href="{{ data.schema.blog_url }}" />
+        <meta itemprop="description" content="Things I write about" />
+        <meta itemprop="inLanguage" content="en-GB" />
+        <link itemprop="isPartOf" href="{{ data.website_id }}" />
+        <link itemprop="author" href="{{ data.person_id }}" />
+        <link itemprop="publisher" href="{{ data.person_id }}" />
         {% for post in posts %}
-            <li class="post-list__item h-entry" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting" itemid="{{ post.url }}">
+            <li class="post-list__item h-entry" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting" itemid="{{ post.url }}#blogpost">
                 <meta itemprop="url" content="{{ post.url }}" />
+                <link itemprop="mainEntityOfPage" href="{{ post.url }}" />
                 <meta itemprop="wordCount" content="{{ post.word_count }}" />
-                <span itemprop="author" itemscope itemtype="https://schema.org/Person" itemid="{{ data.person_id }}">
-                    <meta itemprop="name" content="Gijs6" />
-                </span>
+                <meta itemprop="timeRequired" content="PT{{ post.reading_time }}M" />
+                <meta itemprop="inLanguage" content="en-GB" />
+                {%- if post.description %}<meta itemprop="description" content="{{ post.description | truncate(300) }}" />{% endif %}
+                {%- if post.date_modified %}<meta itemprop="dateModified" content="{{ post.date_modified.isoformat() }}" />{% endif %}
+                <link itemprop="isPartOf" href="{{ data.blog_id }}" />
+                <link itemprop="author" href="{{ data.person_id }}" />
+                <link itemprop="publisher" href="{{ data.person_id }}" />
+                {% for keyword in post.keywords %}<meta itemprop="keywords" content="{{ keyword }}" />{% endfor %}
                 <h2 class="post-list__title">
-                    <a class="p-name u-url" href="/blog/{{ post.slug }}"><span itemprop="headline">{{ post.title }}</span></a>
+                    <a class="p-name u-url" href="/blog/{{ post.slug }}"><span itemprop="headline name">{{ post.title }}</span></a>
                 </h2>
                 <p class="post-list__meta">
                     {%- if post.date -%}<time class="dt-published" itemprop="datePublished" datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }}</time> ·{%- endif %}

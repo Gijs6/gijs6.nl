@@ -39,10 +39,6 @@
         <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Blog - Atom" />
         <link rel="alternate" type="application/feed+json" href="/blog/feed.json" title="Blog - JSON" />
 
-        {# djlint:off #}
-        <script type="application/ld+json">{{ data.jsonld_site | safe }}</script>
-        {# djlint:on #}
-
         {% block additional_head %}
         {% endblock additional_head %}
     </head>
@@ -75,23 +71,78 @@
                 </nav>
             </header>
         {% endif %}
-        <main class="page">
+        {%- set canonical_url = "https://gijs6.nl" ~ (canonical_path if canonical_path else "/") -%}
+        <main class="page"
+              {% if not bare_page %}itemscope itemtype="{% block page_itemtype %}https://schema.org/WebPage{% endblock page_itemtype %}" itemid="{{ canonical_url }}#webpage"{% endif %}>
+            {% if not bare_page %}
+                <meta itemprop="name" content="{{ self.title() | trim }}" />
+                <link itemprop="url" href="{{ canonical_url }}" />
+                <link itemprop="isPartOf" href="https://gijs6.nl/#website" />
+                <link itemprop="author" href="https://gijs6.nl/#person" />
+                <meta itemprop="inLanguage" content="en-GB" />
+                {% block page_schema %}{% endblock page_schema %}
+            {% endif %}
             {% if bare_page %}<a class="page__brand" href="/"><span class="page__brand-first">G</span>ijs<span class="page__brand-last">6</span></a>{% endif %}
             {% block content %}
             {% endblock content %}
         </main>
         {% if not bare_page %}
-            <footer class="footer">
+            <footer class="footer" itemscope itemtype="https://schema.org/WebSite https://schema.org/SoftwareSourceCode" itemid="https://gijs6.nl/#website">
+                <link itemprop="url" href="https://gijs6.nl/" />
+                <meta itemprop="name" content="Gijs6" />
+                <meta itemprop="alternateName" content="gijs6.nl" />
+                <meta itemprop="description" content="{{ data.schema.site_description }}" />
+                <meta itemprop="inLanguage" content="en-GB" />
+                <meta itemprop="programmingLanguage" content="Python" />
+                <link itemprop="mainEntity" href="https://gijs6.nl/#person" />
+                <link itemprop="hasPart" href="https://gijs6.nl/blog/#blog" />
+                {% for repo in data.schema.site_repos %}<link itemprop="codeRepository" href="{{ repo }}" />{% endfor %}
+
                 {% block footer_extra %}
                 {% endblock footer_extra %}
-                <address class="footer__line">
-                    Made by <a href="https://contact.gijs6.nl">Gijs ten Berg</a>
+
+                <address class="footer__line" itemprop="author publisher copyrightHolder" itemscope itemtype="https://schema.org/Person" itemid="https://gijs6.nl/#person">
+                    Made by <a href="https://contact.gijs6.nl" itemprop="sameAs"><span itemprop="name">Gijs ten Berg</span></a>
+                    <link itemprop="url" href="https://gijs6.nl/" />
+                    <meta itemprop="givenName" content="{{ data.schema.author_given_name }}" />
+                    <meta itemprop="familyName" content="{{ data.schema.author_family_name }}" />
+                    <meta itemprop="jobTitle" content="{{ data.schema.author_job_title }}" />
+                    <meta itemprop="image" content="{{ data.schema.author_image }}" />
+                    <meta itemprop="email" content="{{ data.schema.author_email }}" />
+                    <meta itemprop="nationality" content="Dutch" />
+                    {% for name in data.schema.author_alternate_names %}<meta itemprop="alternateName" content="{{ name }}" />{% endfor %}
+                    {% for topic in data.schema.author_knows_about %}<meta itemprop="knowsAbout" content="{{ topic }}" />{% endfor %}
+                    <meta itemprop="knowsLanguage" content="Dutch" />
+                    <meta itemprop="knowsLanguage" content="English" />
+                    {% for url in data.schema.author_same_as %}<link itemprop="sameAs" href="{{ url }}" />{% endfor %}
+                    <span itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+                        <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                            <meta itemprop="addressLocality" content="Schiedam" />
+                            <meta itemprop="addressRegion" content="South Holland" />
+                            <meta itemprop="addressCountry" content="the Netherlands" />
+                        </span>
+                    </span>
+                    <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization" itemid="https://gijs6.nl/#qdentity">
+                        <meta itemprop="name" content="Qdentity" />
+                        <link itemprop="url" href="https://qdentity.com" />
+                        <link itemprop="sameAs" href="https://qdentity.com" />
+                    </span>
+                    <span itemprop="affiliation" itemscope itemtype="https://schema.org/HighSchool" itemid="https://gijs6.nl/#school">
+                        <meta itemprop="name" content="Lyceum Schravenlant" />
+                        <link itemprop="url" href="https://www.lyceumschravenlant.nl/" />
+                    </span>
+                    <span itemprop="memberOf" itemscope itemtype="https://schema.org/Organization" itemid="https://gijs6.nl/#dupunkto">
+                        <meta itemprop="name" content="{du}punkto" />
+                        <link itemprop="url" href="https://dupunkto.org/" />
+                        <link itemprop="sameAs" href="https://git.dupunkto.org" />
+                    </span>
                 </address>
                 <p class="footer__line">
-                    <a href="https://unlicense.org/">No rights reserved</a>: copy it, change it, do something with it, make something cool :)
+                    <a href="https://unlicense.org/" itemprop="license">No rights reserved</a>: copy it, change it, do something with it, make something cool :)
+                    <link itemprop="license" href="https://creativecommons.org/publicdomain/zero/1.0/" />
                 </p>
                 <p class="footer__line">
-                    Built from commit <a href="https://github.com/Gijs6/gijs6.nl/commit/{{ data.last_commit.hash.long }}"><code>{{ data.last_commit.hash.short }}</code></a>, deployed on <time datetime="{{ data.now.iso }}">{{ data.now.date.long }} at {{ data.now.time }} {{ data.now.tz }}</time>
+                    Built from commit <a href="https://github.com/Gijs6/gijs6.nl/commit/{{ data.last_commit.hash.long }}"><code>{{ data.last_commit.hash.short }}</code></a>, deployed on <time itemprop="dateModified" datetime="{{ data.now.iso }}">{{ data.now.date.long }} at {{ data.now.time }} {{ data.now.tz }}</time>
                 </p>
                 {% if source_path %}
                     <p class="footer__line">

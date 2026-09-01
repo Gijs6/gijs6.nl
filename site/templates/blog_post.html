@@ -4,23 +4,31 @@
     {{ post.title }}
 {%- endblock title %}
 
-{% block additional_head %}
-    {# djlint:off #}
-    <script type="application/ld+json">{{ post.jsonld | safe }}</script>
-    {# djlint:on #}
-{% endblock additional_head %}
+{% block page_schema %}
+    <link itemprop="mainEntity" href="{{ post.url }}#blogpost" />
+    {%- if post.date %}<meta itemprop="datePublished" content="{{ post.date.isoformat() }}" />{% endif -%}
+    {%- if post.date_modified %}<meta itemprop="dateModified" content="{{ post.date_modified.isoformat() }}" />{% endif -%}
+{% endblock page_schema %}
 
 {% block content %}
-    <article class="page__article h-entry" itemscope itemtype="https://schema.org/BlogPosting" itemid="{{ post.url }}">
+    <article class="page__article h-entry" itemscope itemtype="https://schema.org/BlogPosting" itemid="{{ post.url }}#blogpost">
         <meta itemprop="url" content="{{ post.url }}" />
+        <link itemprop="mainEntityOfPage" href="{{ post.url }}" />
+        {%- if post.description %}<meta itemprop="description" content="{{ post.description | truncate(300) }}" />{% endif %}
         <meta itemprop="wordCount" content="{{ post.word_count }}" />
-        <meta itemprop="license" content="https://unlicense.org/" />
+        <meta itemprop="timeRequired" content="PT{{ post.reading_time }}M" />
+        <meta itemprop="inLanguage" content="en-GB" />
+        <link itemprop="license" href="https://unlicense.org/" />
+        <link itemprop="isPartOf" href="{{ data.blog_id }}" />
+        <link itemprop="publisher" href="{{ data.person_id }}" />
+        {% for keyword in post.keywords %}<meta itemprop="keywords" content="{{ keyword }}" />{% endfor %}
         <hgroup class="page__intro">
-            <h1 class="page__title p-name" itemprop="headline">{{ post.title }}</h1>
+            <h1 class="page__title p-name" itemprop="headline name">{{ post.title }}</h1>
             <p class="page__subtitle">
-                <a hidden class="p-author h-card u-url p-name" href="/" itemprop="author" itemscope itemtype="https://schema.org/Person" itemid="{{ data.person_id }}"><span itemprop="name">Gijs6</span></a>
+                <a hidden class="p-author h-card u-url p-name" href="/" itemprop="author" itemscope itemtype="https://schema.org/Person" itemid="{{ data.person_id }}"><span itemprop="name">Gijs6</span><link itemprop="url" href="https://gijs6.nl/" /></a>
                 {%- if post.date -%}
-                    <time class="dt-published" itemprop="datePublished" datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }} {{ post.date.strftime("%Z") }}</time> ·
+                    <time class="dt-published" itemprop="datePublished" datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }} {{ post.date.strftime("%Z") }}</time>
+                    {%- if post.date_modified and post.date_modified.date() != post.date.date() %}<meta itemprop="dateModified" content="{{ post.date_modified.isoformat() }}" />{% endif %} ·
                 {%- endif %}
                 {{ post.reading_time }} min read · {{ post.word_count }} words
             </p>
