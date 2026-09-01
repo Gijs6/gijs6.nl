@@ -72,15 +72,15 @@
             </header>
         {% endif %}
         {%- set canonical_url = "https://gijs6.nl" ~ (canonical_path if canonical_path else "/") -%}
-        <main class="page"
-              {% if not bare_page %}itemscope itemtype="{% block page_itemtype %}https://schema.org/WebPage{% endblock page_itemtype %}" itemid="{{ canonical_url }}#webpage"{% endif %}>
+        <main class="page" {% if not bare_page %}itemscope itemtype="{% block page_itemtype %}https://schema.org/WebPage{% endblock page_itemtype %}" itemid="{{ canonical_url }}#webpage"{% endif %}>
             {% if not bare_page %}
                 <meta itemprop="name" content="{{ self.title() | trim }}" />
                 <link itemprop="url" href="{{ canonical_url }}" />
                 <link itemprop="isPartOf" href="https://gijs6.nl/#website" />
                 <link itemprop="author" href="https://gijs6.nl/#person" />
                 <meta itemprop="inLanguage" content="en-GB" />
-                {% block page_schema %}{% endblock page_schema %}
+                {% block page_schema %}
+                {% endblock page_schema %}
             {% endif %}
             {% if bare_page %}<a class="page__brand" href="/"><span class="page__brand-first">G</span>ijs<span class="page__brand-last">6</span></a>{% endif %}
             {% block content %}

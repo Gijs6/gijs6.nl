@@ -4,7 +4,9 @@
     Home
 {%- endblock title %}
 
-{% block page_itemtype %}https://schema.org/ProfilePage{% endblock page_itemtype %}
+{% block page_itemtype %}
+    https://schema.org/ProfilePage
+{% endblock page_itemtype %}
 
 {% block content %}
     <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Person" itemid="{{ data.person_id }}">
@@ -33,7 +35,15 @@
                     studying <span lang="nl">5<a href="https://en.wikipedia.org/wiki/Voorbereidend_wetenschappelijk_onderwijs"><abbr title="voorbereidend wetenschappelijk onderwijs">vwo</abbr></a></span> (which I think is roughly comparable to year 12 in the UK and 11th grade in the US) at <a itemprop="url sameAs" href="https://www.lyceumschravenlant.nl/" hreflang="nl"><span itemprop="name">Lyceum Schravenlant</span></a>, doing <i lang="nl">natuur & techniek</i>, which means physics, chemistry, biology (unfortunately), <a href="https://nl.wikipedia.org/wiki/Natuur,_leven_en_technologie" hreflang="nl"><abbr lang="nl" title="natuur, leven en technologie">NLT</abbr></a>, and <span lang="fr">français (bien sûr!)</span>
                 </li>
                 <li>
-                    working on <span itemscope itemtype="https://schema.org/SoftwareApplication https://schema.org/SoftwareSourceCode" itemid="{{ data.aleida_id }}"><a itemprop="url sameAs" href="https://aleida.org" hreflang="nl"><span itemprop="name">Aleida</span></a>, an <span itemprop="applicationCategory">educational graphical modelling application</span><meta itemprop="applicationCategory" content="EducationalApplication" /><meta itemprop="operatingSystem" content="Web browser" /><meta itemprop="inLanguage" content="nl" /><link itemprop="author" href="{{ data.person_id }}" /><span itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Mika" /><link itemprop="url" href="https://m1kadev.nl" /></span></span>, that <a href="https://m1kadev.nl">Mika</a> and I are making for our <abbr lang="nl" title="profielwerkstuk">PWS</abbr>
+                    working on <span itemscope itemtype="https://schema.org/SoftwareApplication https://schema.org/SoftwareSourceCode" itemid="{{ data.aleida_id }}"><a itemprop="url sameAs" href="https://aleida.org" hreflang="nl"><span itemprop="name">Aleida</span></a>, an <span itemprop="applicationCategory">educational graphical modelling application</span>
+                    <meta itemprop="applicationCategory" content="EducationalApplication" />
+                    <meta itemprop="operatingSystem" content="Web browser" />
+                    <meta itemprop="inLanguage" content="nl" />
+                    <link itemprop="author" href="{{ data.person_id }}" />
+                    <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <meta itemprop="name" content="Mika" />
+                        <link itemprop="url" href="https://m1kadev.nl" />
+                    </span></span>, that <a href="https://m1kadev.nl">Mika</a> and I are making for our <abbr lang="nl" title="profielwerkstuk">PWS</abbr>
                 </li>
                 <li itemprop="worksFor" itemscope itemtype="https://schema.org/Organization" itemid="{{ data.qdentity_id }}">
                     working as a junior developer at <a itemprop="url sameAs" href="https://qdentity.com"><span itemprop="name">Qdentity</span></a>

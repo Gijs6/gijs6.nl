@@ -6,8 +6,12 @@
 
 {% block page_schema %}
     <link itemprop="mainEntity" href="{{ post.url }}#blogpost" />
-    {%- if post.date %}<meta itemprop="datePublished" content="{{ post.date.isoformat() }}" />{% endif -%}
-    {%- if post.date_modified %}<meta itemprop="dateModified" content="{{ post.date_modified.isoformat() }}" />{% endif -%}
+    {%- if post.date %}
+        <meta itemprop="datePublished" content="{{ post.date.isoformat() }}" />
+    {% endif -%}
+    {%- if post.date_modified %}
+        <meta itemprop="dateModified" content="{{ post.date_modified.isoformat() }}" />
+    {% endif -%}
 {% endblock page_schema %}
 
 {% block content %}
@@ -25,16 +29,19 @@
         <hgroup class="page__intro">
             <h1 class="page__title p-name" itemprop="headline name">{{ post.title }}</h1>
             <p class="page__subtitle">
-                <a hidden class="p-author h-card u-url p-name" href="/" itemprop="author" itemscope itemtype="https://schema.org/Person" itemid="{{ data.person_id }}"><span itemprop="name">Gijs6</span><link itemprop="url" href="https://gijs6.nl/" /></a>
-                {%- if post.date -%}
-                    <time class="dt-published" itemprop="datePublished" datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }} {{ post.date.strftime("%Z") }}</time>
-                    {%- if post.date_modified and post.date_modified.date() != post.date.date() %}<meta itemprop="dateModified" content="{{ post.date_modified.isoformat() }}" />{% endif %} ·
-                {%- endif %}
-                {{ post.reading_time }} min read · {{ post.word_count }} words
-            </p>
-        </hgroup>
-        <div class="e-content" itemprop="articleBody">{{ post.content | safe }}</div>
-    </article>
+            <a hidden class="p-author h-card u-url p-name" href="/" itemprop="author" itemscope itemtype="https://schema.org/Person" itemid="{{ data.person_id }}"><span itemprop="name">Gijs6</span>
+            <link itemprop="url" href="https://gijs6.nl/" />
+        </a>
+        {%- if post.date -%}
+            <time class="dt-published" itemprop="datePublished" datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }} {{ post.date.strftime("%Z") }}</time>
+            {%- if post.date_modified and post.date_modified.date() != post.date.date() %}<meta itemprop="dateModified" content="{{ post.date_modified.isoformat() }}" />{% endif %}
+            ·
+        {%- endif %}
+        {{ post.reading_time }} min read · {{ post.word_count }} words
+    </p>
+</hgroup>
+<div class="e-content" itemprop="articleBody">{{ post.content | safe }}</div>
+</article>
 {% endblock content %}
 
 {% block footer_extra %}
