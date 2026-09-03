@@ -666,7 +666,7 @@ def build(output_dir=None):
     )
 
 
-def serve(port=8000, host="localhost"):
+def serve(port=8000, host="0.0.0.0"):
     print(f"{Fore.BLUE}=== Development Server ==={Style.RESET_ALL}\n")
 
     build(output_dir=BUILD_DEV_DIR)
@@ -680,7 +680,16 @@ def serve(port=8000, host="localhost"):
     class DevHTTPServer(BuildHTTPServer):
         directory = BUILD_DEV_DIR
 
-    server = HTTPServer((host, port), DevHTTPServer)
+    for candidate in range(port, port + 100):
+        try:
+            server = HTTPServer((host, candidate), DevHTTPServer)
+            port = candidate
+            break
+        except OSError as exc:
+            if exc.errno != 98:
+                raise
+    else:
+        raise SystemExit(f"engine.py: no free port in {port}-{port + 99}")
     threading.Thread(target=server.serve_forever, daemon=True).start()
 
     print(
@@ -719,8 +728,8 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--host",
-        default="localhost",
-        help="Host for server (default: localhost)",
+        default="0.0.0.0",
+        help="Host for server (default: 0.0.0.0)",
     )
 
     args = parser.parse_args()
