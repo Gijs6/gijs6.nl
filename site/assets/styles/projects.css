@@ -22,7 +22,7 @@
         }
 
         > .project-list__description {
-            margin-block: 0 var(--spacing-sm);
+            margin-block: 0 var(--spacing-xs);
             color: var(--color-card-fg-muted);
         }
 
