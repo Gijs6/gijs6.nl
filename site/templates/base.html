@@ -72,7 +72,7 @@
             </header>
         {% endif %}
         {%- set canonical_url = "https://gijs6.nl" ~ (canonical_path if canonical_path else "/") -%}
-        <main class="page" {% if not bare_page %}itemscope itemtype="{% block page_itemtype %}https://schema.org/WebPage{% endblock page_itemtype %}" itemid="{{ canonical_url }}#webpage"{% endif %}>
+        <main class="page" {% if not bare_page %}itemscope itemtype="{%- block page_itemtype -%}https://schema.org/WebPage{%- endblock page_itemtype -%}" itemid="{{ canonical_url }}#webpage"{% endif %}>
             {% if not bare_page %}
                 <meta itemprop="name" content="{{ self.title() | trim }}" />
                 <link itemprop="url" href="{{ canonical_url }}" />
