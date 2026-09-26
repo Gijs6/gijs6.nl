@@ -15,7 +15,7 @@
 {% endblock page_schema %}
 
 {% block content %}
-    <article class="page__article h-entry" itemscope itemtype="https://schema.org/BlogPosting" itemid="{{ post.url }}#blogpost">
+    <article class="page__article h-entry" data-post="{{ post.slug }}" itemscope itemtype="https://schema.org/BlogPosting" itemid="{{ post.url }}#blogpost">
         <meta itemprop="url" content="{{ post.url }}" />
         <link itemprop="mainEntityOfPage" href="{{ post.url }}" />
         {%- if post.description %}<meta itemprop="description" content="{{ post.description | truncate(300) }}" />{% endif %}

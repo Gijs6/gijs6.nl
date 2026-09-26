@@ -2,29 +2,6 @@
 title: My proposal for the Dutch national exam design
 ---
 
-<style>
-    figure {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: var(--spacing-md);
-        margin: 0
-    }
-
-    figure a {
-        max-width: 340px;
-        width: 100%
-    }
-
-    figure:has(a:only-child) a {
-        max-width: 100%
-    }
-
-    figcaption {
-        grid-column: 1 / -1;
-        font-style: italic
-    }
-</style>
-
 *This is a follow-up to [my post about the new Dutch exam design](exam-design)*
 
 Instead of just complaining, I decided to design something better. My proposal borrows heavily from the old design, because I still think the <time datetime="2025">2025</time> layout gets most things right. But it also fixes a few things that were already slightly off before the <span lang="nl">CvTE</span> made them worse.

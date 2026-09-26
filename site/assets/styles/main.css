@@ -1,7 +1,7 @@
-@import "skeleton.css";
-@import "fonts.css";
-@import "base.css";
-@import "bookmarks.css";
-@import "blog.css";
-@import "projects.css";
-@import "error.css";
+@import url("skeleton.css");
+@import url("fonts.css");
+@import url("base.css");
+@import url("bookmarks.css");
+@import url("blog.css");
+@import url("projects.css");
+@import url("error.css");

@@ -17,6 +17,14 @@ build() {
   prettier --write --config .prettierrc --ignore-path /dev/null "build/**/*.{css,js,xml,html}"
 }
 
+validate() {
+  build
+  local status=0
+  html-validate "build/**/*.html" || status=1
+  stylelint "site/assets/styles/**/*.css" || status=1
+  return "$status"
+}
+
 deploy() {
   build
   g:deploy

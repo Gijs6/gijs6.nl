@@ -6,7 +6,5 @@ __pycache__
 .ruff_cache
 
 node_modules
-package.json
-package-lock.json
 
 CLAUDE.md

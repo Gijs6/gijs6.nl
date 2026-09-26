@@ -1,12 +1,12 @@
 html > .body.body--bare > .page {
     > .page__error-heading {
-        --404-spacing: 0.4em;
+        --error-spacing: 0.4em;
 
         position: relative;
         display: inline-flex;
         align-items: flex-start;
         gap: var(--spacing-sm);
-        height: calc(var(--line-height-heading) * 1em + var(--404-spacing) * 2);
+        height: calc(var(--line-height-heading) * 1em + var(--error-spacing) * 2);
         font-size: clamp(6rem, 30vw, 16rem);
 
         > .page__error-heading-digit {
@@ -17,12 +17,12 @@ html > .body.body--bare > .page {
             }
 
             &:nth-child(2) {
-                margin-block-start: calc(var(--404-spacing) * 1);
+                margin-block-start: calc(var(--error-spacing) * 1);
                 color: var(--color-body-fg-muted);
             }
 
             &:nth-child(3) {
-                margin-block-start: calc(var(--404-spacing) * 2);
+                margin-block-start: calc(var(--error-spacing) * 2);
                 rotate: 20deg;
             }
         }

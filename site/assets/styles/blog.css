@@ -25,7 +25,7 @@
         }
     }
 
-    > .post-list {
+    > .h-feed > .post-list {
         list-style: none;
         padding-inline-start: 0;
         margin-block: 0;
@@ -53,7 +53,7 @@
                 color: var(--color-card-fg-muted);
                 font-size: var(--font-size-xs);
 
-                @media (max-width: 750px) {
+                @media (width <= 750px) {
                     flex-basis: 100%;
                 }
             }
@@ -64,6 +64,96 @@
                 font-weight: var(--font-weight-bold);
                 font-size: var(--font-size-md);
             }
+        }
+    }
+}
+
+[data-post="exam-design"],
+[data-post="new-exam-design"] {
+    figure {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: var(--spacing-md);
+        margin: 0;
+
+        a {
+            max-width: 340px;
+            width: 100%;
+        }
+
+        &:has(a:only-child) a {
+            max-width: 100%;
+        }
+
+        figcaption {
+            grid-column: 1 / -1;
+            font-style: italic;
+        }
+    }
+}
+
+[data-post="banknote-redesign"] {
+    .banknotes {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+        margin: 0 0 var(--spacing-lg);
+    }
+
+    .banknotes > .banknotes__figure {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+        margin-block: 0 !important;
+    }
+
+    .banknotes > .banknotes__figure > a > .banknotes__image {
+        --note-size: 145px;
+
+        display: block;
+        width: auto;
+        height: auto;
+        max-height: var(--note-size);
+        object-fit: contain;
+    }
+
+    .banknotes > .banknotes__figure > a > .banknotes__image--vertical {
+        max-width: var(--note-size);
+        max-height: none;
+    }
+
+    .series {
+        display: grid;
+        float: right;
+        grid-auto-flow: column;
+        grid-template-columns: auto auto;
+        grid-template-rows: 1fr auto;
+        gap: var(--spacing-xs) var(--spacing-sm);
+        margin: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-sm);
+
+        > .series__figure {
+            display: contents;
+        }
+
+        > .series__figure > .series__image {
+            --series-max-width: 200px;
+
+            width: 100%;
+            height: 100%;
+            max-width: var(--series-max-width);
+            object-fit: contain;
+            background: white;
+            justify-self: center;
+        }
+    }
+
+    @media (width <= 1050px) {
+        .series {
+            float: none;
+            width: fit-content;
+            margin: var(--spacing-sm) 0;
         }
     }
 }

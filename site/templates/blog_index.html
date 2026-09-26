@@ -28,7 +28,7 @@
             </li>
         </ul>
     </nav>
-    <ol class="post-list h-feed" itemprop="mainEntity" itemscope itemtype="https://schema.org/Blog" itemid="{{ data.blog_id }}">
+    <div class="h-feed" itemprop="mainEntity" itemscope itemtype="https://schema.org/Blog" itemid="{{ data.blog_id }}">
         <meta itemprop="name" content="Gijs6 - blog" />
         <link itemprop="url" href="{{ data.schema.blog_url }}" />
         <meta itemprop="description" content="Things I write about" />
@@ -36,6 +36,7 @@
         <link itemprop="isPartOf" href="{{ data.website_id }}" />
         <link itemprop="author" href="{{ data.person_id }}" />
         <link itemprop="publisher" href="{{ data.person_id }}" />
+        <ol class="post-list">
         {% for post in posts %}
             <li class="post-list__item h-entry" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting" itemid="{{ post.url }}#blogpost">
                 <meta itemprop="url" content="{{ post.url }}" />
@@ -58,5 +59,6 @@
                 </p>
             </li>
         {% endfor %}
-    </ol>
+        </ol>
+    </div>
 {% endblock content %}
