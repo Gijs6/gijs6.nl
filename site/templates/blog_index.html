@@ -37,28 +37,28 @@
         <link itemprop="author" href="{{ data.person_id }}" />
         <link itemprop="publisher" href="{{ data.person_id }}" />
         <ol class="post-list">
-        {% for post in posts %}
-            <li class="post-list__item h-entry" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting" itemid="{{ post.url }}#blogpost">
-                <meta itemprop="url" content="{{ post.url }}" />
-                <link itemprop="mainEntityOfPage" href="{{ post.url }}" />
-                <meta itemprop="wordCount" content="{{ post.word_count }}" />
-                <meta itemprop="timeRequired" content="PT{{ post.reading_time }}M" />
-                <meta itemprop="inLanguage" content="en-GB" />
-                {%- if post.description %}<meta itemprop="description" content="{{ post.description | truncate(300) }}" />{% endif %}
-                {%- if post.date_modified %}<meta itemprop="dateModified" content="{{ post.date_modified.isoformat() }}" />{% endif %}
-                <link itemprop="isPartOf" href="{{ data.blog_id }}" />
-                <link itemprop="author" href="{{ data.person_id }}" />
-                <link itemprop="publisher" href="{{ data.person_id }}" />
-                {% for keyword in post.keywords %}<meta itemprop="keywords" content="{{ keyword }}" />{% endfor %}
-                <h2 class="post-list__title">
-                    <a class="p-name u-url" href="/blog/{{ post.slug }}"><span itemprop="headline name">{{ post.title }}</span></a>
-                </h2>
-                <p class="post-list__meta">
-                    {%- if post.date -%}<time class="dt-published" itemprop="datePublished" datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }}</time> ·{%- endif %}
-                    {{ post.reading_time }} min read · {{ post.word_count }} words
-                </p>
-            </li>
-        {% endfor %}
+            {% for post in posts %}
+                <li class="post-list__item h-entry" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting" itemid="{{ post.url }}#blogpost">
+                    <meta itemprop="url" content="{{ post.url }}" />
+                    <link itemprop="mainEntityOfPage" href="{{ post.url }}" />
+                    <meta itemprop="wordCount" content="{{ post.word_count }}" />
+                    <meta itemprop="timeRequired" content="PT{{ post.reading_time }}M" />
+                    <meta itemprop="inLanguage" content="en-GB" />
+                    {%- if post.description %}<meta itemprop="description" content="{{ post.description | truncate(300) }}" />{% endif %}
+                    {%- if post.date_modified %}<meta itemprop="dateModified" content="{{ post.date_modified.isoformat() }}" />{% endif %}
+                    <link itemprop="isPartOf" href="{{ data.blog_id }}" />
+                    <link itemprop="author" href="{{ data.person_id }}" />
+                    <link itemprop="publisher" href="{{ data.person_id }}" />
+                    {% for keyword in post.keywords %}<meta itemprop="keywords" content="{{ keyword }}" />{% endfor %}
+                    <h2 class="post-list__title">
+                        <a class="p-name u-url" href="/blog/{{ post.slug }}"><span itemprop="headline name">{{ post.title }}</span></a>
+                    </h2>
+                    <p class="post-list__meta">
+                        {%- if post.date -%}<time class="dt-published" itemprop="datePublished" datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%Y-%m-%d") }}</time> ·{%- endif %}
+                        {{ post.reading_time }} min read · {{ post.word_count }} words
+                    </p>
+                </li>
+            {% endfor %}
         </ol>
     </div>
 {% endblock content %}
