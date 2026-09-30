@@ -2,11 +2,9 @@
 title: The new Dutch exam design is worse
 ---
 
-The Dutch national exams are getting redesigned. The Board for Tests and Examinations (<abbr lang="nl" title="College voor Toetsen en Examens">CvTE</abbr>) has been running pilots since <time datetime="2025">2025</time>, starting with the Spanish exam for <abbr lang="nl" title="hoger algemeen voortgezet onderwijs">havo</abbr>. This year even more exams use the new layout, including the English exam for <abbr lang="nl" title="voorbereidend wetenschappelijk onderwijs">vwo</abbr>, which I took.
+The Dutch national exams are getting redesigned. The Board for Tests and Examinations (<abbr lang="nl" title="College voor Toetsen en Examens">CvTE</abbr>) has been running pilots since <time datetime="2025">2025</time> and this year even more exams use the new layout, including the English exam for <abbr lang="nl" title="voorbereidend wetenschappelijk onderwijs">vwo</abbr>, which I took. And I absolutely hated the design.
 
-The current design has been around since <time datetime="2007">2007</time>, so a refresh makes sense. The <span lang="nl">CvTE</span> says the main driver is new accessibility regulations. But having taken the new exam myself, I don't think it's an improvement at all.
-
-For those unfamiliar with Dutch national exams: the design is pretty plain. No fancy shapes, just black 11pt Arial with the occasional grey border. You can see the <a href="https://www.examenblad.nl/2025/vwo/documenten/cse-1/vw-1002-a-25-1-o" hreflang="nl"><time datetime="2025">2025</time> English <span lang="nl">vwo</span> exam</a> for reference.
+Here a quick reminder of how the 'old' design looks:
 
 <figure>
     <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/2025/opgaven.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/2025/opgaven/page-01.png" alt="Cover of the 2025 vwo English exercise booklet"></a>
@@ -14,7 +12,7 @@ For those unfamiliar with Dutch national exams: the design is pretty plain. No f
     <figcaption>The <time datetime="2025">2025</time> vwo English exam: exercise booklet cover (left) and texts booklet cover (right)</figcaption>
 </figure>
 
-Honestly, this design is fine. There's room for improvement (the line-height is a bit tight, and the cover is not always clear), but it does its job. Everything that needs to be communicated is communicated, clearly and without any distractions.
+And this design is just fine. There's room for improvement (the line-height is a bit tight, and the cover is not always clear), but it does its job. Everything that needs to be communicated is communicated, clearly and without any distractions.
 
 <figure>
     <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/2025/opgaven.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/2025/opgaven/page-02.png" alt="First questions page of the 2025 vwo English exercise booklet"></a>
@@ -22,9 +20,9 @@ Honestly, this design is fine. There's room for improvement (the line-height is 
     <figcaption>The <time datetime="2025">2025</time> vwo English exam: exercise booklet questions page (left) and texts booklet text page (right)</figcaption>
 </figure>
 
-That's what exam design should do. The goal isn't to look good or feel modern: it's to get information across as clearly as possible to as many candidates as possible. <strong>A good exam design goes completely unnoticed.</strong>
+That's what exam design should do. The goal isn't (and shouldn't be) to look good or feel modern: it's to get information across as clearly as possible to everyone involved. <strong>A good exam design goes completely unnoticed.</strong>
 
-So when you compare the old design to the <a href="https://www.examenblad.nl/2026/vwo/documenten/cse-1/vw-1002-a-26-1-o" hreflang="nl">new one</a>, the problems become obvious pretty quickly.
+So when you compare the old design to the <a href="https://www.examenblad.nl/2026/vwo/documenten/cse-1/vw-1002-a-26-1-o" hreflang="nl">new one</a>, the problems are very obvious.
 
 <figure>
     <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/2026/opgaven.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/2026/opgaven/page-01.png" alt="Cover of the 2026 vwo English exercise booklet"></a>
@@ -32,7 +30,7 @@ So when you compare the old design to the <a href="https://www.examenblad.nl/202
     <figcaption>The <time datetime="2026">2026</time> vwo English exam: exercise booklet cover (left) and texts booklet cover (right)</figcaption>
 </figure>
 
-The new design is full of visual clutter. There are decorative diagonal shapes on the cover, text with weird borders snaking around it, icons, text blocks with grey backgrounds, grey text all over the place, and the word <span lang="nl">"Vraag"</span> printed in front of every single question number. None of this adds information. It just adds noise, which is exactly what you don't want when someone is trying to concentrate.
+The new design is full of visual clutter. There are decorative diagonal shapes on the cover, text with weird borders around it, icons, text blocks with grey backgrounds, grey text all over the place, and the word <span lang="nl">"Vraag"</span> printed in front of every single question number. None of this adds information. It just adds noise, which is exactly what you don't want when someone is trying to concentrate.
 
 <figure>
     <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/2026/opgaven.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/2026/opgaven/page-02.png" alt="First questions page of the 2026 vwo English exercise booklet"></a>
@@ -40,14 +38,14 @@ The new design is full of visual clutter. There are decorative diagonal shapes o
     <figcaption>The <time datetime="2026">2026</time> vwo English exam: exercise booklet questions page (left) and texts booklet text page (right)</figcaption>
 </figure>
 
-The accessibility argument is also hard to take seriously when you look at the grey background blocks they've introduced. Those blocks actually have worse contrast than anything in the old design. For some of the blocks, the contrast ratio is 6.89:1, which actually **fails** <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> AAA. The old design, boring as it was, had black text on white paper.
+One of the reasons for the redesign is 'to improve accessibility', but this is hard to take seriously when you look at the grey background blocks they've introduced. Those blocks actually have worse contrast than anything in the old design. For some of the blocks, the contrast ratio is 6.89:1, which actually **fails** <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> AAA. The old design, boring as it was, had black text on white paper, which many would agree is a pretty good contrast.
 
-Then there's the bold text problem. In the new design, all questions are printed in bold. The idea is probably to make the questions stand out from the text surrounding them. But questions sometimes need emphasis within them too, and the way the <span lang="nl">CvTE</span> solved that was to make that text *even bolder*. In practice, the difference is almost invisible. My English teacher pointed this out to me after the exam. I hadn't noticed it while actually sitting the test (which is exactly the problem).
+Then there's the bold text. In the new design, all questions are printed in bold (with the idea probably being to make the questions stand out from the text surrounding them), but questions sometimes need emphasis within them too, and the way the <span lang="nl">CvTE</span> solved that was to make that text *even bolder*. In practice, the difference is almost invisible. My English teacher pointed this out to me after the exam. I hadn't noticed it while actually sitting the test (which is exactly the problem). (Also super accessible of course)
 
 <figure>
     <a href="https://cdn.gijs6.nl/blog/dutch-exam-design/2026/opgaven.pdf"><img src="https://cdn.gijs6.nl/blog/dutch-exam-design/2026/opgaven/question-8.png" alt="Close-up of question 8 from the 2026 vwo English exam"></a>
 </figure>
 
-And then there's the points. In the old design, the number of points for each question was shown before the question number, so you could easily look at a page and immediately get a sense of how the points were distributed across questions. In the new design, the points are in parentheses after the question. Scanning a page to plan your time is now noticeably harder.
+And then there are the point numbers. In the old design, the number of points for each question was shown before the question number, so you could easily look at a page and immediately get a sense of how the points were distributed across questions. In the new design, the points are in parentheses after the question. Scanning a page to plan your time is now much harder.
 
-What frustrates me most is the irony of it all. The <span lang="nl">CvTE</span> redesigned these exams specifically for accessibility reasons, and in doing so introduced contrast failures, invisible emphasis, and a more cluttered layout. The old design wasn't exciting, but it was legible. That used to be enough.
+Maybe I'm just being nostalgic for the old design, but after actually making an exam with the new design, I really can't see what the new design improves. It feels like a lot of changes were made simply because the old design looked old. And while that's fine for a website or something, an exam isn't something that needs a new look. It just needs to work.
