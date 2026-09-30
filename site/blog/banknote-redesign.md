@@ -2,7 +2,7 @@
 title: Euro banknotes are getting a redesign and I have opinions
 ---
 
-The European Central Bank (BCE/ECB/ЕЦБ/EZB/EKP/EKT/ESB/EKB/BĊE/EBC) is redesigning the euro banknotes. After years of committees and surveys, we've finally reached the fun part: 10 designs made the shortlist, and they went public this month.
+The European Central Bank (BCE/ECB/ЕЦБ/EZB/EKP/EKT/ESB/EKB/BĊE/EBC) is redesigning the euro banknotes. After years of committees and surveys, we have finally reached the fun part: 10 designs made the shortlist, they went public this month, and we can vote on which we like!
 
 ## The old notes
 
@@ -18,15 +18,9 @@ The European Central Bank (BCE/ECB/ЕЦБ/EZB/EKP/EKT/ESB/EKB/BĊE/EBC) is redes
     </figure>
 </div>
 
-The first euro banknote series was made by Austrian designer Robert Kalina in <time datetime="2002">2002</time>. It's built around windows, doorways, and bridges, but none of them are real buildings.
+The first euro banknote series was made by Austrian designer Robert Kalina in <time datetime="2002">2002</time>. It's built around windows, doorways, and bridges, but none of them are real buildings (well they weren't real buildings when the banknotes were designed, but then the amazing Dutch town of Spijkenisse decided to <a href="https://en.wikipedia.org/wiki/Eurobridges_Spijkenisse">build the bridges from the banknotes in real life</a>, so now they are real buildings).
 
-After that came the "Europa series", a redesign of the first one by designer Reinhold Gerstetter.
-
-## Why?
-
-The Europa series still does its job, so why? The ECB gives a few reasons.
-
-The boring-but-important one is counterfeiting: reproduction tech keeps getting better, so every so often the notes need fresh security features to stay ahead. A full redesign is a good excuse to add those./And they say the new notes will also be more accessible, especially for people who are visually impaired. They want to make them more durable and more sustainable too.
+After that came the "Europa series", a redesign of the first one by designer Reinhold Gerstetter, which are the banknotes you're using these days.
 
 ## Two new themes
 
@@ -35,7 +29,7 @@ After many surveys, the ECB picked 2 themes: "European culture" and "Rivers and 
 - "European culture: Europe's rich cultural heritage and dynamic cultural and creative sectors strengthen the European identity, forging a shared sense of belonging. Culture promotes common values, inclusion and dialogue in Europe and across the globe. It brings people together."
 - "Rivers and birds: Rivers and birds recognise no borders, symbolising freedom and unity amongst Europeans and our connection to nature. Europe boasts a wide variety of rivers and birds that inspire us and remind us of our responsibility to protect the environment."
 
-Each note gets its own motifs depending on the theme:
+And each individual note gets its own motifs depending on the theme:
 
 ### European culture
 
@@ -65,11 +59,11 @@ Here the front shows a landscape and a bird, and the back shows an EU institutio
 
 ## The shortlist
 
-Getting from 2 themes to 10 designs took a while. Over 1,200 designers and studios across the EU applied, 25 were asked to make full proposals, and a jury of 21 independent experts picked the 10 you see below. The ECB has a [public survey](https://surveys.ecb.europa.eu/10b/neweuro) open until <time datetime="2026-09-21">21 September 2026</time>, and at the end of the year, they will make a descision
+Getting from 2 themes to 10 designs took a while. Over 1200 designers and studios across the EU applied, 25 were asked to make full proposals, and a jury of 21 independent experts picked the 10 you see below. The ECB has a [public survey](https://surveys.ecb.europa.eu/10b/neweuro) open until <time datetime="2026-09-21">21 September 2026</time>, and at the end of the year, they will make a decision.
 
-Side note:everything below is just my opinion. I'm not an amazing designer, I've got no special expertise here, I just really like this stuff and have thoughts. So (after reading this) go look at the designs yourself and make up your own mind. (And then go vote!)
+Side note: everything below is just my opinion. I'm not an amazing designer, I've got no special expertise here, I just really like this stuff and have thoughts. So (after reading this) go look at the designs yourself and make up your own mind. (And then go vote!)
 
-### Design A by <span lang="nl">Studio Joost Grootens</span>
+### Design A by Studio Joost Grootens
 
 <div class="banknotes">
     <figure class="banknotes__figure">
@@ -103,9 +97,9 @@ Side note:everything below is just my opinion. I'm not an amazing designer, I've
     </figure>
 </div>
 
-The notes are fine, but that's about it for me. The rest falls a bit flat: the fronts feel empty, the portraits aren't visually really appealing, and those silhouette figures are just weird. This gives me school textbook vibes, not money.
+The notes are fine, but that's about it for me. The rest is a bit flat: the fronts feel empty, the portraits aren't visually really appealing, and those silhouette figures are just weird. This gives me school textbook vibes and not money.
 
-### Design B by <span lang="de">PunktFormStrich</span>
+### Design B by PunktFormStrich
 
 <div class="banknotes">
     <figure class="banknotes__figure">
@@ -139,9 +133,9 @@ The notes are fine, but that's about it for me. The rest falls a bit flat: the f
     </figure>
 </div>
 
-Wow, okay, these are gorgeous. Design A stuck to one main colour with a secondary accent, but this one really uses each note's colour amazingly. The buildings look great, and you can directly tell that the river landscapes are actually rivers. My favourite bit are the little details under the birds, it's genuinely fun to read (it's in English though, I would have have liked something language-neutral). These feel like notes that could really exist. Just beautiful.
+Wow, okay, these are gorgeous. This one really uses each note's colour amazingly. The buildings look great, and you can directly tell that the river landscapes are actually rivers. My favourite bit are the little details under the birds, it's really fun to read (it's in English though, I would have liked something language-neutral). These feel like notes that could really exist.
 
-### Design C by <span lang="de">Neue Gestaltung GmbH</span>
+### Design C by Neue Gestaltung GmbH
 
 <div class="banknotes">
     <figure class="banknotes__figure">
@@ -175,9 +169,9 @@ Wow, okay, these are gorgeous. Design A stuck to one main colour with a secondar
     </figure>
 </div>
 
-Someone please remind them this was meant to be a banknote, not a company report. The left and right bits are okay (the portraits are a bit dull, but the little constellations on the map of Europe are cool), but the middle ruins it. You can just about tell what it's supposed to be, a piano, a chemistry set, some books, but it looks so, so corporate. Way more like the cover of a company report than money.
+I think this was meant to be a banknote, not a company report. The left and right bits are okay (the portraits are a bit dull, but the little constellations on the map of Europe are cool), but the middle ruins it. You can just about tell what it's supposed to be, a piano, a chemistry set, some books, but it looks so, so corporate.
 
-### Design D by <span lang="fr">Rudy Guedj</span> and <span lang="fr">François Girard-Meunier</span>
+### Design D by Rudy Guedj and François Girard-Meunier
 
 <div class="banknotes">
     <figure class="banknotes__figure">
@@ -211,9 +205,9 @@ Someone please remind them this was meant to be a banknote, not a company report
     </figure>
 </div>
 
-Okay, this one is on another level. Design B still left some white space along the sides, but here the notes are filled with colour from edge to edge, and it works so well. I absolutely love this. The details ARE SO GOOD: the actual waveform of a bird call, tiny footprints of the birds, a feather, more bird-sound stuff, IT'S SO GOOD. The backs are about as European as it gets too (I don't get the hands though). The 10 and 50 notes look a bit too alik tough. But overall, just really, really good.
+Okay, this one is on another level. Design B still left some white space along the sides, but here the notes are filled with colour from edge to edge, and it works so well. I absolutely love this. The details ARE SO GOOD: the actual waveform of a bird call, tiny footprints of the birds, a feather, more bird-sound stuff, IT'S SO GOOD. The backs are about as European as it gets too (I don't get the hands though). The 10 and 50 notes look a bit too alike tough. But overall, just really, really good.
 
-### Design E by <span lang="el">Myrsini Vardopoulou</span>
+### Design E by Myrsini Vardopoulou
 
 <div class="banknotes">
     <figure class="banknotes__figure">
@@ -249,7 +243,7 @@ Okay, this one is on another level. Design B still left some white space along t
 
 These feel washed out to me. Flat, lifeless, really like pale colours, kind of boring. And because everything is so muted, the notes are hard to tell apart, which doesn't help. Not terrible, but far from great.
 
-### Design F by <span lang="de">Jan Robert Dünnweller</span>
+### Design F by Jan Robert Dünnweller
 
 <div class="banknotes">
     <figure class="banknotes__figure">
@@ -283,9 +277,9 @@ These feel washed out to me. Flat, lifeless, really like pale colours, kind of b
     </figure>
 </div>
 
-Gorgeous, honestly so beautifully drawn. But well... it isn't really money. Each note is an amazing bit of art, really nicely done, and yet I just can't picture handing one over at a shop. Beautiful, just not quite money.
+Gorgeous, honestly so beautifully drawn. But well... it isn't really money. Each note is an amazing bit of art, really nicely done, and yet I just can't picture handing one over at a shop.
 
-### Design G by <span lang="es">Rubio &amp; del Amo</span> and <span lang="es">Cruz más Cruz</span>
+### Design G by Rubio &amp; del Amo and Cruz más Cruz
 
 <div class="banknotes">
     <figure class="banknotes__figure">
@@ -321,7 +315,7 @@ Gorgeous, honestly so beautifully drawn. But well... it isn't really money. Each
 
 Pretty sure the brief was money for the Eurozone, not Monopoly. It all feels too busy and too playful for real currency. That said, it's nicely designed, and these are the coolest portraits on the whole list. But like design C, the art style is so corporate.
 
-### Design H by <span lang="de">Atelier Goppel-Toperngpong</span>
+### Design H by Atelier Goppel-Toperngpong
 
 <div class="banknotes">
     <figure class="banknotes__figure">
@@ -357,7 +351,7 @@ Pretty sure the brief was money for the Eurozone, not Monopoly. It all feels too
 
 Fantastic. Honestly so, so beautiful. The buildings are gorgeous, the colours are lovely, and these are by far the nicest birds on the whole shortlist. It looks a lot like the current notes, but in a good way. It feels familiar and fresh at the same time, and out of all ten this is the one I can most easily picture actually becoming real money. It could maybe use a bit more of that "Europe" feeling somewhere, but otherwise just gorgeous.
 
-### Design I by <span lang="fr">Isabelle Daëron</span>
+### Design I by Isabelle Daëron
 
 <div class="banknotes">
     <figure class="banknotes__figure">
@@ -393,7 +387,7 @@ Fantastic. Honestly so, so beautiful. The buildings are gorgeous, the colours ar
 
 A bit boring, nothing too special here. They look more like a set of Pokemon cards than banknotes. And it doesn't feel very creative either: it's like they followed the assignment to the letter and then just did nothing, not adding anything creative.
 
-### Design J by <span lang="fi">Ville Tietäväinen</span>
+### Design J by Ville Tietäväinen
 
 <div class="banknotes">
     <figure class="banknotes__figure">
@@ -441,6 +435,6 @@ I'm also not a fan of the fully vertical notes (design G, I, and J). That's just
 
 ## Go vote
 
-A big thanks to everyone behind these 10 designs. Even the ones I didn't like had a ton of work and care put into them, so big love to all of you.
+A big thanks to everyone behind these 10 designs. Even the ones I didn't like, still had a ton of work and care put into them
 
 If you've got opinions too (and after all this, how could you not), go fill in the [ECB's survey](https://surveys.ecb.europa.eu/10b/neweuro) before <time datetime="2026-09-21">21 September 2026</time> and let them know what you think.
