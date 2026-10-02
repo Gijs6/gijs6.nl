@@ -7,6 +7,7 @@ import shutil
 import tempfile
 
 import re
+from html.parser import HTMLParser
 from datetime import datetime
 from zoneinfo import ZoneInfo
 import json
@@ -140,6 +141,34 @@ def first_paragraph_text(html_content):
     return text or None
 
 
+class ReadingTextParser(HTMLParser):
+    NON_VISIBLE_TAGS = {"script", "style", "template"}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.parts = []
+        self.non_visible_depth = 0
+
+    def handle_starttag(self, tag, attrs):
+        if tag in self.NON_VISIBLE_TAGS:
+            self.non_visible_depth += 1
+
+    def handle_endtag(self, tag):
+        if tag in self.NON_VISIBLE_TAGS and self.non_visible_depth:
+            self.non_visible_depth -= 1
+
+    def handle_data(self, data):
+        if not self.non_visible_depth:
+            self.parts.append(data)
+
+
+def count_reading_words(html_content):
+    parser = ReadingTextParser()
+    parser.feed(html_content)
+    parser.close()
+    return len(" ".join(parser.parts).split())
+
+
 def schema_constants():
     return {
         "site_url": SITE_URL,
@@ -256,7 +285,7 @@ def process_blog(build_dir, template_env, md_processor, data):
         if not date:
             warn(f"No date found for blog post: {filename}")
 
-        word_count = len(re.sub(r"<[^>]+>", " ", html_content).split())
+        word_count = count_reading_words(html_content)
 
         keywords = metadata.get("tags") or metadata.get("keywords") or []
         if isinstance(keywords, str):
