@@ -1,33 +1,27 @@
-import sys
-import subprocess
 import argparse
-
-import os
-import shutil
-import tempfile
-
-import re
-from html.parser import HTMLParser
-from datetime import datetime
-from zoneinfo import ZoneInfo
 import json
-
-import time
+import os
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
 import threading
-
-from http.server import HTTPServer, SimpleHTTPRequestHandler
-
-from watchdog.observers import Observer
-from watchdog.events import FileSystemEventHandler
-
-from jinja2 import Environment, FileSystemLoader
-from markdown import Markdown
-import yaml
+import time
 import xml.etree.ElementTree as ET
+from datetime import datetime
+from html.parser import HTMLParser
+from http.server import HTTPServer, SimpleHTTPRequestHandler
+from typing import ClassVar
+from zoneinfo import ZoneInfo
 
-from feedgen.feed import FeedGenerator
-
+import yaml
 from colorama import Fore, Style, init
+from feedgen.feed import FeedGenerator
+from jinja2 import Environment, FileSystemLoader, TemplateError
+from markdown import Markdown
+from watchdog.events import FileSystemEventHandler
+from watchdog.observers import Observer
 
 init()
 
@@ -102,7 +96,7 @@ def first_paragraph_text(html_content):
 
 
 class ReadingTextParser(HTMLParser):
-    NON_VISIBLE_TAGS = {"script", "style", "template"}
+    NON_VISIBLE_TAGS: ClassVar[set[str]] = {"script", "style", "template"}
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
@@ -371,7 +365,7 @@ def process_site_files(build_dir, template_env, md_processor, data):
 
                     with open(output_path, "w", encoding="utf-8") as f:
                         f.write(rendered)
-                except Exception as e:
+                except (OSError, TemplateError) as e:
                     warn(f"Failed to render {filepath}: {e}")
 
             elif filepath.endswith(".html"):
@@ -396,7 +390,7 @@ def process_site_files(build_dir, template_env, md_processor, data):
                         rendered = template.render(
                             page=page_data, data=data, source_path=filepath
                         )
-                    except Exception as e:
+                    except (OSError, TemplateError) as e:
                         warn(f"Failed to render {filepath}: {e}")
                         continue
                 else:
@@ -409,7 +403,7 @@ def process_site_files(build_dir, template_env, md_processor, data):
                             data=data,
                             source_path=filepath,
                         )
-                    except Exception as e:
+                    except (OSError, TemplateError) as e:
                         warn(f"Failed to render {filepath}: {e}")
                         continue
 
