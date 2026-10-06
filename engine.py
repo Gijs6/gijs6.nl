@@ -46,47 +46,7 @@ DEFAULT_TEMPLATE = "base.html"
 SITE_URL = "https://gijs6.nl"
 SITE_TITLE = "Gijs6"
 SITE_DESCRIPTION = "A big mess of fun pages, interesting projects, my own thoughts and opinions and more."
-SITE_LANGUAGE = "en-GB"
-SITE_REPOS = [
-    "https://github.com/Gijs6/gijs6.nl",
-    "https://gitlab.com/ggijs/gijs6.nl",
-    "https://codeberg.org/gijs6/gijs6.nl",
-    "https://git.dupunkto.org/sites/gijs6.nl",
-]
-AUTHOR_NAME = "Gijs6"
-AUTHOR_EMAIL = "me@gijs6.nl"
-AUTHOR_IMAGE = "https://cdn.gijs6.nl/images/me.jpg"
-AUTHOR_GIVEN_NAME = "Gijs"
-AUTHOR_FAMILY_NAME = "ten Berg"
-AUTHOR_JOB_TITLE = "Junior developer"
-AUTHOR_ALTERNATE_NAMES = ["Gijs6", "Gijs ten Berg", "gijsz", "ggijs", "ggijs109"]
-AUTHOR_SAME_AS = [
-    "https://github.com/Gijs6",
-    "https://gitlab.com/ggijs",
-    "https://codeberg.org/Gijs6",
-]
-AUTHOR_KNOWS_ABOUT = [
-    "Python",
-    "Elixir",
-    "JavaScript",
-    "Web development",
-    "Static site generators",
-    "Graphic design",
-    "Dutch politics",
-    "Education policy",
-]
-LICENSE_URL = "https://unlicense.org/"
-
-PERSON_ID = f"{SITE_URL}/#person"
-WEBSITE_ID = f"{SITE_URL}/#website"
-QDENTITY_ID = f"{SITE_URL}/#qdentity"
-SCHOOL_ID = f"{SITE_URL}/#school"
-DUPUNKTO_ID = f"{SITE_URL}/#dupunkto"
-ALEIDA_ID = f"{SITE_URL}/#aleida"
-
-BLOG_SECTION = os.path.basename(BLOG_DIR)
-BLOG_URL = f"{SITE_URL}/{BLOG_SECTION}/"
-BLOG_ID = f"{SITE_URL}/{BLOG_SECTION}/#blog"
+AUTHOR_NAME = "Gijs ten Berg"
 
 FRONT_MATTER_PATTERN = re.compile(r"^---\n(.*?)\n---", re.DOTALL)
 
@@ -169,35 +129,6 @@ def count_reading_words(html_content):
     return len(" ".join(parser.parts).split())
 
 
-def schema_constants():
-    return {
-        "site_url": SITE_URL,
-        "site_title": SITE_TITLE,
-        "site_description": SITE_DESCRIPTION,
-        "site_language": SITE_LANGUAGE,
-        "site_repos": SITE_REPOS,
-        "author_name": AUTHOR_NAME,
-        "author_given_name": AUTHOR_GIVEN_NAME,
-        "author_family_name": AUTHOR_FAMILY_NAME,
-        "author_job_title": AUTHOR_JOB_TITLE,
-        "author_alternate_names": AUTHOR_ALTERNATE_NAMES,
-        "author_same_as": AUTHOR_SAME_AS,
-        "author_knows_about": AUTHOR_KNOWS_ABOUT,
-        "author_image": AUTHOR_IMAGE,
-        "author_email": AUTHOR_EMAIL,
-        "license_url": LICENSE_URL,
-        "blog_section": BLOG_SECTION,
-        "blog_url": BLOG_URL,
-        "person_id": PERSON_ID,
-        "website_id": WEBSITE_ID,
-        "blog_id": BLOG_ID,
-        "qdentity_id": QDENTITY_ID,
-        "school_id": SCHOOL_ID,
-        "dupunkto_id": DUPUNKTO_ID,
-        "aleida_id": ALEIDA_ID,
-    }
-
-
 def get_data():
     now = datetime.now(LOCAL_TZ)
     return {
@@ -211,14 +142,6 @@ def get_data():
             "tz": now.strftime("%Z"),
             "iso": now.isoformat(timespec="milliseconds"),
         },
-        "schema": schema_constants(),
-        "person_id": PERSON_ID,
-        "website_id": WEBSITE_ID,
-        "blog_id": BLOG_ID,
-        "qdentity_id": QDENTITY_ID,
-        "school_id": SCHOOL_ID,
-        "dupunkto_id": DUPUNKTO_ID,
-        "aleida_id": ALEIDA_ID,
     }
 
 
@@ -259,7 +182,7 @@ def get_post_dates(filepath):
 def process_blog(build_dir, template_env, md_processor, data):
     posts = []
     blog_slugs = set()
-    blog_section = BLOG_SECTION
+    blog_section = os.path.basename(BLOG_DIR)
 
     if not os.path.exists(BLOG_DIR):
         return posts
@@ -344,7 +267,7 @@ def process_blog(build_dir, template_env, md_processor, data):
     fg.id(SITE_URL)
     fg.link(href=f"{SITE_URL}/{blog_section}", rel="alternate")
     fg.language("en-GB")
-    fg.author(name=AUTHOR_NAME, email=AUTHOR_EMAIL, uri=f"{SITE_URL}/")
+    fg.author(name=AUTHOR_NAME, email="me@gijs6.nl", uri=f"{SITE_URL}/")
 
     for post in posts:
         fe = fg.add_entry()

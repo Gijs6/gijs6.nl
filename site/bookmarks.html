@@ -4,314 +4,310 @@
     Bookmarks
 {%- endblock title %}
 
-{%- block page_itemtype -%}
-    https://schema.org/CollectionPage
-{%- endblock page_itemtype -%}
-
 {% block content %}
     <hgroup class="page__intro">
-        <h1 class="page__title">Bookmarks</h1>
+        <h1 id="bookmarks-heading" class="page__title">Bookmarks</h1>
         <p class="page__subtitle">A collection of websites I find handy, interesting, or funny</p>
     </hgroup>
-    <div class="bookmarks">
+    <section class="bookmarks" aria-labelledby="bookmarks-heading">
         <section class="bookmarks__group" aria-labelledby="tools-heading">
             <h2 class="bookmarks__heading" id="tools-heading">Tools</h2>
-            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://picsum.photos"><span itemprop="name">Lorem Picsum</span></a>
+            <ul class="bookmark-list">
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://picsum.photos"><span>Lorem Picsum</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://bgjar.com"><span itemprop="name">BGJar</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://bgjar.com"><span>BGJar</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://gauger.io/fonticon"><span itemprop="name">FontIcon</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://gauger.io/fonticon"><span>FontIcon</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://simpleicons.org"><span itemprop="name">Simple Icons</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://simpleicons.org"><span>Simple Icons</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://yeun.github.io/open-color"><span itemprop="name">Open Color</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://yeun.github.io/open-color"><span>Open Color</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://github.com/yusukebe/revealgo"><span itemprop="name">revealgo</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://github.com/yusukebe/revealgo"><span>revealgo</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://columneditor.com"><span itemprop="name">Column Editor</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://columneditor.com"><span>Column Editor</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://filiph.github.io/unsure/"><span itemprop="name">Unsure Calculator</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://filiph.github.io/unsure/"><span>Unsure Calculator</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://shademap.app"><span itemprop="name">ShadeMap</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://shademap.app"><span>ShadeMap</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://dimensions.com"><span itemprop="name">Dimensions</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://dimensions.com"><span>Dimensions</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://treinposities.nl" hreflang="nl" lang="nl"><span itemprop="name">Treinposities.nl</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://treinposities.nl" hreflang="nl" lang="nl"><span>Treinposities.nl</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.ahprijsindex.nl" hreflang="nl" lang="nl"><span itemprop="name">AH Prijsindex</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.ahprijsindex.nl" hreflang="nl" lang="nl"><span>AH Prijsindex</span></a>
                 </li>
             </ul>
         </section>
         <section class="bookmarks__group" aria-labelledby="web-toys-heading">
             <h2 class="bookmarks__heading" id="web-toys-heading">Web toys</h2>
-            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://mapoftheuniverse.net"><span itemprop="name">The Map of the Universe</span></a>
+            <ul class="bookmark-list">
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://mapoftheuniverse.net"><span>The Map of the Universe</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://dinosaurpictures.org/ancient-earth"><span itemprop="name">Ancient Earth globe</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://dinosaurpictures.org/ancient-earth"><span>Ancient Earth globe</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://jenevoldsen.com/posts/excitable-cells"><span itemprop="name">Excitable cells</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://jenevoldsen.com/posts/excitable-cells"><span>Excitable cells</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://biocubes.net"><span itemprop="name">biocubes</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://biocubes.net"><span>biocubes</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://ncase.me/trust/"><span itemprop="name">The Evolution of Trust</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://ncase.me/trust/"><span>The Evolution of Trust</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://metrodreamin.com"><span itemprop="name">MetroDreamin'</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://metrodreamin.com"><span>MetroDreamin'</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://shifthappens.site/typewriter"><span itemprop="name">Shift Happens: Typewriter simulator</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://shifthappens.site/typewriter"><span>Shift Happens: Typewriter simulator</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://binarypiano.com/"><span itemprop="name">Binary Music Player</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://binarypiano.com/"><span>Binary Music Player</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://benjaminaster.com/css-minecraft/"><span itemprop="name">CSS Minecraft</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://benjaminaster.com/css-minecraft/"><span>CSS Minecraft</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://sansbullshitsans.com"><span itemprop="name">Sans Bullshit Sans</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://sansbullshitsans.com"><span>Sans Bullshit Sans</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://jsfuck.com/"><span itemprop="name">JSFuck</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://jsfuck.com/"><span>JSFuck</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://pointerpointer.com/"><span itemprop="name">Pointer Pointer</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://pointerpointer.com/"><span>Pointer Pointer</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://landsat.gsfc.nasa.gov/apps/YourNameInLandsat-main"><span itemprop="name">Your Name in Landsat</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://landsat.gsfc.nasa.gov/apps/YourNameInLandsat-main"><span>Your Name in Landsat</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://mewtru.com/flappyfavi"><span itemprop="name">FlappyFavi</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://mewtru.com/flappyfavi"><span>FlappyFavi</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://type.method.ac"><span itemprop="name">Kern Type</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://type.method.ac"><span>Kern Type</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://windows93.net"><span itemprop="name">WINDOWS93</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://windows93.net"><span>WINDOWS93</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://beterdanhugo.nl/" hreflang="nl" lang="nl"><span itemprop="name">Beter dan Hugo</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://beterdanhugo.nl/" hreflang="nl" lang="nl"><span>Beter dan Hugo</span></a>
                 </li>
             </ul>
         </section>
         <section class="bookmarks__group" aria-labelledby="galleries-heading">
             <h2 class="bookmarks__heading" id="galleries-heading">Galleries &amp; collections</h2>
-            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.scanofthemonth.com"><span itemprop="name">Scan of the Month</span></a>
+            <ul class="bookmark-list">
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.scanofthemonth.com"><span>Scan of the Month</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.window-swap.com/Window"><span itemprop="name">WindowSwap</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.window-swap.com/Window"><span>WindowSwap</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://owlsintowels.org/"><span itemprop="name">Owls in Towels</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://owlsintowels.org/"><span>Owls in Towels</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://theforest.link/"><span itemprop="name">The Forest</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://theforest.link/"><span>The Forest</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://715-999-7483.com"><span itemprop="name">715-999-7483</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://715-999-7483.com"><span>715-999-7483</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://driesdepoorter.be/theflemishscrollers/"><span itemprop="name">The Flemish Scrollers</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://driesdepoorter.be/theflemishscrollers/"><span>The Flemish Scrollers</span></a>
                 </li>
             </ul>
         </section>
         <section class="bookmarks__group" aria-labelledby="tech-heading">
             <h2 class="bookmarks__heading" id="tech-heading">Tech/programming</h2>
-            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://eev.ee/blog/2012/04/09/php-a-fractal-of-bad-design/"><span itemprop="name">PHP: a fractal of bad design</span></a>
+            <ul class="bookmark-list">
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://eev.ee/blog/2012/04/09/php-a-fractal-of-bad-design/"><span>PHP: a fractal of bad design</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://gkeenan.co/avgb/rss-readers-make-me-want-to-jump-into-a-vat-of-acid/"><span itemprop="name">RSS readers make me want to jump into a vat of acid!</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://gkeenan.co/avgb/rss-readers-make-me-want-to-jump-into-a-vat-of-acid/"><span>RSS readers make me want to jump into a vat of acid!</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://tonsky.me/blog/lockfiles/"><span itemprop="name">We shouldn't have needed lockfiles</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://tonsky.me/blog/lockfiles/"><span>We shouldn't have needed lockfiles</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://tonsky.me/blog/syntax-highlighting/"><span itemprop="name">I am sorry, but everyone is getting syntax highlighting wrong</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://tonsky.me/blog/syntax-highlighting/"><span>I am sorry, but everyone is getting syntax highlighting wrong</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://lucumr.pocoo.org/2025/9/29/90-percent/"><span itemprop="name">90%</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://lucumr.pocoo.org/2025/9/29/90-percent/"><span>90%</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=-5wpm-gesOY"><span itemprop="name">The Problem with Time &amp; Timezones</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=-5wpm-gesOY"><span>The Problem with Time &amp; Timezones</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=AaZ_RSt0KP8"><span itemprop="name">The Universe is Hostile to Computers</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=AaZ_RSt0KP8"><span>The Universe is Hostile to Computers</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=6avJHaC3C2U"><span itemprop="name">The Art of Code - Dylan Beattie</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=6avJHaC3C2U"><span>The Art of Code - Dylan Beattie</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=-J3wNP6u5YU"><span itemprop="name">Naming Things in Code</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=-J3wNP6u5YU"><span>Naming Things in Code</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=Bf7vDBBOBUA"><span itemprop="name">Don't Write Comments</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=Bf7vDBBOBUA"><span>Don't Write Comments</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=RTB5XhjbgZA"><span itemprop="name">Segmented Displays</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=RTB5XhjbgZA"><span>Segmented Displays</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=1qIHCUWAgh4"><span itemprop="name">Electronic Paper</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=1qIHCUWAgh4"><span>Electronic Paper</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=fSjc8vLMg8c"><span itemprop="name">Programming a first person shooter from scratch like it's 1995</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=fSjc8vLMg8c"><span>Programming a first person shooter from scratch like it's 1995</span></a>
                 </li>
             </ul>
         </section>
         <section class="bookmarks__group" aria-labelledby="internet-heading">
             <h2 class="bookmarks__heading" id="internet-heading">The internet</h2>
-            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.theverge.com/c/23998379/google-search-seo-algorithm-webpage-optimization"><span itemprop="name">How Google perfected the web</span></a>
+            <ul class="bookmark-list">
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.theverge.com/c/23998379/google-search-seo-algorithm-webpage-optimization"><span>How Google perfected the web</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://shkspr.mobi/blog/2025/10/i-have-no-facts-and-i-must-scream/"><span itemprop="name">You did no fact checking, and I must scream</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://shkspr.mobi/blog/2025/10/i-have-no-facts-and-i-must-scream/"><span>You did no fact checking, and I must scream</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.opte.org"><span itemprop="name">The Opte Project</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.opte.org"><span>The Opte Project</span></a>
                 </li>
             </ul>
         </section>
         <section class="bookmarks__group" aria-labelledby="stories-heading">
             <h2 class="bookmarks__heading" id="stories-heading">Stories</h2>
-            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://highline.huffingtonpost.com/articles/en/lotto-winners"><span itemprop="name">The Lottery Hackers</span></a>
+            <ul class="bookmark-list">
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://highline.huffingtonpost.com/articles/en/lotto-winners"><span>The Lottery Hackers</span></a>
                 </li>
             </ul>
         </section>
         <section class="bookmarks__group" aria-labelledby="math-heading">
             <h2 class="bookmarks__heading" id="math-heading">Maths &amp; science</h2>
-            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=dtjb2OhEQcU"><span itemprop="name">Double Pendulums are Chaoticn't</span></a>
+            <ul class="bookmark-list">
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=dtjb2OhEQcU"><span>Double Pendulums are Chaoticn't</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=Ed1gsyxxwM0"><span itemprop="name">Mandelbrot's Evil Twin</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=Ed1gsyxxwM0"><span>Mandelbrot's Evil Twin</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=RcVA8Nj6HEo"><span itemprop="name">What is PLUS times PLUS?</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=RcVA8Nj6HEo"><span>What is PLUS times PLUS?</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=6JwEYamjXpA"><span itemprop="name">What Happens When Maths Goes Wrong?</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=6JwEYamjXpA"><span>What Happens When Maths Goes Wrong?</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=OkmNXy7er84"><span itemprop="name">The hardest problem on the hardest test</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=OkmNXy7er84"><span>The hardest problem on the hardest test</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=gxAaO2rsdIs"><span itemprop="name">Simulating an epidemic</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=gxAaO2rsdIs"><span>Simulating an epidemic</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=3d6DsjIBzJ4"><span itemprop="name">Taylor series</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=3d6DsjIBzJ4"><span>Taylor series</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=pTn6Ewhb27k"><span itemprop="name">Why No One Has Measured The Speed Of Light</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=pTn6Ewhb27k"><span>Why No One Has Measured The Speed Of Light</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=NSS6yAMZF78"><span itemprop="name">Motion Extraction</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=NSS6yAMZF78"><span>Motion Extraction</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=Qe5WT22-AO8"><span itemprop="name">The man who tried to fake an element</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=Qe5WT22-AO8"><span>The man who tried to fake an element</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=zbKjqHqy2no"><span itemprop="name">Strange Filters</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=zbKjqHqy2no"><span>Strange Filters</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=sMb00lz-IfE"><span itemprop="name">What is NOT Random?</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=sMb00lz-IfE"><span>What is NOT Random?</span></a>
                 </li>
             </ul>
         </section>
         <section class="bookmarks__group" aria-labelledby="documentary-heading">
             <h2 class="bookmarks__heading" id="documentary-heading">Documentary-esque</h2>
-            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=jVpsLMCIB0Y"><span itemprop="name">The Unbreakable Kryptos Code</span></a>
+            <ul class="bookmark-list">
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=jVpsLMCIB0Y"><span>The Unbreakable Kryptos Code</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=CbUjuwhQPKs"><span itemprop="name">The Search For D. B. Cooper</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=CbUjuwhQPKs"><span>The Search For D. B. Cooper</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=I2O7blSSzpI"><span itemprop="name">Cicada 3301: An Internet Mystery</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=I2O7blSSzpI"><span>Cicada 3301: An Internet Mystery</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=kd2KEHvK-q8"><span itemprop="name">The Vanishing of Flight 370</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=kd2KEHvK-q8"><span>The Vanishing of Flight 370</span></a>
                 </li>
             </ul>
         </section>
         <section class="bookmarks__group" aria-labelledby="society-heading">
             <h2 class="bookmarks__heading" id="society-heading">Society/history</h2>
-            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=9oagcP3UHmY" lang="nl"><span itemprop="name">Is de NPO (te) Links?</span></a>
+            <ul class="bookmark-list">
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=9oagcP3UHmY" lang="nl"><span>Is de NPO (te) Links?</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=1Jwo5qc78QU"><span itemprop="name">YouTube's copyright system isn't broken. The world's is.</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=1Jwo5qc78QU"><span>YouTube's copyright system isn't broken. The world's is.</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=8YUWDrLazCg"><span itemprop="name">A Million Dollars vs A Billion Dollars, Visualized: A Road Trip</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=8YUWDrLazCg"><span>A Million Dollars vs A Billion Dollars, Visualized: A Road Trip</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=leX541Dr2rU"><span itemprop="name">There is No Algorithm for Truth</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=leX541Dr2rU"><span>There is No Algorithm for Truth</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=rStL7niR7gs"><span itemprop="name">Why Do All Governments Work the Same Way?</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=rStL7niR7gs"><span>Why Do All Governments Work the Same Way?</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=jN7mSXMruEo"><span itemprop="name">These Stupid Trucks are Literally Killing Us</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=jN7mSXMruEo"><span>These Stupid Trucks are Literally Killing Us</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=xuCn8ux2gbs"><span itemprop="name">history of the entire world, i guess</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=xuCn8ux2gbs"><span>history of the entire world, i guess</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=K64wRD8eaus"><span itemprop="name">Why the Titanic didn't have enough lifeboats</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=K64wRD8eaus"><span>Why the Titanic didn't have enough lifeboats</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=o4EfRggPL-M"><span itemprop="name">A day in the life of the UK</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=o4EfRggPL-M"><span>A day in the life of the UK</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=8S0FDjFBj8o"><span itemprop="name">How to sound smart in your TEDx Talk</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=8S0FDjFBj8o"><span>How to sound smart in your TEDx Talk</span></a>
                 </li>
             </ul>
         </section>
         <section class="bookmarks__group" aria-labelledby="short-films-heading">
             <h2 class="bookmarks__heading" id="short-films-heading">Short films</h2>
-            <ul class="bookmark-list" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=hif5eI5pBxo"><span itemprop="name">nothing, except everything.</span></a>
+            <ul class="bookmark-list">
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=hif5eI5pBxo"><span>nothing, except everything.</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=80EEpYieMgE"><span itemprop="name">I Still Exist.</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=80EEpYieMgE"><span>I Still Exist.</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=ZFiXOJviD6Y"><span itemprop="name">you're allowed to try</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=ZFiXOJviD6Y"><span>you're allowed to try</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=F8Zs8xMTDzo"><span itemprop="name">In Pursuit of an Extraordinary Life</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=F8Zs8xMTDzo"><span>In Pursuit of an Extraordinary Life</span></a>
                 </li>
-                <li class="bookmark-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/WebPage">
-                    <a class="bookmark-list__link" itemprop="url" href="https://www.youtube.com/watch?v=9NvpK89L8PA"><span itemprop="name">the art of beginning anyway</span></a>
+                <li class="bookmark-list__item">
+                    <a class="bookmark-list__link" href="https://www.youtube.com/watch?v=9NvpK89L8PA"><span>the art of beginning anyway</span></a>
                 </li>
             </ul>
         </section>
-    </div>
+    </section>
 {% endblock content %}
