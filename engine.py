@@ -450,11 +450,9 @@ def generate_sitemap(build_dir, posts):
 
     tree = ET.ElementTree(urlset)
     ET.indent(tree, space="    ")
-    tree.write(
-        os.path.join(build_dir, "sitemap.xml"),
-        encoding="utf-8",
-        xml_declaration=True,
-    )
+    with open(os.path.join(build_dir, "sitemap.xml"), "wb") as sitemap:
+        sitemap.write(b'<?xml version="1.0" encoding="UTF-8"?>\n')
+        tree.write(sitemap, encoding="utf-8", xml_declaration=False)
 
 
 class BuildHandler(FileSystemEventHandler):
