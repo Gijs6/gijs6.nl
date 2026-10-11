@@ -32,5 +32,5 @@ deploy() {
 
 release() {
   g:publish
-  cd ../timecapsule.gijs6.nl; shake archive https://gijs6.nl v4; git add site/versions/v4; git add site/v4.png; git commit -m "Update v4"; shake format; shake publish
+  cd ../timecapsule.gijs6.nl; shake archive https://gijs6.nl v4; git add site/versions/v4; git add site/v4.png; shake format; git commit -m "Update v4"; shake publish
 }
