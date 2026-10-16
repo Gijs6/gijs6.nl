@@ -10,8 +10,6 @@ handle @gijs6.nl {
 
 	redir /blog /blog/ permanent
 
-	redir /security.txt /.well-known/security.txt permanent
-
 	header /.well-known/webfinger Content-Type "application/jrd+json"
 
 	redir /priv/absjdwaidajsijasd https://api.gijs6.nl{uri} permanent
